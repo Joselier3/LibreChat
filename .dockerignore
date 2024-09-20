@@ -13,5 +13,7 @@ librechat*
 Dockerfile*
 docs
 
+!librechat.example.yaml
+
 # Ignore all hidden files
 .*

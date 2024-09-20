@@ -26,6 +26,9 @@ RUN \
     npm prune --production; \
     npm cache clean --force
 
+# Copiar librechat.example.yaml a librechat.yaml
+RUN cp librechat.example.yaml librechat.yaml
+
 RUN mkdir -p /app/client/public/images /app/api/logs
 
 # Node API setup

@@ -58,6 +58,8 @@ bower_components/
 librechat.yaml
 librechat.yml
 
+!librechat.example.yaml
+
 # Environment
 .npmrc
 .env*
