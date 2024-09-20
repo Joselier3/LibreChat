@@ -85,13 +85,13 @@ function AccountSettings() {
                 {startupConfig?.checkBalance === true &&
                   balanceQuery.data != null &&
                   !isNaN(parseFloat(balanceQuery.data)) && (
-                  <>
-                    <div className="text-token-text-secondary ml-3 mr-2 py-2 text-sm">
-                      {`Balance: ${parseFloat(balanceQuery.data).toFixed(2)}`}
-                    </div>
-                    <div className="my-1.5 h-px border-b border-border-medium" role="none" />
-                  </>
-                )}
+                    <>
+                      <div className="text-token-text-secondary ml-3 mr-2 py-2 text-sm">
+                        {`Balance: ${parseFloat(balanceQuery.data).toFixed(2)}`}
+                      </div>
+                      <div className="my-1.5 h-px border-b border-border-medium" role="none" />
+                    </>
+                  )}
                 <MenuItem>
                   {({ focus }) => (
                     <NavLink

@@ -8,7 +8,7 @@ const { logger } = require('~/config');
  * @param {Error} options.error - The Axios error object.
  */
 const logAxiosError = ({ message, error }) => {
-  const timedOutMessage = 'Cannot read properties of undefined (reading \'status\')';
+  const timedOutMessage = "Cannot read properties of undefined (reading 'status')";
   if (error.response) {
     logger.error(
       `${message} The request was made and the server responded with a status code that falls out of the range of 2xx: ${

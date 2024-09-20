@@ -66,7 +66,7 @@ const Plugin: React.FC<PluginProps> = ({ plugin }) => {
     if (!plugin.loading && latestPlugin === 'self reflection') {
       return 'Finished';
     } else if (latestPlugin === 'self reflection') {
-      return 'I\'m  thinking...';
+      return "I'm  thinking...";
     } else {
       return (
         <>

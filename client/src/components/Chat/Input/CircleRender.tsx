@@ -21,12 +21,12 @@ const CircleRender = ({ rmsLevel, isCameraOn, state }) => {
     rmsLevel > 0.08
       ? 1.8
       : rmsLevel > 0.07
-        ? 1.6
-        : rmsLevel > 0.05
-          ? 1.4
-          : rmsLevel > 0.01
-            ? 1.2
-            : 1;
+      ? 1.6
+      : rmsLevel > 0.05
+      ? 1.4
+      : rmsLevel > 0.01
+      ? 1.2
+      : 1;
 
   const transformScale = baseScale * scaleMultiplier;
 

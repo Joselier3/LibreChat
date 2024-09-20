@@ -196,7 +196,9 @@ const chatV2 = async (req, res) => {
     }
 
     if (typeof endpointOption.artifactsPrompt === 'string' && endpointOption.artifactsPrompt) {
-      body.additional_instructions = `${body.additional_instructions ?? ''}\n${endpointOption.artifactsPrompt}`.trim();
+      body.additional_instructions = `${body.additional_instructions ?? ''}\n${
+        endpointOption.artifactsPrompt
+      }`.trim();
     }
 
     if (instructions) {

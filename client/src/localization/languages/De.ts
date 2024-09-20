@@ -412,9 +412,9 @@ export default {
   com_endpoint_bing_to_enable_sydney: 'Um Sydney zu aktivieren',
   com_endpoint_bing_jailbreak: 'Jailbreak',
   com_endpoint_bing_context_placeholder:
-    'Bing kann bis zu 7k Token für \'Kontext\' verwenden, auf die es sich im Gespräch beziehen kann. Das spezifische Limit ist nicht bekannt, kann aber bei Überschreitung von 7k Token zu Fehlern führen',
+    "Bing kann bis zu 7k Token für 'Kontext' verwenden, auf die es sich im Gespräch beziehen kann. Das spezifische Limit ist nicht bekannt, kann aber bei Überschreitung von 7k Token zu Fehlern führen",
   com_endpoint_bing_system_message_placeholder:
-    'WARNUNG: Missbrauch dieser Funktion kann zu einer SPERRE für die Nutzung von Bing führen! Klicke auf \'Systemnachricht\' für vollständige Anweisungen und die Standardnachricht, wenn ausgelassen, was die \'Sydney\'-Voreinstellung ist, die als sicher gilt.',
+    "WARNUNG: Missbrauch dieser Funktion kann zu einer SPERRE für die Nutzung von Bing führen! Klicke auf 'Systemnachricht' für vollständige Anweisungen und die Standardnachricht, wenn ausgelassen, was die 'Sydney'-Voreinstellung ist, die als sicher gilt.",
   com_endpoint_system_message: 'Systemnachricht',
   com_endpoint_message: 'Nachricht an',
   com_endpoint_message_not_appendable: 'Bearbeite deine Nachricht oder generiere neu.',
@@ -897,8 +897,8 @@ export const comparisons = {
     translated: 'Beim Löschen der Aktion ist ein Fehler aufgetreten.',
   },
   com_assistants_actions_info: {
-    english: 'Let your Assistant retrieve information or take actions via API\'s',
-    translated: 'Lass deinen Assistenten Informationen abrufen oder Aktionen über API\'s ausführen',
+    english: "Let your Assistant retrieve information or take actions via API's",
+    translated: "Lass deinen Assistenten Informationen abrufen oder Aktionen über API's ausführen",
   },
   com_assistants_name_placeholder: {
     english: 'Optional: The name of the assistant',
@@ -962,7 +962,7 @@ export const comparisons = {
     translated: 'Neuer Chat',
   },
   com_ui_happy_birthday: {
-    english: 'It\'s my 1st birthday!',
+    english: "It's my 1st birthday!",
     translated: 'Es ist mein 1. Geburtstag!',
   },
   com_ui_example_quantum_computing: {
@@ -970,7 +970,7 @@ export const comparisons = {
     translated: 'Erkläre Quantencomputing in einfachen Worten',
   },
   com_ui_example_10_year_old_b_day: {
-    english: 'Got any creative ideas for a 10 year old\'s birthday?',
+    english: "Got any creative ideas for a 10 year old's birthday?",
     translated: 'Hast du eine kreative Idee für den Geburtstag eines 10-Jährigen?',
   },
   com_ui_example_http_in_js: {
@@ -1497,7 +1497,7 @@ export const comparisons = {
       'Es ist ein interner Serverfehler aufgetreten. Bitte warte ein paar Augenblicke und versuche es erneut.',
   },
   com_auth_no_account: {
-    english: 'Don\'t have an account?',
+    english: "Don't have an account?",
     translated: 'Du hast kein Konto?',
   },
   com_auth_sign_up: {
@@ -1710,15 +1710,15 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
+      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
     translated:
-      'Bing kann bis zu 7k Token für \'context\' verwenden, auf die es in der Konversation Bezug nehmen kann. Der genaue Grenzwert ist nicht bekannt, aber mehr als 7k Token können zu Fehlern führen.',
+      "Bing kann bis zu 7k Token für 'context' verwenden, auf die es in der Konversation Bezug nehmen kann. Der genaue Grenzwert ist nicht bekannt, aber mehr als 7k Token können zu Fehlern führen.",
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
+      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
     translated:
-      'WARNUNG: Der Missbrauch dieser Funktion kann dazu führen, dass du von der Nutzung von Bing ausgeschlossen wirst! Klicken Sie auf \'Systemaufforderung\', um vollständige Anweisungen und die Standardnachricht zu erhalten, die als sicher gilt.',
+      "WARNUNG: Der Missbrauch dieser Funktion kann dazu führen, dass du von der Nutzung von Bing ausgeschlossen wirst! Klicken Sie auf 'Systemaufforderung', um vollständige Anweisungen und die Standardnachricht zu erhalten, die als sicher gilt.",
   },
   com_endpoint_system_message: {
     english: 'System Message',
@@ -1782,7 +1782,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
       'Top-k ändert, wie das Modell die Token für die Ausgabe auswählt. Ein top-k von 1 bedeutet, dass das ausgewählte Token das wahrscheinlichste unter allen Token im Vokabular des Modells ist (auch gierige Dekodierung genannt), während ein top-k von 3 bedeutet, dass das nächste Token aus den 3 wahrscheinlichsten Token ausgewählt wird (unter Verwendung der Temperatur).',
   },
@@ -1808,7 +1808,7 @@ export const comparisons = {
   },
   com_endpoint_prompt_prefix_assistants_placeholder: {
     english:
-      'Set additional instructions or context on top of the Assistant\'s main instructions. Ignored if empty.',
+      "Set additional instructions or context on top of the Assistant's main instructions. Ignored if empty.",
     translated:
       'Setzt zusätzliche Anweisungen oder Kontext über die Hauptanweisungen des Assistenten. Wird ignoriert, wenn leer.',
   },
@@ -1856,7 +1856,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
+      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
     translated:
       'Die maximale Anzahl der zu erzeugenden Token. Die Gesamtlänge der eingegebenen und generierten Token wird durch die Kontextlänge des Modells begrenzt.',
   },
@@ -1868,13 +1868,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
     translated:
       'Zahl zwischen -2,0 und 2,0. Positive Werte bestrafen neue Token auf der Grundlage ihrer bisherigen Häufigkeit im Text und verringern so die Wahrscheinlichkeit, dass das Model dieselbe Zeile wortwörtlich wiederholt.',
   },
   com_endpoint_openai_pres: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
     translated:
       'Zahl zwischen -2.0 und 2.0. Positive Werte bestrafen neue Token, je nachdem, ob sie bereits im Text vorkommen, und erhöhen so die Wahrscheinlichkeit, dass das Model über neue Themen spricht.',
   },
@@ -1919,7 +1919,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
       'Top-k ändert, wie das Modell Token für die Ausgabe auswählt. Ein top-k von 1 bedeutet, dass das ausgewählte Token das wahrscheinlichste unter allen Token im Vokabular des Modells ist (auch greedy decoding genannt), während ein top-k von 3 bedeutet, dass das nächste Token aus den 3 wahrscheinlichsten Token ausgewählt wird (unter Verwendung der Temperatur).',
   },
@@ -2245,8 +2245,8 @@ export const comparisons = {
     translated: 'um die vollständigen Cookie-Strings bereitzustellen.',
   },
   com_endpoint_config_key_chatgpt: {
-    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
-    translated: 'Um dein Zugangstoken für ChatGPT \'Free Version\' zu erhalten, melde dich bei',
+    english: "To get your Access token For ChatGPT 'Free Version', login to",
+    translated: "Um dein Zugangstoken für ChatGPT 'Free Version' zu erhalten, melde dich bei",
   },
   com_endpoint_config_key_chatgpt_then_visit: {
     english: 'then visit',
@@ -2274,9 +2274,9 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
+      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
     translated:
-      'Stelle sicher, dass du auf \'Erstellen und Fortfahren\' klickst, um mindestens die \'Vertex AI User\'-Rolle zu vergeben. Erstelle schließlich einen JSON-Schlüssel, den du hier importieren kannst.',
+      "Stelle sicher, dass du auf 'Erstellen und Fortfahren' klickst, um mindestens die 'Vertex AI User'-Rolle zu vergeben. Erstelle schließlich einen JSON-Schlüssel, den du hier importieren kannst.",
   },
   com_nav_welcome_assistant: {
     english: 'Please Select an Assistant',
@@ -2682,7 +2682,7 @@ export const comparisons = {
   },
   com_error_moderation: {
     english:
-      'It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We\'re unable to proceed with this specific topic. If you have any other questions or topics you\'d like to explore, please edit your message, or create a new conversation.',
+      "It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We're unable to proceed with this specific topic. If you have any other questions or topics you'd like to explore, please edit your message, or create a new conversation.",
     translated:
       'Es sieht so aus, als ob der übermittelte Inhalt von unserem Moderationssystem als nicht konform mit unseren Gemeinschaftsrichtlinien markiert wurde. Wir können mit diesem spezifischen Thema leider nicht fortfahren. Wenn du andere Fragen oder Themen hast, die du gerne erörtern möchtest, bearbeite bitte deine Nachricht oder starte eine neue Konversation.',
   },
@@ -2836,7 +2836,7 @@ export const comparisons = {
   },
   com_endpoint_context_info: {
     english:
-      'The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models\' context size. Setting higher values may result in errors and/or higher token cost.',
+      "The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models' context size. Setting higher values may result in errors and/or higher token cost.",
     translated:
       'Die maximale Anzahl an Token, die für den Kontext verwendet werden kann. Verwenden Sie dies, um zu steuern, wie viele Token pro Anfrage gesendet werden. Wenn nicht angegeben, werden systemseitige Standardwerte basierend auf der bekannten Kontextgröße der Modelle verwendet. Höhere Werte können zu Fehlern und/oder höheren Tokenkosten führen.',
   },

@@ -30,7 +30,7 @@ const { getModelMaxTokens } = require('~/utils');
 const _getWeather = tool(
   async ({ location }) => {
     if (location === 'SAN FRANCISCO') {
-      return 'It\'s 60 degrees and foggy';
+      return "It's 60 degrees and foggy";
     } else if (location.toLowerCase() === 'san francisco') {
       throw new Error('Input queries must be all capitals');
     } else {

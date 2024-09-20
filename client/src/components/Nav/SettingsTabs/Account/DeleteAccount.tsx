@@ -139,8 +139,8 @@ const renderDeleteButton = (
       isLocked
         ? 'cursor-not-allowed bg-gray-200 text-gray-300 dark:bg-gray-500 dark:text-gray-600'
         : isDeleting
-          ? 'cursor-not-allowed bg-gray-100 text-gray-700 dark:bg-gray-400 dark:text-gray-700'
-          : 'bg-red-700 text-white hover:bg-red-800 ',
+        ? 'cursor-not-allowed bg-gray-100 text-gray-700 dark:bg-gray-400 dark:text-gray-700'
+        : 'bg-red-700 text-white hover:bg-red-800 ',
     )}
     onClick={handleDeleteUser}
     disabled={isDeleting || isLocked}

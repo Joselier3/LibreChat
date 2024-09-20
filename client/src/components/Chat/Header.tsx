@@ -38,21 +38,23 @@ export default function Header() {
       <div className="hide-scrollbar flex w-full items-center justify-between gap-2 overflow-x-auto">
         <div className="flex items-center gap-2">
           {!navVisible && <HeaderNewChat />}
+          {/* muestra el menu de IAs y si hay un asistente seleccionado muestra el assistente */}
           {interfaceConfig.endpointsMenu === true && <EndpointsMenu />}
           {modelSpecs.length > 0 && <ModelSpecsMenu modelSpecs={modelSpecs} />}
+          {/* muestra la configuracion prestablecida de la IA y permite cambiar de asistente  */}
           {<HeaderOptions interfaceConfig={interfaceConfig} />}
-          {interfaceConfig.presets === true && <PresetsMenu />}
-          {hasAccessToBookmarks === true && <BookmarkMenu />}
-          {hasAccessToMultiConvo === true && <AddMultiConvo />}
-          {isSmallScreen && (
+          {/* {interfaceConfig.presets === true && <PresetsMenu />} */}
+          {/* {hasAccessToBookmarks === true && <BookmarkMenu />} */}
+          {/* {hasAccessToMultiConvo === true && <AddMultiConvo />} */}
+          {/* {isSmallScreen && (
             <ExportAndShareMenu
               isSharedButtonEnabled={startupConfig?.sharedLinksEnabled ?? false}
             />
-          )}
+          )} */}
         </div>
-        {!isSmallScreen && (
+        {/* {!isSmallScreen && (
           <ExportAndShareMenu isSharedButtonEnabled={startupConfig?.sharedLinksEnabled ?? false} />
-        )}
+        )} */}
       </div>
       {/* Empty div for spacing */}
       <div />

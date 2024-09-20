@@ -123,9 +123,9 @@ export default {
   com_endpoint_bing_to_enable_sydney: 'Aby aktywować Sydney',
   com_endpoint_bing_jailbreak: 'Odblokuj',
   com_endpoint_bing_context_placeholder:
-    'Bing może użyć do 7k tokenów dla \'kontekstu\', które mogą odnosić się do rozmowy.  Dokładny limit nie jest znany, ale przekroczenie 7 tysięcy tokenów może prowadzić do błędów.',
+    "Bing może użyć do 7k tokenów dla 'kontekstu', które mogą odnosić się do rozmowy.  Dokładny limit nie jest znany, ale przekroczenie 7 tysięcy tokenów może prowadzić do błędów.",
   com_endpoint_bing_system_message_placeholder:
-    'OSTRZEŻENIE: Nadużywanie tej funkcji może skutkować ZAKAZEM korzystania z Bing! Kliknij na \'Wiadomość systemowa\' , aby uzyskać pełne instrukcje oraz domyślną wiadomość, jeśli zostanie pominięta, co jest predefiniowaną opcją \'Sydney\', uważaną za bezpieczną.',
+    "OSTRZEŻENIE: Nadużywanie tej funkcji może skutkować ZAKAZEM korzystania z Bing! Kliknij na 'Wiadomość systemowa' , aby uzyskać pełne instrukcje oraz domyślną wiadomość, jeśli zostanie pominięta, co jest predefiniowaną opcją 'Sydney', uważaną za bezpieczną.",
   com_endpoint_system_message: 'Wiadomość systemowa',
   com_endpoint_default_blank: 'domyślnie: puste',
   com_endpoint_default_false: 'domyślnie: fałsz',
@@ -277,7 +277,7 @@ export const comparisons = {
     translated: 'Nowy czat',
   },
   com_ui_happy_birthday: {
-    english: 'It\'s my 1st birthday!',
+    english: "It's my 1st birthday!",
     translated: 'To moje pierwsze urodziny!',
   },
   com_ui_example_quantum_computing: {
@@ -285,7 +285,7 @@ export const comparisons = {
     translated: 'Wyjaśnij obliczenia kwantowe w prostych słowach',
   },
   com_ui_example_10_year_old_b_day: {
-    english: 'Got any creative ideas for a 10 year old\'s birthday?',
+    english: "Got any creative ideas for a 10 year old's birthday?",
     translated: 'Masz jakieś kreatywne pomysły na dziesiąte urodziny?',
   },
   com_ui_example_http_in_js: {
@@ -508,7 +508,7 @@ export const comparisons = {
       'Nie udało się zalogować przy użyciu podanych danych. Sprawdź swoje dane logowania i spróbuj ponownie.',
   },
   com_auth_no_account: {
-    english: 'Don\'t have an account?',
+    english: "Don't have an account?",
     translated: 'Nie masz konta?',
   },
   com_auth_sign_up: {
@@ -716,15 +716,15 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
+      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
     translated:
-      'Bing może użyć do 7k tokenów dla \'kontekstu\', które mogą odnosić się do rozmowy.  Dokładny limit nie jest znany, ale przekroczenie 7 tysięcy tokenów może prowadzić do błędów.',
+      "Bing może użyć do 7k tokenów dla 'kontekstu', które mogą odnosić się do rozmowy.  Dokładny limit nie jest znany, ale przekroczenie 7 tysięcy tokenów może prowadzić do błędów.",
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
+      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
     translated:
-      'OSTRZEŻENIE: Nadużywanie tej funkcji może skutkować ZAKAZEM korzystania z Bing! Kliknij na \'Wiadomość systemowa\' , aby uzyskać pełne instrukcje oraz domyślną wiadomość, jeśli zostanie pominięta, co jest predefiniowaną opcją \'Sydney\', uważaną za bezpieczną.',
+      "OSTRZEŻENIE: Nadużywanie tej funkcji może skutkować ZAKAZEM korzystania z Bing! Kliknij na 'Wiadomość systemowa' , aby uzyskać pełne instrukcje oraz domyślną wiadomość, jeśli zostanie pominięta, co jest predefiniowaną opcją 'Sydney', uważaną za bezpieczną.",
   },
   com_endpoint_system_message: {
     english: 'System Message',
@@ -780,7 +780,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
       'Top-k wpływa na sposób, w jaki model wybiera tokeny do wygenerowania odpowiedzi. Top-k 1 oznacza, że wybrany token jest najbardziej prawdopodobny spośród wszystkich tokenów w słowniku modelu (nazywane też dekodowaniem zachłannym), podczas gdy top-k 3 oznacza, że następny token jest wybierany spośród 3 najbardziej prawdopodobnych tokenów (z uwzględnieniem temperatury).',
   },
@@ -830,7 +830,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
+      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
     translated:
       'Maksymalna liczba tokenów do wygenerowania. Łączna długość tokenów wejściowych i wygenerowanych tokenów jest ograniczona długością kontekstu modelu.',
   },
@@ -842,13 +842,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
     translated:
       'Liczba pomiędzy -2,0 a 2,0. Dodatnie wartości karzą nowe tokeny w oparciu o ich dotychczasową częstotliwość występowania w tekście, co zmniejsza tendencję modelu do powtarzania tej samej linii dosłownie.',
   },
   com_endpoint_openai_pres: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
     translated:
       'Liczba pomiędzy -2,0 a 2,0. Dodatnie wartości karzą nowe tokeny w oparciu o to, czy pojawiły się już w tekście, co zwiększa tendencję modelu do poruszania nowych tematów.',
   },
@@ -874,7 +874,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
       'Top-K wpływa na sposób wyboru tokenów przez model. Top-K równa 1 oznacza, że wybrany token jest najbardziej prawdopodobny spośród wszystkich tokenów w słowniku modelu (tzw. dekodowanie zachłanne), podczas gdy top-K równa 3 oznacza, że następny token zostaje wybrany spośród 3 najbardziej prawdopodobnych tokenów (za pomocą temperatury).',
   },

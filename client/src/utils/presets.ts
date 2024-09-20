@@ -57,13 +57,13 @@ export const getPresetTitle = (preset: TPreset, mention?: boolean) => {
     return `${modelInfo}${label ? ` | ${label}` : ''}${promptPrefix ? ` | ${promptPrefix}` : ''}${
       tools
         ? ` | ${tools
-          .map((tool: TPlugin | string) => {
-            if (typeof tool === 'string') {
-              return tool;
-            }
-            return tool.pluginKey;
-          })
-          .join(', ')}`
+            .map((tool: TPlugin | string) => {
+              if (typeof tool === 'string') {
+                return tool;
+              }
+              return tool.pluginKey;
+            })
+            .join(', ')}`
         : ''
     }`;
   }

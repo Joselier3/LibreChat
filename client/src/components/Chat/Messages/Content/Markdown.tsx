@@ -155,12 +155,12 @@ const Markdown = memo(({ content = '', showCursor, isLatestMessage }: TContentPr
 
   const remarkPlugins: Pluggable[] = codeArtifacts
     ? [
-      supersub,
-      remarkGfm,
-      [remarkMath, { singleDollarTextMath: true }],
-      remarkDirective,
-      artifactPlugin,
-    ]
+        supersub,
+        remarkGfm,
+        [remarkMath, { singleDollarTextMath: true }],
+        remarkDirective,
+        artifactPlugin,
+      ]
     : [supersub, remarkGfm, [remarkMath, { singleDollarTextMath: true }]];
 
   return (

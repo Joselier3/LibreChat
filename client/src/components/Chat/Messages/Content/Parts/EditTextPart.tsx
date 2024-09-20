@@ -117,10 +117,10 @@ const EditTextPart = ({
       messages.map((msg) =>
         msg.messageId === messageId
           ? {
-            ...msg,
-            content: updatedContent,
-            isEdited: true,
-          }
+              ...msg,
+              content: updatedContent,
+              isEdited: true,
+            }
           : msg,
       ),
     );

@@ -160,9 +160,9 @@ export default {
   com_endpoint_bing_to_enable_sydney: 'Om Sydney in te schakelen',
   com_endpoint_bing_jailbreak: 'Jailbreak',
   com_endpoint_bing_context_placeholder:
-    'Bing kan maximaal 7k tokens voor \'context\' gebruiken, waarnaar het kan verwijzen voor het gesprek. De specifieke limiet is niet bekend, maar kan fouten opleveren bij meer dan 7k tokens',
+    "Bing kan maximaal 7k tokens voor 'context' gebruiken, waarnaar het kan verwijzen voor het gesprek. De specifieke limiet is niet bekend, maar kan fouten opleveren bij meer dan 7k tokens",
   com_endpoint_bing_system_message_placeholder:
-    'WAARSCHUWING: Misbruik van deze functie kan ertoe leiden dat je VERBANNEN wordt van het gebruik van Bing! Klik op \'Systeembericht\' voor volledige instructies en het standaardbericht indien weggelaten, wat de \'Sydney\'-voorinstelling is die veilig wordt geacht.',
+    "WAARSCHUWING: Misbruik van deze functie kan ertoe leiden dat je VERBANNEN wordt van het gebruik van Bing! Klik op 'Systeembericht' voor volledige instructies en het standaardbericht indien weggelaten, wat de 'Sydney'-voorinstelling is die veilig wordt geacht.",
   com_endpoint_system_message: 'Systeembericht',
   com_endpoint_default_blank: 'standaard: leeg',
   com_endpoint_default_false: 'standaard: onwaar',
@@ -178,7 +178,7 @@ export default {
   com_endpoint_google_topp:
     'Top-p verandert hoe het model tokens selecteert voor uitvoer. Tokens worden geselecteerd van meest K (zie topK-parameter) waarschijnlijk tot minst waarschijnlijk totdat de som van hun kansen gelijk is aan de top-p-waarde.',
   com_endpoint_google_topk:
-    'Top-k verandert hoe het model tokens selecteert voor uitvoer. Een top-k van 1 betekent dat het geselecteerde token het meest waarschijnlijk is van alle tokens in de vocabulaire van het model (ook wel \'greedy decoding\' genoemd), terwijl een top-k van 3 betekent dat het volgende token wordt geselecteerd uit de 3 meest waarschijnlijke tokens (met behulp van temperatuur).',
+    "Top-k verandert hoe het model tokens selecteert voor uitvoer. Een top-k van 1 betekent dat het geselecteerde token het meest waarschijnlijk is van alle tokens in de vocabulaire van het model (ook wel 'greedy decoding' genoemd), terwijl een top-k van 3 betekent dat het volgende token wordt geselecteerd uit de 3 meest waarschijnlijke tokens (met behulp van temperatuur).",
   com_endpoint_google_maxoutputtokens:
     '	Maximum aantal tokens dat kan worden gegenereerd in de reactie. Geef een lagere waarde op voor kortere reacties en een hogere waarde voor langere reacties.',
   com_endpoint_google_custom_name_placeholder: 'Stel een aangepaste naam in voor Google',
@@ -209,7 +209,7 @@ export default {
   com_endpoint_anthropic_topp:
     'Top-p verandert hoe het model tokens selecteert voor uitvoer. Tokens worden geselecteerd van meest K (zie topK-parameter) waarschijnlijk tot minst waarschijnlijk totdat de som van hun kansen gelijk is aan de top-p-waarde.',
   com_endpoint_anthropic_topk:
-    'Top-k verandert hoe het model tokens selecteert voor uitvoer. Een top-k van 1 betekent dat het geselecteerde token het meest waarschijnlijk is van alle tokens in de vocabulaire van het model (ook wel \'greedy decoding\' genoemd), terwijl een top-k van 3 betekent dat het volgende token wordt geselecteerd uit de 3 meest waarschijnlijke tokens (met behulp van temperatuur).',
+    "Top-k verandert hoe het model tokens selecteert voor uitvoer. Een top-k van 1 betekent dat het geselecteerde token het meest waarschijnlijk is van alle tokens in de vocabulaire van het model (ook wel 'greedy decoding' genoemd), terwijl een top-k van 3 betekent dat het volgende token wordt geselecteerd uit de 3 meest waarschijnlijke tokens (met behulp van temperatuur).",
   com_endpoint_anthropic_maxoutputtokens:
     'Maximum aantal tokens dat kan worden gegenereerd in de reactie. Geef een lagere waarde op voor kortere reacties en een hogere waarde voor langere reacties.',
   com_endpoint_anthropic_custom_name_placeholder: 'Stel een aangepaste naam in voor Anthropic',
@@ -272,7 +272,7 @@ export default {
   com_endpoint_config_key_edge_full_key_string:
     'om de volledige cookie-tekenreeksen te verstrekken.',
   com_endpoint_config_key_chatgpt:
-    'Om uw toegangstoken voor ChatGPT \'Gratis versie\' te krijgen, logt u in op',
+    "Om uw toegangstoken voor ChatGPT 'Gratis versie' te krijgen, logt u in op",
   com_endpoint_config_key_chatgpt_then_visit: 'ga vervolgens naar',
   com_endpoint_config_key_chatgpt_copy_token: 'Kopieer toegangstoken.',
   com_endpoint_config_key_google_need_to: 'U moet',
@@ -280,7 +280,7 @@ export default {
   com_endpoint_config_key_google_vertex_api: 'API op Google Cloud, dan',
   com_endpoint_config_key_google_service_account: 'Maak een serviceaccount',
   com_endpoint_config_key_google_vertex_api_role:
-    'Zorg ervoor dat u op \'Maken en doorgaan\' klikt om ten minste de \'Vertex AI-gebruiker\'-rol te geven. Maak ten slotte een JSON-sleutel aan om hier te importeren.',
+    "Zorg ervoor dat u op 'Maken en doorgaan' klikt om ten minste de 'Vertex AI-gebruiker'-rol te geven. Maak ten slotte een JSON-sleutel aan om hier te importeren.",
   com_nav_auto_scroll: 'Automatisch scrollen naar Nieuwste bij openen',
   com_nav_plugin_store: 'Plugin-opslag',
   com_nav_plugin_search: 'Plugins zoeken',
@@ -343,7 +343,7 @@ export const comparisons = {
     translated: 'Nieuwe chat',
   },
   com_ui_happy_birthday: {
-    english: 'It\'s my 1st birthday!',
+    english: "It's my 1st birthday!",
     translated: 'Het is mijn eerste verjaardag!',
   },
   com_ui_example_quantum_computing: {
@@ -351,7 +351,7 @@ export const comparisons = {
     translated: 'Leg quantumcomputing in eenvoudige termen uit',
   },
   com_ui_example_10_year_old_b_day: {
-    english: 'Got any creative ideas for a 10 year old\'s birthday?',
+    english: "Got any creative ideas for a 10 year old's birthday?",
     translated: 'Heb je creatieve ideeën voor de verjaardag van een 10-jarige?',
   },
   com_ui_example_http_in_js: {
@@ -706,7 +706,7 @@ export const comparisons = {
     translated: 'Er was een interne serverfout. Wacht een paar momenten en probeer het opnieuw.',
   },
   com_auth_no_account: {
-    english: 'Don\'t have an account?',
+    english: "Don't have an account?",
     translated: 'Heb je geen account?',
   },
   com_auth_sign_up: {
@@ -915,15 +915,15 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
+      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
     translated:
-      'Bing kan maximaal 7k tokens voor \'context\' gebruiken, waarnaar het kan verwijzen voor het gesprek. De specifieke limiet is niet bekend, maar kan fouten opleveren bij meer dan 7k tokens',
+      "Bing kan maximaal 7k tokens voor 'context' gebruiken, waarnaar het kan verwijzen voor het gesprek. De specifieke limiet is niet bekend, maar kan fouten opleveren bij meer dan 7k tokens",
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
+      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
     translated:
-      'WAARSCHUWING: Misbruik van deze functie kan ertoe leiden dat je VERBANNEN wordt van het gebruik van Bing! Klik op \'Systeembericht\' voor volledige instructies en het standaardbericht indien weggelaten, wat de \'Sydney\'-voorinstelling is die veilig wordt geacht.',
+      "WAARSCHUWING: Misbruik van deze functie kan ertoe leiden dat je VERBANNEN wordt van het gebruik van Bing! Klik op 'Systeembericht' voor volledige instructies en het standaardbericht indien weggelaten, wat de 'Sydney'-voorinstelling is die veilig wordt geacht.",
   },
   com_endpoint_system_message: {
     english: 'System Message',
@@ -979,9 +979,9 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
-      'Top-k verandert hoe het model tokens selecteert voor uitvoer. Een top-k van 1 betekent dat het geselecteerde token het meest waarschijnlijk is van alle tokens in de vocabulaire van het model (ook wel \'greedy decoding\' genoemd), terwijl een top-k van 3 betekent dat het volgende token wordt geselecteerd uit de 3 meest waarschijnlijke tokens (met behulp van temperatuur).',
+      "Top-k verandert hoe het model tokens selecteert voor uitvoer. Een top-k van 1 betekent dat het geselecteerde token het meest waarschijnlijk is van alle tokens in de vocabulaire van het model (ook wel 'greedy decoding' genoemd), terwijl een top-k van 3 betekent dat het volgende token wordt geselecteerd uit de 3 meest waarschijnlijke tokens (met behulp van temperatuur).",
   },
   com_endpoint_google_maxoutputtokens: {
     english:
@@ -1033,7 +1033,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
+      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
     translated:
       'Het max. aantal tokens dat kan worden gegenereerd. De totale lengte van invoer-tokens en gegenereerde tokens is beperkt door de contextlengte van het model.',
   },
@@ -1045,13 +1045,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
     translated:
       'Getal tussen -2,0 en 2,0. Positieve waarden straffen nieuwe tokens op basis van hun bestaande frequentie in de tekst tot nu toe, waardoor de kans dat het model dezelfde regel letterlijk herhaalt, afneemt.',
   },
   com_endpoint_openai_pres: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
     translated:
       'Getal tussen -2,0 en 2,0. Positieve waarden straffen nieuwe tokens op basis van of ze al voorkomen in de tekst tot nu toe, waardoor de kans dat het model over nieuwe onderwerpen praat toeneemt.',
   },
@@ -1077,9 +1077,9 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
-      'Top-k verandert hoe het model tokens selecteert voor uitvoer. Een top-k van 1 betekent dat het geselecteerde token het meest waarschijnlijk is van alle tokens in de vocabulaire van het model (ook wel \'greedy decoding\' genoemd), terwijl een top-k van 3 betekent dat het volgende token wordt geselecteerd uit de 3 meest waarschijnlijke tokens (met behulp van temperatuur).',
+      "Top-k verandert hoe het model tokens selecteert voor uitvoer. Een top-k van 1 betekent dat het geselecteerde token het meest waarschijnlijk is van alle tokens in de vocabulaire van het model (ook wel 'greedy decoding' genoemd), terwijl een top-k van 3 betekent dat het volgende token wordt geselecteerd uit de 3 meest waarschijnlijke tokens (met behulp van temperatuur).",
   },
   com_endpoint_anthropic_maxoutputtokens: {
     english:
@@ -1288,8 +1288,8 @@ export const comparisons = {
     translated: 'om de volledige cookie-tekenreeksen te verstrekken.',
   },
   com_endpoint_config_key_chatgpt: {
-    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
-    translated: 'Om uw toegangstoken voor ChatGPT \'Gratis versie\' te krijgen, logt u in op',
+    english: "To get your Access token For ChatGPT 'Free Version', login to",
+    translated: "Om uw toegangstoken voor ChatGPT 'Gratis versie' te krijgen, logt u in op",
   },
   com_endpoint_config_key_chatgpt_then_visit: {
     english: 'then visit',
@@ -1317,9 +1317,9 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
+      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
     translated:
-      'Zorg ervoor dat u op \'Maken en doorgaan\' klikt om ten minste de \'Vertex AI-gebruiker\'-rol te geven. Maak ten slotte een JSON-sleutel aan om hier te importeren.',
+      "Zorg ervoor dat u op 'Maken en doorgaan' klikt om ten minste de 'Vertex AI-gebruiker'-rol te geven. Maak ten slotte een JSON-sleutel aan om hier te importeren.",
   },
   com_nav_auto_scroll: {
     english: 'Auto-Scroll to latest message on chat open',

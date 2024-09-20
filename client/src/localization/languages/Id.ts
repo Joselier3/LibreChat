@@ -167,9 +167,9 @@ export default {
   com_endpoint_bing_to_enable_sydney: 'Untuk mengaktifkan Sydney',
   com_endpoint_bing_jailbreak: 'Jailbreak',
   com_endpoint_bing_context_placeholder:
-    'Bing dapat menggunakan hingga 7k token untuk \'konteks\', yang dapat dirujuk untuk percakapan. Batas spesifik tidak diketahui tetapi mungkin menemui kesalahan melebihi 7k token',
+    "Bing dapat menggunakan hingga 7k token untuk 'konteks', yang dapat dirujuk untuk percakapan. Batas spesifik tidak diketahui tetapi mungkin menemui kesalahan melebihi 7k token",
   com_endpoint_bing_system_message_placeholder:
-    'PERINGATAN: Penyalahgunaan fitur ini dapat membuat Anda DILARANG menggunakan Bing! Klik pada \'Pesan Sistem\' untuk instruksi lengkap dan pesan default jika diabaikan, yang merupakan preset \'Sydney\' yang dianggap aman.',
+    "PERINGATAN: Penyalahgunaan fitur ini dapat membuat Anda DILARANG menggunakan Bing! Klik pada 'Pesan Sistem' untuk instruksi lengkap dan pesan default jika diabaikan, yang merupakan preset 'Sydney' yang dianggap aman.",
   com_endpoint_system_message: 'Pesan Sistem',
   com_endpoint_message: 'Pesan',
   com_endpoint_message_not_appendable: 'Edit pesan Anda atau Regenerasi.',
@@ -304,7 +304,7 @@ export default {
   com_endpoint_config_key_edge_instructions: 'instruksi',
   com_endpoint_config_key_edge_full_key_string: 'untuk memberikan string cookie lengkap.',
   com_endpoint_config_key_chatgpt:
-    'Untuk mendapatkan token akses Anda Untuk ChatGPT \'Versi Gratis\', masuk ke',
+    "Untuk mendapatkan token akses Anda Untuk ChatGPT 'Versi Gratis', masuk ke",
   com_endpoint_config_key_chatgpt_then_visit: 'kemudian kunjungi',
   com_endpoint_config_key_chatgpt_copy_token: 'Salin token akses.',
   com_endpoint_config_key_google_need_to: 'Anda perlu',
@@ -312,7 +312,7 @@ export default {
   com_endpoint_config_key_google_vertex_api: 'API di Google Cloud, kemudian',
   com_endpoint_config_key_google_service_account: 'Buat Akun Layanan',
   com_endpoint_config_key_google_vertex_api_role:
-    'Pastikan untuk mengklik \'Buat dan Lanjutkan\' untuk memberikan setidaknya peran \'Pengguna Vertex AI\'. Terakhir, buat kunci JSON untuk diimpor di sini.',
+    "Pastikan untuk mengklik 'Buat dan Lanjutkan' untuk memberikan setidaknya peran 'Pengguna Vertex AI'. Terakhir, buat kunci JSON untuk diimpor di sini.",
   com_nav_welcome_message: 'Bagaimana saya bisa membantu Anda hari ini?',
   com_nav_auto_scroll: 'Otomatis gulir ke Baru saat Buka',
   com_nav_modular_chat: 'Aktifkan penggantian Endpoint di tengah percakapan',
@@ -408,7 +408,7 @@ export const comparisons = {
     translated: 'Chat Baru',
   },
   com_ui_happy_birthday: {
-    english: 'It\'s my 1st birthday!',
+    english: "It's my 1st birthday!",
     translated: 'Ini ulang tahun pertamaku!',
   },
   com_ui_example_quantum_computing: {
@@ -416,7 +416,7 @@ export const comparisons = {
     translated: 'Jelaskan komputasi kuantum dengan istilah yang sederhana',
   },
   com_ui_example_10_year_old_b_day: {
-    english: 'Got any creative ideas for a 10 year old\'s birthday?',
+    english: "Got any creative ideas for a 10 year old's birthday?",
     translated: 'Ada ide kreatif untuk ulang tahun anak 10 tahun?',
   },
   com_ui_example_http_in_js: {
@@ -799,7 +799,7 @@ export const comparisons = {
     translated: 'Ada kesalahan server internal. Harap tunggu beberapa saat dan coba lagi.',
   },
   com_auth_no_account: {
-    english: 'Don\'t have an account?',
+    english: "Don't have an account?",
     translated: 'Tidak memiliki akun?',
   },
   com_auth_sign_up: {
@@ -1007,15 +1007,15 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
+      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
     translated:
-      'Bing dapat menggunakan hingga 7k token untuk \'konteks\', yang dapat dirujuk untuk percakapan. Batas spesifik tidak diketahui tetapi mungkin menemui kesalahan melebihi 7k token',
+      "Bing dapat menggunakan hingga 7k token untuk 'konteks', yang dapat dirujuk untuk percakapan. Batas spesifik tidak diketahui tetapi mungkin menemui kesalahan melebihi 7k token",
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
+      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
     translated:
-      'PERINGATAN: Penyalahgunaan fitur ini dapat membuat Anda DILARANG menggunakan Bing! Klik pada \'Pesan Sistem\' untuk instruksi lengkap dan pesan default jika diabaikan, yang merupakan preset \'Sydney\' yang dianggap aman.',
+      "PERINGATAN: Penyalahgunaan fitur ini dapat membuat Anda DILARANG menggunakan Bing! Klik pada 'Pesan Sistem' untuk instruksi lengkap dan pesan default jika diabaikan, yang merupakan preset 'Sydney' yang dianggap aman.",
   },
   com_endpoint_system_message: {
     english: 'System Message',
@@ -1079,7 +1079,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
       'Top-k mengubah cara model memilih token untuk output. Top-k 1 berarti token yang dipilih adalah yang paling mungkin di antara semua token dalam kosakata model (juga disebut decoding serakah), sedangkan top-k 3 berarti token berikutnya dipilih dari antara 3 token yang paling mungkin (menggunakan temperatur).',
   },
@@ -1133,7 +1133,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
+      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
     translated:
       'Token maksimum yang akan dihasilkan. Panjang total token masukan dan token yang dihasilkan dibatasi oleh panjang konteks model.',
   },
@@ -1145,13 +1145,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
     translated:
       'Angka antara -2,0 dan 2,0. Nilai positif menghukum token baru berdasarkan frekuensi mereka yang ada dalam teks sejauh ini, mengurangi kemungkinan model untuk mengulangi baris yang sama secara harfiah.',
   },
   com_endpoint_openai_pres: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
     translated:
       'Angka antara -2,0 dan 2,0. Nilai positif menghukum token baru berdasarkan apakah mereka muncul dalam teks sejauh ini, meningkatkan kemungkinan model untuk berbicara tentang topik baru.',
   },
@@ -1189,7 +1189,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
       'Top-k mengubah cara model memilih token untuk output. Top-k 1 berarti token yang dipilih adalah yang paling mungkin di antara semua token dalam kosakata model (juga disebut decoding serakah), sedangkan top-k 3 berarti token berikutnya dipilih dari antara 3 token yang paling mungkin (menggunakan suhu).',
   },
@@ -1488,8 +1488,8 @@ export const comparisons = {
     translated: 'untuk memberikan string cookie lengkap.',
   },
   com_endpoint_config_key_chatgpt: {
-    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
-    translated: 'Untuk mendapatkan token akses Anda Untuk ChatGPT \'Versi Gratis\', masuk ke',
+    english: "To get your Access token For ChatGPT 'Free Version', login to",
+    translated: "Untuk mendapatkan token akses Anda Untuk ChatGPT 'Versi Gratis', masuk ke",
   },
   com_endpoint_config_key_chatgpt_then_visit: {
     english: 'then visit',
@@ -1517,9 +1517,9 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
+      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
     translated:
-      'Pastikan untuk mengklik \'Buat dan Lanjutkan\' untuk memberikan setidaknya peran \'Pengguna Vertex AI\'. Terakhir, buat kunci JSON untuk diimpor di sini.',
+      "Pastikan untuk mengklik 'Buat dan Lanjutkan' untuk memberikan setidaknya peran 'Pengguna Vertex AI'. Terakhir, buat kunci JSON untuk diimpor di sini.",
   },
   com_nav_welcome_message: {
     english: 'How can I help you today?',

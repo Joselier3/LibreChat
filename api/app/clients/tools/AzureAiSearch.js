@@ -18,7 +18,7 @@ class AzureAISearch extends StructuredTool {
     super();
     this.name = 'azure-ai-search';
     this.description =
-      'Use the \'azure-ai-search\' tool to retrieve search results relevant to your input';
+      "Use the 'azure-ai-search' tool to retrieve search results relevant to your input";
 
     // Initialize properties using helper function
     this.serviceEndpoint = this._initializeField(

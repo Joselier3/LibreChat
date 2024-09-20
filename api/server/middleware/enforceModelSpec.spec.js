@@ -21,7 +21,7 @@ describe('enforceModelSpec function', () => {
     expect(enforceModelSpec(modelSpec, parsedBody)).toBe(false);
   });
 
-  test('ignores the \'endpoint\' key in model spec', () => {
+  test("ignores the 'endpoint' key in model spec", () => {
     const modelSpec = { preset: { endpoint: 'ignored', feature: 'Special' } };
     const parsedBody = { feature: 'Special' };
     expect(enforceModelSpec(modelSpec, parsedBody)).toBe(true);

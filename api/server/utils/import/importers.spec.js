@@ -90,8 +90,8 @@ describe('importChatGptConvo', () => {
       const actualMessageId = idToUUIDMap.get(id);
       const actualParentId = actualMessageId
         ? importBatchBuilder.saveMessage.mock.calls.find(
-          (call) => call[0].messageId === actualMessageId,
-        )[0].parentMessageId
+            (call) => call[0].messageId === actualMessageId,
+          )[0].parentMessageId
         : Constants.NO_PARENT;
 
       expect(actualParentId).toBe(expectedParentId);

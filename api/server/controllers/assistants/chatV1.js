@@ -118,7 +118,7 @@ const chatV1 = async (req, res) => {
     } else if (/Files.*are invalid/.test(error.message)) {
       const errorMessage = `Files are invalid, or may not have uploaded yet.${
         endpoint === EModelEndpoint.azureAssistants
-          ? ' If using Azure OpenAI, files are only available in the region of the assistant\'s model at the time of upload.'
+          ? " If using Azure OpenAI, files are only available in the region of the assistant's model at the time of upload."
           : ''
       }`;
       return sendResponse(req, res, messageData, errorMessage);
@@ -314,7 +314,9 @@ const chatV1 = async (req, res) => {
     }
 
     if (typeof endpointOption.artifactsPrompt === 'string' && endpointOption.artifactsPrompt) {
-      body.additional_instructions = `${body.additional_instructions ?? ''}\n${endpointOption.artifactsPrompt}`.trim();
+      body.additional_instructions = `${body.additional_instructions ?? ''}\n${
+        endpointOption.artifactsPrompt
+      }`.trim();
     }
 
     if (instructions) {
@@ -382,8 +384,8 @@ const chatV1 = async (req, res) => {
         body.additional_instructions ? `${body.additional_instructions}\n` : ''
       }The user has uploaded ${imageCount} image${pluralized}.
       Use the \`${ImageVisionTool.function.name}\` tool to retrieve ${
-  plural ? '' : 'a '
-}detailed text description${pluralized} for ${plural ? 'each' : 'the'} image${pluralized}.`;
+        plural ? '' : 'a '
+      }detailed text description${pluralized} for ${plural ? 'each' : 'the'} image${pluralized}.`;
 
       return files;
     };

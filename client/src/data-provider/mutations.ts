@@ -255,8 +255,8 @@ export const useUpdateSharedLinkMutation = (
           // If the shared link is public, add it to the shared links cache list.
           vars.isPublic
             ? // Even if the SharedLink data exists in the database, it is not registered in the cache when isPublic is false.
-          // Therefore, when isPublic is true, use addSharedLink instead of updateSharedLink.
-            addSharedLink(sharedLink, _data)
+              // Therefore, when isPublic is true, use addSharedLink instead of updateSharedLink.
+              addSharedLink(sharedLink, _data)
             : deleteSharedLink(sharedLink, _data.shareId),
           InfiniteCollections.SHARED_LINKS,
           sharedLink.pages[0].pageSize as number,

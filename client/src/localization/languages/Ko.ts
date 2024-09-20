@@ -147,9 +147,9 @@ export default {
   com_endpoint_bing_to_enable_sydney: '시드니를 활성화하려면',
   com_endpoint_bing_jailbreak: 'Jailbreak',
   com_endpoint_bing_context_placeholder:
-    'Bing은 \'컨텍스트\'로 최대 7,000개의 토큰을 사용할 수 있으며, 대화에서 참조할 수 있습니다. 구체적인 제한은 알려져 있지 않지만, 7,000개의 토큰을 초과하면 오류가 발생할 수 있습니다.',
+    "Bing은 '컨텍스트'로 최대 7,000개의 토큰을 사용할 수 있으며, 대화에서 참조할 수 있습니다. 구체적인 제한은 알려져 있지 않지만, 7,000개의 토큰을 초과하면 오류가 발생할 수 있습니다.",
   com_endpoint_bing_system_message_placeholder:
-    '경고: 이 기능의 오용으로 인해 Bing의 사용이 \'금지\'될 수 있습니다. 모든 내용을 보려면 \'시스템 메시지\'를 클릭하세요. 생략된 경우 \'시드니\' 프리셋이 사용됩니다.',
+    "경고: 이 기능의 오용으로 인해 Bing의 사용이 '금지'될 수 있습니다. 모든 내용을 보려면 '시스템 메시지'를 클릭하세요. 생략된 경우 '시드니' 프리셋이 사용됩니다.",
   com_endpoint_system_message: '시스템 메시지',
   com_endpoint_default_blank: '기본값: 공백',
   com_endpoint_default_false: '기본값: false',
@@ -529,7 +529,7 @@ export default {
   com_endpoint_config_google_gemini_api: 'Gemini API 설정',
   com_endpoint_config_google_api_info: 'Gemini에서 Generative Language API 키를 얻으려면',
   com_endpoint_config_key_chatgpt:
-    'ChatGPT \'무료 버전\'의 액세스 토큰을 얻으려면 다음 사이트에 로그인하세요',
+    "ChatGPT '무료 버전'의 액세스 토큰을 얻으려면 다음 사이트에 로그인하세요",
   com_endpoint_config_key_chatgpt_then_visit: '그런 다음 방문하세요',
   com_endpoint_config_key_chatgpt_copy_token: '액세스 토큰 복사',
   com_endpoint_config_key_google_need_to: 'API 키를 설정해야 합니다',
@@ -537,7 +537,7 @@ export default {
   com_endpoint_config_key_google_vertex_api: 'Google Cloud에서 제공하는 API',
   com_endpoint_config_key_google_service_account: '서비스 계정 생성',
   com_endpoint_config_key_google_vertex_api_role:
-    '\'Vertex AI 사용자\' 역할을 부여하려면 반드시 \'생성 및 계속\'을 클릭하세요. 마지막으로 여기에 가져올 JSON 키를 생성하세요.',
+    "'Vertex AI 사용자' 역할을 부여하려면 반드시 '생성 및 계속'을 클릭하세요. 마지막으로 여기에 가져올 JSON 키를 생성하세요.",
   com_nav_welcome_assistant: '어시스턴트 선택하기',
   com_nav_welcome_message: '오늘 무엇을 도와드릴까요?',
   com_nav_auto_scroll: '채팅 열렸을 때 최신 메시지로 자동 스크롤',
@@ -597,7 +597,7 @@ export const comparisons = {
     translated: '새 채팅',
   },
   com_ui_happy_birthday: {
-    english: 'It\'s my 1st birthday!',
+    english: "It's my 1st birthday!",
     translated: '내 첫 생일이야!',
   },
   com_ui_example_quantum_computing: {
@@ -605,7 +605,7 @@ export const comparisons = {
     translated: '양자 컴퓨팅을 간단하게 설명해줄래?',
   },
   com_ui_example_10_year_old_b_day: {
-    english: 'Got any creative ideas for a 10 year old\'s birthday?',
+    english: "Got any creative ideas for a 10 year old's birthday?",
     translated: '10살 아이 생일 파티를 위한 참신한 아이디어 있을까?',
   },
   com_ui_example_http_in_js: {
@@ -938,7 +938,7 @@ export const comparisons = {
     translated: '제공된 정보로 로그인할 수 없습니다. 자격 증명을 확인하고 다시 시도하세요.',
   },
   com_auth_no_account: {
-    english: 'Don\'t have an account?',
+    english: "Don't have an account?",
     translated: '계정이 없으신가요?',
   },
   com_auth_sign_up: {
@@ -1145,15 +1145,15 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
+      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
     translated:
-      'Bing은 \'컨텍스트\'로 최대 7,000개의 토큰을 사용할 수 있으며, 대화에서 참조할 수 있습니다. 구체적인 제한은 알려져 있지 않지만, 7,000개의 토큰을 초과하면 오류가 발생할 수 있습니다.',
+      "Bing은 '컨텍스트'로 최대 7,000개의 토큰을 사용할 수 있으며, 대화에서 참조할 수 있습니다. 구체적인 제한은 알려져 있지 않지만, 7,000개의 토큰을 초과하면 오류가 발생할 수 있습니다.",
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
+      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
     translated:
-      '경고: 이 기능의 오용으로 인해 Bing의 사용이 \'금지\'될 수 있습니다. 모든 내용을 보려면 \'시스템 메시지\'를 클릭하세요. 생략된 경우 \'시드니\' 프리셋이 사용됩니다.',
+      "경고: 이 기능의 오용으로 인해 Bing의 사용이 '금지'될 수 있습니다. 모든 내용을 보려면 '시스템 메시지'를 클릭하세요. 생략된 경우 '시드니' 프리셋이 사용됩니다.",
   },
   com_endpoint_system_message: {
     english: 'System Message',
@@ -1209,7 +1209,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
       'Top-k는 모델이 출력에 사용할 토큰을 선택하는 방식을 변경합니다. top-k가 1인 경우 모델의 어휘 중 가장 확률이 높은 토큰이 선택됩니다(greedy decoding). top-k가 3인 경우 다음 토큰은 가장 확률이 높은 3개의 토큰 중에서 선택됩니다(temperature 사용).',
   },
@@ -1263,7 +1263,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
+      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
     translated:
       '생성할 최대 토큰 수입니다. 입력 토큰과 생성된 토큰의 총 길이는 모델의 컨텍스트 길이로 제한됩니다.',
   },
@@ -1275,13 +1275,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
     translated:
       '텍스트에서 토큰의 빈도수에 따라 새로운 토큰에 패널티를 부여합니다. 이전에 나온 텍스트의 빈도수에 따라 새로운 토큰의 확률이 감소하여 동일한 문장을 반복할 가능성을 줄입니다.',
   },
   com_endpoint_openai_pres: {
     english:
-      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
+      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
     translated:
       '텍스트에서 토큰이 나타나는지 여부에 따라 새로운 토큰에 패널티를 부여합니다. 이전에 나온 텍스트에 나타나는 토큰에 대한 패널티를 증가시켜 새로운 주제에 대해 이야기할 가능성을 높입니다.',
   },
@@ -1307,7 +1307,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
+      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
     translated:
       'Top-k는 모델이 출력에 사용할 토큰을 선택하는 방식을 변경합니다. top-k가 1인 경우 모델의 어휘 중 가장 확률이 높은 토큰이 선택됩니다(greedy decoding). top-k가 3인 경우 다음 토큰은 가장 확률이 높은 3개의 토큰 중에서 선택됩니다(temperature 사용).',
   },
@@ -1810,7 +1810,7 @@ export const comparisons = {
   },
   com_error_moderation: {
     english:
-      'It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We\'re unable to proceed with this specific topic. If you have any other questions or topics you\'d like to explore, please edit your message, or create a new conversation.',
+      "It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We're unable to proceed with this specific topic. If you have any other questions or topics you'd like to explore, please edit your message, or create a new conversation.",
     translated:
       '제출된 내용이 커뮤니티 가이드라인에 부합하지 않는다고 판단되어 모더레이션 시스템에 의해 차단되었습니다. 해당 주제로는 진행할 수 없습니다. 다른 질문이나 탐구하고 싶은 주제가 있다면 메시지를 수정하거나 새 대화를 시작해 주세요.',
   },
@@ -1959,7 +1959,7 @@ export const comparisons = {
     translated: '작업 삭제 중 오류가 발생했습니다',
   },
   com_assistants_actions_info: {
-    english: 'Let your Assistant retrieve information or take actions via API\'s',
+    english: "Let your Assistant retrieve information or take actions via API's",
     translated: '어시스턴트가 API를 통해 정보를 검색하거나 작업을 수행할 수 있게 해줍니다.',
   },
   com_assistants_name_placeholder: {
@@ -2354,7 +2354,7 @@ export const comparisons = {
   },
   com_endpoint_context_info: {
     english:
-      'The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models\' context size. Setting higher values may result in errors and/or higher token cost.',
+      "The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models' context size. Setting higher values may result in errors and/or higher token cost.",
     translated:
       '컨텍스트로 사용할 수 있는 최대 토큰 수입니다. 요청마다 보내는 토큰 수를 제어하는 데 사용할 수 있습니다. 지정하지 않으면 알려진 모델의 컨텍스트 크기를 기반으로 시스템 기본값을 사용합니다. 더 높은 값을 설정하면 오류가 발생하거나 토큰 비용이 더 높아질 수 있습니다.',
   },
@@ -2365,7 +2365,7 @@ export const comparisons = {
   },
   com_endpoint_prompt_prefix_assistants_placeholder: {
     english:
-      'Set additional instructions or context on top of the Assistant\'s main instructions. Ignored if empty.',
+      "Set additional instructions or context on top of the Assistant's main instructions. Ignored if empty.",
     translated:
       '추가 지시사항 또는 컨텍스트를 Assistant의 기본 지시사항에 추가합니다. 비어 있으면 무시됩니다.',
   },
@@ -2526,8 +2526,8 @@ export const comparisons = {
     translated: 'Gemini에서 Generative Language API 키를 얻으려면',
   },
   com_endpoint_config_key_chatgpt: {
-    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
-    translated: 'ChatGPT \'무료 버전\'의 액세스 토큰을 얻으려면 다음 사이트에 로그인하세요',
+    english: "To get your Access token For ChatGPT 'Free Version', login to",
+    translated: "ChatGPT '무료 버전'의 액세스 토큰을 얻으려면 다음 사이트에 로그인하세요",
   },
   com_endpoint_config_key_chatgpt_then_visit: {
     english: 'then visit',
@@ -2555,9 +2555,9 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
+      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
     translated:
-      '\'Vertex AI 사용자\' 역할을 부여하려면 반드시 \'생성 및 계속\'을 클릭하세요. 마지막으로 여기에 가져올 JSON 키를 생성하세요.',
+      "'Vertex AI 사용자' 역할을 부여하려면 반드시 '생성 및 계속'을 클릭하세요. 마지막으로 여기에 가져올 JSON 키를 생성하세요.",
   },
   com_nav_welcome_assistant: {
     english: 'Please Select an Assistant',

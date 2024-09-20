@@ -101,8 +101,8 @@ export default function Presentation({
             artifactsVisible === true &&
             codeArtifacts === true &&
             Object.keys(artifacts ?? {}).length > 0 ? (
-                <Artifacts />
-              ) : null
+              <Artifacts />
+            ) : null
           }
         >
           <main className="flex h-full flex-col" role="main">

@@ -39,7 +39,7 @@ class StableDiffusionAPI extends StructuredTool {
 // "negative_prompt":"semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime, out of frame, low quality, ugly, mutation, deformed"
 // - Generate images only once per human query unless explicitly requested by the user`;
     this.description =
-      'You can generate images using text with \'stable-diffusion\'. This tool is exclusively for visual content.';
+      "You can generate images using text with 'stable-diffusion'. This tool is exclusively for visual content.";
     this.schema = z.object({
       prompt: z
         .string()

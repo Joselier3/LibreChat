@@ -510,7 +510,7 @@ describe('AppService updating app.locals and issuing warnings', () => {
     const { logger } = require('~/config');
     expect(logger.warn).toHaveBeenCalledWith(
       expect.stringContaining(
-        'The \'assistants\' endpoint has both \'supportedIds\' and \'excludedIds\' defined.',
+        "The 'assistants' endpoint has both 'supportedIds' and 'excludedIds' defined.",
       ),
     );
   });
@@ -532,7 +532,7 @@ describe('AppService updating app.locals and issuing warnings', () => {
     const { logger } = require('~/config');
     expect(logger.warn).toHaveBeenCalledWith(
       expect.stringContaining(
-        'The \'assistants\' endpoint has both \'privateAssistants\' and \'supportedIds\' or \'excludedIds\' defined.',
+        "The 'assistants' endpoint has both 'privateAssistants' and 'supportedIds' or 'excludedIds' defined.",
       ),
     );
   });

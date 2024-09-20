@@ -21,18 +21,18 @@ const SpecIcon: React.FC<SpecIconProps> = ({ currentSpec, endpointsConfig }) => 
   } else {
     Icon = iconURL
       ? () => (
-        <div
-          className="icon-xl mr-1 shrink-0 overflow-hidden rounded-full "
-          style={{ width: '20', height: '20' }}
-        >
-          <img
-            src={iconURL}
-            alt={currentSpec.name}
-            style={{ width: '100%', height: '100%' }}
-            className="object-cover"
-          />
-        </div>
-      )
+          <div
+            className="icon-xl mr-1 shrink-0 overflow-hidden rounded-full "
+            style={{ width: '20', height: '20' }}
+          >
+            <img
+              src={iconURL}
+              alt={currentSpec.name}
+              style={{ width: '100%', height: '100%' }}
+              className="object-cover"
+            />
+          </div>
+        )
       : icons[endpoint ?? ''] ?? icons.unknown;
   }
 
