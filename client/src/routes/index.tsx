@@ -15,6 +15,17 @@ import ShareRoute from './ShareRoute';
 import ChatRoute from './ChatRoute';
 import Search from './Search';
 import Root from './Root';
+import DashboardFalitech from '../components/dashboardFalitech';
+import CreateWorkspace from '~/components/dashboardFalitech/CreateWorkspace';
+import RootFalitech from '~/components/dashboardFalitech/RootFalitech';
+import Teamworks from '~/components/dashboardFalitech/Teamworks';
+import Profile from '~/components/dashboardFalitech/Profile';
+import EditWorkspace from '~/components/dashboardFalitech/EditWorkspace';
+import Integrations from '~/components/dashboardFalitech/Integrations';
+import Chats from '~/components/dashboardFalitech/chats';
+import OpenAI from '~/components/dashboardFalitech/Integrations/OpenAI';
+import Assistants from '~/components/dashboardFalitech/Integrations/Assistants';
+import DetailsChats from '~/components/dashboardFalitech/chats/DetailsChats';
 
 const AuthLayout = () => (
   <AuthContextProvider>
@@ -79,6 +90,57 @@ export const router = createBrowserRouter([
           {
             path: 'search',
             element: <Search />,
+          },
+        ],
+      },
+      {
+        path: 'dashboard',
+        element: <RootFalitech />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="workspaces" replace={true} />,
+          },
+          {
+            path: 'profile',
+            element: <Profile />,
+          },
+          {
+            path: 'workspaces',
+            element: <CreateWorkspace />,
+          },
+          {
+            path: 'chats',
+            element: <Chats />,
+            children: [
+              {
+                path: ':chatId',
+                element: <DetailsChats />,
+              },
+            ],
+          },
+          {
+            path: 'integrations',
+            element: <Integrations />,
+            children: [
+              {
+                index: true,
+                path: 'openai',
+                element: <OpenAI />,
+              },
+              {
+                path: 'assistants',
+                element: <Assistants />,
+              },
+            ],
+          },
+          {
+            path: 'members',
+            element: <Teamworks />,
+          },
+          {
+            path: 'setting',
+            element: <EditWorkspace />,
           },
         ],
       },

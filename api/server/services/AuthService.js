@@ -3,19 +3,20 @@ const { webcrypto } = require('node:crypto');
 const { SystemRoles, errorsToString } = require('librechat-data-provider');
 const {
   findUser,
-  countUsers,
   createUser,
   updateUser,
   getUserById,
   generateToken,
   deleteUserById,
 } = require('~/models/userMethods');
+const { validateInvitation, acceptInvitation } = require('~/models/invitationMethods');
 const { createToken, findToken, deleteTokens, Session } = require('~/models');
 const { sendEmail, checkEmailConfig } = require('~/server/utils');
 const { registerSchema } = require('~/strategies/validators');
 const { hashToken } = require('~/server/utils/crypto');
 const isDomainAllowed = require('./isDomainAllowed');
 const { logger } = require('~/config');
+const { createWorkspace } = require('~/models/workspaceMethods');
 
 const domains = {
   client: process.env.DOMAIN_CLIENT,
@@ -135,9 +136,12 @@ const verifyEmail = async (req) => {
  * @returns {Promise<{status: number, message: string, user?: MongoUser}>}
  */
 const registerUser = async (user, additionalData = {}) => {
+
   const { error } = registerSchema.safeParse(user);
+
   if (error) {
     const errorMessage = errorsToString(error.errors);
+
     logger.info(
       'Route: register - Validation Error',
       { name: 'Request params:', value: user },
@@ -147,7 +151,7 @@ const registerUser = async (user, additionalData = {}) => {
     return { status: 404, message: errorMessage };
   }
 
-  const { email, password, name, username } = user;
+  const { email, password, name, username, workspace, invitationCode } = user;
 
   let newUserId;
   try {
@@ -173,23 +177,53 @@ const registerUser = async (user, additionalData = {}) => {
     }
 
     //determine if this is the first registered user (not counting anonymous_user)
-    const isFirstRegisteredUser = (await countUsers()) === 0;
+    // const isFirstRegisteredUser = (await countUsers()) === 0;
 
     const salt = bcrypt.genSaltSync(10);
+
     const newUserData = {
       provider: 'local',
       email,
       username,
       name,
       avatar: null,
-      role: isFirstRegisteredUser ? SystemRoles.ADMIN : SystemRoles.USER,
+      // role: isFirstRegisteredUser ? SystemRoles.ADMIN : SystemRoles.USER,
+      role: invitationCode ? SystemRoles.USER : SystemRoles.ADMIN,
       password: bcrypt.hashSync(password, salt),
       ...additionalData,
     };
 
+    // definimos un avatar genérico para el workspace
     const emailEnabled = checkEmailConfig();
+
     const newUser = await createUser(newUserData, false, true);
+
     newUserId = newUser._id;
+
+    if(invitationCode){
+      const invitation = await validateInvitation(invitationCode, email);
+      console.log('[invitationCode affter]',invitation);
+      if (invitation && invitation?.status === 'pending') {
+        // Aceptar la invitación
+        console.log('[invitationCode before]',invitation._id, invitation);
+
+        await acceptInvitation(invitation._id, newUserId);
+
+        // Actualizar la lista de workspaces del usuario
+        // await updateUser(newUserId, { $push: { workspaces: invitation?.workspace } });
+      } else {
+        throw new Error('La invitación no es válida o ya fue aceptada');
+      }
+    }else{
+      // Crear un nuevo área de trabajo y asignarlo como propiedad del usuario
+      await createWorkspace({
+        name: workspace,
+        owner: newUserId,
+        members: newUserId,
+        newUserId,
+      });
+    }
+
     if (emailEnabled && !newUser.emailVerified) {
       await sendVerificationEmail({
         _id: newUserId,

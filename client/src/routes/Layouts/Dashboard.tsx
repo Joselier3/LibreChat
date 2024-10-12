@@ -17,6 +17,8 @@ export default function DashboardRoute() {
     setPrevLocationPath(prevLocationRef.current?.pathname || '');
   }, [prevLocationRef]);
 
+  console.log(prevLocationRef.current?.pathname);
+
   useEffect(() => {
     queryClient.removeQueries([QueryKeys.messages, 'new']);
     clearConvoState();

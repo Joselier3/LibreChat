@@ -3,6 +3,11 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_nav_dashboard: 'gösterge paneli',
+  com_auth_workspace_required: 'Çalışma alanı adı gereklidir',
+  com_auth_workspace_min_length: 'Çalışma alanı adı en az 3 karakter uzunluğunda olmalıdır',
+  com_auth_workspace_max_length: 'Çalışma alanı adı 80 karakterden kısa olmalıdır',
+  com_auth_workspace: 'Çalışma Alanı Adı',
   com_error_moderation:
     'Gönderdiğiniz içerik, topluluk kurallarımıza uymadığı için moderasyon sistemimiz tarafından işaretlenmiş görünüyor. Bu belirli konu ile devam edemiyoruz. Başka sorularınız veya incelemek istediğiniz başka konular varsa, mesajınızı düzenleyin veya yeni bir konuşma başlatın.',
   com_error_no_user_key: 'Anahtar bulunamadı. Lütfen bir anahtar sağlayın ve tekrar deneyin.',
@@ -23,7 +28,7 @@ export default {
   com_assistants_capabilities: 'Yetenekler',
   com_assistants_file_search: 'Dosya Arama',
   com_assistants_file_search_info:
-    "Dosya Araması için vektör mağazalarını eklemek henüz desteklenmiyor. Bunları Sağlayıcı Oyun Alanı'ndan ekleyebilir veya mesajlar için dosya ekleyerek konu bazında dosya arayabilirsin.",
+    'Dosya Araması için vektör mağazalarını eklemek henüz desteklenmiyor. Bunları Sağlayıcı Oyun Alanı\'ndan ekleyebilir veya mesajlar için dosya ekleyerek konu bazında dosya arayabilirsin.',
   com_assistants_knowledge: 'Bilgi',
   com_assistants_knowledge_info:
     'Dosyaları Bilgi altına yüklersen, Asistan ile yapılan konuşmalar dosya içeriklerini içerebilir.',
@@ -52,7 +57,7 @@ export default {
   com_assistants_update_actions_error: 'Eylem oluşturma veya güncelleme sırasında bir hata oluştu.',
   com_assistants_delete_actions_error: 'Eylem silme sırasında bir hata oluştu.',
   com_assistants_actions_info:
-    "Asistanın API'leri kullanarak bilgi getirmesine veya eylem gerçekleştirmesine izin ver",
+    'Asistanın API\'leri kullanarak bilgi getirmesine veya eylem gerçekleştirmesine izin ver',
   com_assistants_name_placeholder: 'Seçmeli: asistanın adı',
   com_assistants_instructions_placeholder: 'Asistanın kullandığı sistem talimatları',
   com_assistants_description_placeholder: 'Seçmeli: Asistanınızın açıklamasını buraya yazın',
@@ -92,7 +97,7 @@ export default {
   com_ui_example_quantum_computing: 'Kuantum hesaplamayı basit terimlerle açıkla',
   com_ui_example_10_year_old_b_day:
     '10 yaşındaki bir çocuğun doğum günü için yaratıcı fikirleriniz var mı?',
-  com_ui_example_http_in_js: "JavaScript'te nasıl HTTP isteği yaparım?",
+  com_ui_example_http_in_js: 'JavaScript\'te nasıl HTTP isteği yaparım?',
   com_ui_capabilities: 'Yetenekler',
   com_ui_capability_remember: 'Kullanıcının önceki konuşmalarını hatırlar',
   com_ui_capability_correction: 'Takip düzeltmelerine izin verir',
@@ -146,7 +151,7 @@ export default {
   com_ui_none_selected: 'Hiçbiri seçilmedi',
   com_ui_upload_success: 'Dosya başarıyla yüklendi',
   com_ui_upload_error: 'Dosyanızı yüklerken bir hata oluştu',
-  com_ui_upload_invalid: "Geçersiz dosya yükleme. 2 MB'ı geçmeyen bir resim olması gerekir",
+  com_ui_upload_invalid: 'Geçersiz dosya yükleme. 2 MB\'ı geçmeyen bir resim olması gerekir',
   com_ui_cancel: 'İptal',
   com_ui_save: 'Kaydet',
   com_ui_save_submit: 'Kaydet ve Gönder',
@@ -343,13 +348,13 @@ export default {
   com_auth_email_resend_link: 'E-postayı yeniden gönder',
   com_auth_email_verification_redirecting: '{0} saniye içinde yönlendiriliyor...',
   com_endpoint_open_menu: 'Menüyü Aç',
-  com_endpoint_bing_enable_sydney: "Sydney'i Etkinleştir",
-  com_endpoint_bing_to_enable_sydney: "Sydney'i etkinleştirmek için",
+  com_endpoint_bing_enable_sydney: 'Sydney\'i Etkinleştir',
+  com_endpoint_bing_to_enable_sydney: 'Sydney\'i etkinleştirmek için',
   com_endpoint_bing_jailbreak: 'Jailbreak',
   com_endpoint_bing_context_placeholder:
-    "Bing, konuşma için referans olarak kullanabileceği 'bağlam' için 7 bin tokene kadar kullanabilir. Belirli limit bilinmemektedir ancak 7 bin tokenden fazla olması durumunda hatalar oluşabilir",
+    'Bing, konuşma için referans olarak kullanabileceği \'bağlam\' için 7 bin tokene kadar kullanabilir. Belirli limit bilinmemektedir ancak 7 bin tokenden fazla olması durumunda hatalar oluşabilir',
   com_endpoint_bing_system_message_placeholder:
-    "UYARI: Bu özelliği kötüye kullanmak Bing kullanımınız için YASAKLANMANIZA sebep olabilir! Varsayılan mesajı görebilir veya eklenmiş olan Sistem Mesajı'nı kullanabilirsiniz.",
+    'UYARI: Bu özelliği kötüye kullanmak Bing kullanımınız için YASAKLANMANIZA sebep olabilir! Varsayılan mesajı görebilir veya eklenmiş olan Sistem Mesajı\'nı kullanabilirsiniz.',
   com_endpoint_system_message: 'Sistem Mesajı',
   com_endpoint_message: 'Mesaj',
   com_endpoint_messages: 'Mesajlar',
@@ -410,12 +415,12 @@ export default {
     'Daha önce eklenmiş tüm dosyaları yeniden gönderin. Not: Bu, token maliyetinizi artıracaktır ve birden çok eklenmiş dosya ile hatalarla karşılaşabilirsiniz.',
   com_endpoint_openai_detail:
     'Görsel istekleri için çözünürlük. "Düşük" daha ucuz ve hızlıdır, "Yüksek" daha detaylı ve pahalıdır, "Otomatik" ise görüntü çözünürlüğüne göre ikisi arasında otomatik olarak bir seçim yapar.',
-  com_endpoint_openai_stop: "API'nin ek tokenlar üretmeyi durduracağı en fazla 4 sıra.",
+  com_endpoint_openai_stop: 'API\'nin ek tokenlar üretmeyi durduracağı en fazla 4 sıra.',
   com_endpoint_openai_custom_name_placeholder: 'AI için özel bir ad ayarlayın',
   com_endpoint_openai_prompt_prefix_placeholder:
     'Sistem Mesajına dahil edilecek özel talimatlar ayarlayın. Varsayılan: yok',
   com_endpoint_anthropic_temp:
-    "0 ile 1 arasında değişir. Analitik / çoktan seçmeli sorular için 0'a yakın, yaratıcı ve üretken görevler için 1'e yakın bir sıcaklık kullanın. Bu parametre ile Olasılık Kütüphanesini değiştirmeyi öneririz (ikisini birden değiştirmemek).",
+    '0 ile 1 arasında değişir. Analitik / çoktan seçmeli sorular için 0\'a yakın, yaratıcı ve üretken görevler için 1\'e yakın bir sıcaklık kullanın. Bu parametre ile Olasılık Kütüphanesini değiştirmeyi öneririz (ikisini birden değiştirmemek).',
   com_endpoint_anthropic_topp:
     'Modelin çıktı için token seçim şeklini değiştirir. Tokenlar, en olasılıktan (bkz. topK parametresi) en az olasıya kadar seçilir ve olasılıkları toplamı, top-p değerine eşit olana kadar devam eder.',
   com_endpoint_anthropic_topk:
@@ -495,7 +500,7 @@ export default {
   com_endpoint_config_key_expiry: 'son kullanma tarihi',
   com_endpoint_config_click_here: 'Buraya Tıklayın',
   com_endpoint_config_google_service_key: 'Google Hizmet Hesabı Anahtarı',
-  com_endpoint_config_google_cloud_platform: "(Google Cloud Platform'dan)",
+  com_endpoint_config_google_cloud_platform: '(Google Cloud Platform\'dan)',
   com_endpoint_config_google_api_key: 'Google API Anahtarı',
   com_endpoint_config_google_gemini_api: '(Gemini API)',
   com_endpoint_config_google_api_info: 'Gemini için Yapay Zeka Dil API Anahtarınızı almak için,',
@@ -511,15 +516,15 @@ export default {
   com_endpoint_config_key_edge_instructions: 'talimatları takip edin',
   com_endpoint_config_key_edge_full_key_string: 'tam çerez dizelerini sağlamak için',
   com_endpoint_config_key_chatgpt:
-    "ChatGPT 'Ücretsiz Sürüm' için Erişim anahtarınızı almak için, şuraya giriş yapın",
+    'ChatGPT \'Ücretsiz Sürüm\' için Erişim anahtarınızı almak için, şuraya giriş yapın',
   com_endpoint_config_key_chatgpt_then_visit: 'sonra burayı ziyaret edin',
   com_endpoint_config_key_chatgpt_copy_token: 'Erişim anahtarını kopyalayın.',
   com_endpoint_config_key_google_need_to: 'Şu işlemi yapmanız gerekiyor',
-  com_endpoint_config_key_google_vertex_ai: "Vertex AI'ı Etkinleştirin",
-  com_endpoint_config_key_google_vertex_api: "Google Cloud'da API'yi etkinleştirin, ardından ",
+  com_endpoint_config_key_google_vertex_ai: 'Vertex AI\'ı Etkinleştirin',
+  com_endpoint_config_key_google_vertex_api: 'Google Cloud\'da API\'yi etkinleştirin, ardından ',
   com_endpoint_config_key_google_service_account: 'Bir Hizmet Hesabı oluşturun',
   com_endpoint_config_key_google_vertex_api_role:
-    "'Oluştur ve Devam Et' seçeneğine tıkladığınızdan emin olun ve en azından 'Vertex AI Kullanıcı' rolünü verin. Son olarak, burada ithal etmek için bir JSON anahtarı oluşturun.",
+    '\'Oluştur ve Devam Et\' seçeneğine tıkladığınızdan emin olun ve en azından \'Vertex AI Kullanıcı\' rolünü verin. Son olarak, burada ithal etmek için bir JSON anahtarı oluşturun.',
   com_nav_welcome_assistant: 'Lütfen bir Asistan Seçin',
   com_nav_welcome_message: 'Bugün size nasıl yardımcı olabilirim?',
   com_nav_auto_scroll: 'Sohbet açıldığında otomatik olarak son mesaja kaydır',

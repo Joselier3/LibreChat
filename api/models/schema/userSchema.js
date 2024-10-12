@@ -17,12 +17,7 @@ const { SystemRoles } = require('librechat-data-provider');
  * @property {string} [avatar] - The URL of the user's avatar
  * @property {string} provider - The provider of the user's account (e.g., 'local', 'google')
  * @property {string} [role='USER'] - The role of the user
- * @property {string} [googleId] - Optional Google ID for the user
- * @property {string} [facebookId] - Optional Facebook ID for the user
- * @property {string} [openidId] - Optional OpenID ID for the user
- * @property {string} [ldapId] - Optional LDAP ID for the user
- * @property {string} [githubId] - Optional GitHub ID for the user
- * @property {string} [discordId] - Optional Discord ID for the user
+ * @property {Array<ObjectId>} [workspaces] - List of workspaces created or joined by the user
  * @property {Array} [plugins=[]] - List of plugins used by the user
  * @property {Array.<MongoSession>} [refreshToken] - List of sessions with refresh tokens
  * @property {Date} [expiresAt] - Optional expiration date of the file
@@ -51,7 +46,7 @@ const userSchema = mongoose.Schema(
     },
     email: {
       type: String,
-      required: [true, "can't be blank"],
+      required: [true, 'can\'t be blank'],
       lowercase: true,
       unique: true,
       match: [/\S+@\S+\.\S+/, 'is invalid'],
@@ -126,6 +121,12 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    workspaces: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Workspace', // Referencia a la colección de workspaces
+      },
+    ],
   },
 
   { timestamps: true },

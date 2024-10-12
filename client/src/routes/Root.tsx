@@ -36,6 +36,8 @@ export default function Root() {
     }
   }, [termsData]);
 
+  console.log({ agentsMap });
+
   const handleAcceptTerms = () => {
     setShowTerms(false);
   };
@@ -58,6 +60,7 @@ export default function Root() {
             <Banner onHeightChange={setBannerHeight} />
             <div className="flex" style={{ height: `calc(100dvh - ${bannerHeight}px)` }}>
               <div className="relative z-0 flex h-full w-full overflow-hidden">
+                {/* barra lateral izquierda */}
                 <Nav navVisible={navVisible} setNavVisible={setNavVisible} />
                 <div className="relative flex h-full max-w-full flex-1 flex-col overflow-hidden">
                   <MobileNav setNavVisible={setNavVisible} />
@@ -66,6 +69,7 @@ export default function Root() {
               </div>
             </div>
           </AgentsMapContext.Provider>
+          {/* terminos y condiciones que se muestra cuando es un ususario nuevo */}
           {config?.interface?.termsOfService?.modalAcceptance && (
             <TermsAndConditionsModal
               open={showTerms}

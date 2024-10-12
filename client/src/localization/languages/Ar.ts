@@ -1,6 +1,7 @@
 // Arabic phrases
 
 export default {
+  com_nav_dashboard: 'لوحة القيادة',
   com_ui_examples: 'أمثلة',
   com_ui_happy_birthday: 'إنه عيد ميلادي الأول!',
   com_ui_new_chat: 'دردشة جديدة',
@@ -150,9 +151,9 @@ export default {
   com_endpoint_bing_to_enable_sydney: 'لتمكين سيدني',
   com_endpoint_bing_jailbreak: 'الهروب من السجن',
   com_endpoint_bing_context_placeholder:
-    "يمكن أن يستخدم بينغ ما يصل إلى 7 آلاف رمز لـ 'السياق'، والذي يمكنه الرجوع إليه للمحادثة. الحد الخاص ليس معروفًا ولكن قد يواجه أخطاء تجاوز 7 آلاف رمز",
+    'يمكن أن يستخدم بينغ ما يصل إلى 7 آلاف رمز لـ \'السياق\'، والذي يمكنه الرجوع إليه للمحادثة. الحد الخاص ليس معروفًا ولكن قد يواجه أخطاء تجاوز 7 آلاف رمز',
   com_endpoint_bing_system_message_placeholder:
-    "تحذير: يمكن أن يؤدي سوء استخدام هذه الميزة إلى حظرك من استخدام Bing! انقر على 'رسالة النظام' للحصول على التعليمات الكاملة والرسالة الافتراضية إذا تم حذفها، والتي هي الإعداد المسبق 'سيدني' الذي يعتبر آمنًا.",
+    'تحذير: يمكن أن يؤدي سوء استخدام هذه الميزة إلى حظرك من استخدام Bing! انقر على \'رسالة النظام\' للحصول على التعليمات الكاملة والرسالة الافتراضية إذا تم حذفها، والتي هي الإعداد المسبق \'سيدني\' الذي يعتبر آمنًا.',
   com_endpoint_system_message: 'رسالة النظام',
   com_endpoint_default_blank: 'الافتراضي: فارغ',
   com_endpoint_default_false: 'الافتراضي: خاطئ',
@@ -502,7 +503,7 @@ export default {
   com_endpoint_prompt_prefix_assistants: 'التعليمات الإضافية',
   com_endpoint_instructions_assistants: 'تعليمات التجاوز',
   com_endpoint_stop: 'توقف التسلسلات',
-  com_endpoint_stop_placeholder: "اضغط على 'Enter' لفصل القيم",
+  com_endpoint_stop_placeholder: 'اضغط على \'Enter\' لفصل القيم',
   com_endpoint_openai_max_tokens:
     'حقل `max_tokens` الاختياري، يمثل الحد الأقصى لعدد الرموز التي يمكن توليدها في إكمال المحادثة.\n\nإجمالي طول رموز الإدخال والرموز المولدة محدود بطول سياق النموذج. قد تواجه أخطاء إذا تجاوز هذا العدد الحد الأقصى لرموز السياق.',
   com_endpoint_openai_resend:
@@ -599,7 +600,7 @@ export const comparisons = {
     translated: 'أمثلة',
   },
   com_ui_happy_birthday: {
-    english: "It's my 1st birthday!",
+    english: 'It\'s my 1st birthday!',
     translated: 'إنه عيد ميلادي الأول!',
   },
   com_ui_new_chat: {
@@ -611,7 +612,7 @@ export const comparisons = {
     translated: 'شرح الحوسبة الكمومية ببساطة',
   },
   com_ui_example_10_year_old_b_day: {
-    english: "Got any creative ideas for a 10 year old's birthday?",
+    english: 'Got any creative ideas for a 10 year old\'s birthday?',
     translated: 'هل لديك أفكار إبداعية لعيد ميلاد طفل عمره 10 سنوات؟',
   },
   com_ui_example_http_in_js: {
@@ -953,7 +954,7 @@ export const comparisons = {
     translated: 'كان هناك خطأ في الخادم الداخلي. يرجى الانتظار بضع لحظات وحاول مرة أخرى.',
   },
   com_auth_no_account: {
-    english: "Don't have an account?",
+    english: 'Don\'t have an account?',
     translated: 'ليس لديك حساب؟',
   },
   com_auth_sign_up: {
@@ -1161,15 +1162,15 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
+      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
     translated:
-      "يمكن أن يستخدم بينغ ما يصل إلى 7 آلاف رمز لـ 'السياق'، والذي يمكنه الرجوع إليه للمحادثة. الحد الخاص ليس معروفًا ولكن قد يواجه أخطاء تجاوز 7 آلاف رمز",
+      'يمكن أن يستخدم بينغ ما يصل إلى 7 آلاف رمز لـ \'السياق\'، والذي يمكنه الرجوع إليه للمحادثة. الحد الخاص ليس معروفًا ولكن قد يواجه أخطاء تجاوز 7 آلاف رمز',
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
+      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
     translated:
-      "تحذير: يمكن أن يؤدي سوء استخدام هذه الميزة إلى حظرك من استخدام Bing! انقر على 'رسالة النظام' للحصول على التعليمات الكاملة والرسالة الافتراضية إذا تم حذفها، والتي هي الإعداد المسبق 'سيدني' الذي يعتبر آمنًا.",
+      'تحذير: يمكن أن يؤدي سوء استخدام هذه الميزة إلى حظرك من استخدام Bing! انقر على \'رسالة النظام\' للحصول على التعليمات الكاملة والرسالة الافتراضية إذا تم حذفها، والتي هي الإعداد المسبق \'سيدني\' الذي يعتبر آمنًا.',
   },
   com_endpoint_system_message: {
     english: 'System Message',
@@ -1225,7 +1226,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'Top-k يغير كيفية اختيار النموذج للرموز للإخراج. top-k من 1 يعني أن الرمز المحدد هو الأكثر احتمالية بين جميع   الرموز في مفردات النموذج (يسمى أيضًا الترميز الجشعي)، بينما top-k من 3 يعني أن الرمز التالي يتم اختياره من بين الرموز الثلاثة الأكثر احتمالية (باستخدام الحرارة).',
   },
@@ -1279,7 +1280,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
+      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
     translated:
       'الحد الأقصى للرموز لتوليد. إجمالي طول الرموز المدخلة والرموز المولدة محدود بطول سياق النموذج.',
   },
@@ -1291,13 +1292,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
     translated:
       'رقم بين -2.0 و 2.0. القيم الموجبة تعاقب الرموز الجديدة بناءً على تكرارها الحالي في النص حتى الآن، مما يقلل من احتمالية تكرار النموذج لنفس السطر حرفيًا.',
   },
   com_endpoint_openai_pres: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
     translated:
       'رقم بين -2.0 و 2.0. القيم الموجبة تعاقب الرموز الجديدة بناءً على ما إذا كانت تظهر في النص حتى الآن، مما يزيد احتمالية النموذج للحديث عن مواضيع جديدة.',
   },
@@ -1323,7 +1324,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'يغير top-k الطريقة التي يختار فيها النموذج الرموز للإخراج. يعني top-k 1 أن الرمز المحدد هو الأكثر احتمالية من بين جميع الرموز في المفردات النموذجية (يسمى أيضا الترميز الطمع)، بينما يعني top-k من 3 أن الرمز القادم محدد من بين الرموز الثلاثة الأكثر احتمالية (باستخدام درجة الحرارة).',
   },
@@ -1529,7 +1530,7 @@ export const comparisons = {
     translated: ' لتقديم سلاسل كاملة للكوكيز.',
   },
   com_endpoint_config_key_chatgpt: {
-    english: "To get your Access token For ChatGPT 'Free Version', login to",
+    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
     translated: 'للحصول على رمز الوصول الخاص بـ ChatGPT إصدار مجاني، قم بتسجيل الدخول إلى',
   },
   com_endpoint_config_key_chatgpt_then_visit: {
@@ -1558,7 +1559,7 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
+      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
     translated:
       'تأكد من النقر على إنشاء ومتابعة" لمنح الدور "Vertex AI User" على الأقل. أخيرًا، قم بإنشاء مفتاح JSON للعمل على استيراده هنا.',
   },
@@ -1860,7 +1861,7 @@ export const comparisons = {
   },
   com_error_moderation: {
     english:
-      "It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We're unable to proceed with this specific topic. If you have any other questions or topics you'd like to explore, please edit your message, or create a new conversation.",
+      'It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We\'re unable to proceed with this specific topic. If you have any other questions or topics you\'d like to explore, please edit your message, or create a new conversation.',
     translated:
       'يبدو أن المحتوى المقدم قد تم وضع علامة عليه من قبل نظام الرقابة لدينا لعدم توافقه مع إرشادات مجتمعنا. لا نستطيع المضي قدمًا في هذا الموضوع المحدد. إذا كانت لديك أسئلة أخرى أو مواضيع ترغب في استكشافها، يرجى تحرير رسالتك، أو إنشاء محادثة جديدة.',
   },
@@ -2017,7 +2018,7 @@ export const comparisons = {
     translated: 'حدث خطأ أثناء حذف الإجراء.',
   },
   com_assistants_actions_info: {
-    english: "Let your Assistant retrieve information or take actions via API's",
+    english: 'Let your Assistant retrieve information or take actions via API\'s',
     translated: 'اسمح لمساعدك باسترداد المعلومات أو اتخاذ إجراءات عبر واجهات برمجة التطبيقات',
   },
   com_assistants_name_placeholder: {
@@ -2391,7 +2392,7 @@ export const comparisons = {
   },
   com_endpoint_context_info: {
     english:
-      "The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models' context size. Setting higher values may result in errors and/or higher token cost.",
+      'The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models\' context size. Setting higher values may result in errors and/or higher token cost.',
     translated:
       'الحد الأقصى لعدد الرموز التي يمكن استخدامها للسياق. استخدم هذا للتحكم في عدد الرموز المرسلة لكل طلب. إذا لم يتم تحديده، سيتم استخدام الإعدادات الافتراضية للنظام بناءً على حجم سياق نماذج معروفة. قد يؤدي تعيين قيم أعلى إلى حدوث أخطاء و/أو تكلفة رموز أعلى.',
   },
@@ -2402,7 +2403,7 @@ export const comparisons = {
   },
   com_endpoint_prompt_prefix_assistants_placeholder: {
     english:
-      "Set additional instructions or context on top of the Assistant's main instructions. Ignored if empty.",
+      'Set additional instructions or context on top of the Assistant\'s main instructions. Ignored if empty.',
     translated:
       'ضع تعليمات أو سياق إضافي فوق التعليمات الرئيسية للمساعد. يتم تجاهله إذا كان فارغًا.',
   },
@@ -2420,7 +2421,7 @@ export const comparisons = {
   },
   com_endpoint_stop_placeholder: {
     english: 'Separate values by pressing `Enter`',
-    translated: "اضغط على 'Enter' لفصل القيم",
+    translated: 'اضغط على \'Enter\' لفصل القيم',
   },
   com_endpoint_openai_max_tokens: {
     english:
@@ -2750,4 +2751,8 @@ export const comparisons = {
     english: 'עברית',
     translated: 'عبرية',
   },
+  com_auth_workspace_required: 'مطلوب اسم مساحة العمل',
+  com_auth_workspace_min_length: 'يجب أن يكون اسم مساحة العمل على الأقل 3 أحرف',
+  com_auth_workspace_max_length: 'يجب أن يكون اسم مساحة العمل أقل من 80 حرفًا',
+  com_auth_workspace: 'اسم مساحة العمل',
 };

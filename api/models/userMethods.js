@@ -10,13 +10,21 @@ const User = require('./User');
  * @returns {Promise<MongoUser>} A plain object representing the user document, or `null` if no user is found.
  */
 const getUserById = async function (userId, fieldsToSelect = null) {
-  const query = User.findById(userId);
+  const query = User.findById(userId).select('-password');
 
   if (fieldsToSelect) {
     query.select(fieldsToSelect);
   }
 
-  return await query.lean();
+  const user = await query.lean();
+
+  // Agregar un log para ver qué sucede con el userId
+  if (!user) {
+    console.log(`Usuario no encontrado para el ID: ${userId}`);
+  }
+
+  return user;
+
 };
 
 /**
@@ -43,10 +51,19 @@ const findUser = async function (searchCriteria, fieldsToSelect = null) {
  */
 const updateUser = async function (userId, updateData) {
   const updateOperation = {
-    $set: updateData,
+    $addToSet: updateData,
     $unset: { expiresAt: '' }, // Remove the expiresAt field to prevent TTL
   };
+
   return await User.findByIdAndUpdate(userId, updateOperation, {
+    new: true,
+    runValidators: true,
+  }).lean();
+};
+
+const CriteriaUpdateUser = async function (userId, updateData) {
+  console.log('[CriteriaUpdateUser]', { userId, updateData } );
+  return await User.findByIdAndUpdate(userId, updateData, {
     new: true,
     runValidators: true,
   }).lean();
@@ -162,4 +179,5 @@ module.exports = {
   createUser,
   updateUser,
   findUser,
+  CriteriaUpdateUser,
 };

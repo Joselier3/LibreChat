@@ -15,12 +15,13 @@ import Landing from './Landing';
 import Header from './Header';
 import Footer from './Footer';
 import store from '~/store';
+import { useWorkspace } from '../dashboardFalitech/workspaceContext';
 
 function ChatView({ index = 0 }: { index?: number }) {
   const { conversationId } = useParams();
   const rootSubmission = useRecoilValue(store.submissionByIndex(index));
   const addedSubmission = useRecoilValue(store.submissionByIndex(index + 1));
-
+  const { selectedWorkspace, selectWorkspace } = useWorkspace();
   const fileMap = useFileMapContext();
 
   const { data: messagesTree = null, isLoading } = useGetMessagesByConvoId(conversationId ?? '', {
@@ -59,10 +60,10 @@ function ChatView({ index = 0 }: { index?: number }) {
       <ChatContext.Provider value={chatHelpers}>
         <AddedChatContext.Provider value={addedChatHelpers}>
           {/* useSidePanel=false para que no muestre el drawer de la derecha */}
-          <Presentation useSidePanel={false}>
+          <Presentation useSidePanel={true}>
             {content}
             <div className="w-full border-t-0 pl-0 pt-2 dark:border-white/20 md:w-[calc(100%-.5rem)] md:border-t-0 md:border-transparent md:pl-0 md:pt-0 md:dark:border-transparent">
-              <ChatForm index={index} />
+              {selectedWorkspace?.connections.length !== 0 && <ChatForm index={index} />}
               <Footer />
             </div>
           </Presentation>

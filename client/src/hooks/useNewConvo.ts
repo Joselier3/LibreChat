@@ -174,6 +174,7 @@ const useNewConvo = (index = 0) => {
       buildDefault = true,
       keepLatestMessage = false,
       keepAddedConvos = false,
+      workspaceId,
     }: {
       template?: Partial<TConversation>;
       preset?: Partial<TPreset>;
@@ -181,6 +182,7 @@ const useNewConvo = (index = 0) => {
       buildDefault?: boolean;
       keepLatestMessage?: boolean;
       keepAddedConvos?: boolean;
+      workspaceId?: string ,
     } = {}) => {
       pauseGlobalAudio();
 
@@ -197,6 +199,7 @@ const useNewConvo = (index = 0) => {
         conversationId: 'new',
         title: 'New Chat',
         endpoint: null,
+        workspaceId: workspaceId || null,
         ...template,
         createdAt: '',
         updatedAt: '',

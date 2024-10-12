@@ -3,6 +3,11 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_nav_dashboard: '仪表板',
+  com_auth_workspace_required: '工作空间名称是必需的',
+  com_auth_workspace_min_length: '工作空间名称必须至少有3个字符',
+  com_auth_workspace_max_length: '工作空间名称必须少于80个字符',
+  com_auth_workspace: '工作区名称',
   com_nav_convo_menu_options: '对话菜单选项',
   com_ui_artifacts: 'Artifacts',
   com_ui_artifacts_toggle: '切换至 Artifacts UI',

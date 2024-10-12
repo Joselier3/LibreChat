@@ -1,6 +1,11 @@
 // Hebrew phrases
 
 export default {
+  com_nav_dashboard: 'לוח מחוונים',
+  com_auth_workspace_required: 'שם סביבת העבודה נדרש',
+  com_auth_workspace_min_length: 'שם סביבת העבודה חייב להיות באורך של לפחות 3 תווים',
+  com_auth_workspace_max_length: 'שם סביבת העבודה חייב להיות פחות מ-80 תווים',
+  com_auth_workspace: 'שם מרחב עבודה',
   // cSpell:ignore panel side
   com_sidepanel_select_assistant: 'בחר סייען',
   com_sidepanel_assistant_builder: 'בניית סייען',
@@ -95,8 +100,8 @@ export default {
   com_ui_copy_link: 'העתק קישור',
   com_ui_update_link: 'עדכן קישור',
   com_ui_create_link: 'צור קישור',
-  com_ui_share_link_to_chat: "שתף קישור בצ'אט",
-  com_ui_share_error: "אירעה שגיאה בעת שיתוף קישור הצ'אט",
+  com_ui_share_link_to_chat: 'שתף קישור בצ\'אט',
+  com_ui_share_error: 'אירעה שגיאה בעת שיתוף קישור הצ\'אט',
   com_ui_share_retrieve_error: 'אירעה שגיאה בעת מחיקת הקישור המשותף.',
   com_ui_share_delete_error: 'אירעה שגיאה בעת מחיקת הקישור המשותף.',
   com_ui_share_create_message: 'שמך וכל הודעה שתוסיף לאחר השיתוף יישארו פרטיים.',
@@ -196,9 +201,9 @@ export default {
   com_endpoint_bing_to_enable_sydney: 'כדי לאפשר את סידני',
   com_endpoint_bing_jailbreak: 'Jailbreak',
   com_endpoint_bing_context_placeholder:
-    "בינג יכול להשתמש בעד 7,000 אסימונים עבור 'הקשר', שאליהם הוא יכול להתייחס לשיחה. המגבלה הספציפית אינה ידועה אך עשויה להיתקל בשגיאות העולות על 7,000 אסימונים",
+    'בינג יכול להשתמש בעד 7,000 אסימונים עבור \'הקשר\', שאליהם הוא יכול להתייחס לשיחה. המגבלה הספציפית אינה ידועה אך עשויה להיתקל בשגיאות העולות על 7,000 אסימונים',
   com_endpoint_bing_system_message_placeholder:
-    "אזהרה: שימוש לרעה בתכונה זו יכול לגרום לך לאסור להשתמש ב-Bing! לחץ על 'הודעת מערכת' לקבלת הוראות מלאות והודעת ברירת המחדל אם הושמטה, שהיא הקביעה המוגדרת מראש של 'Sydney' שנחשבת בטוחה.",
+    'אזהרה: שימוש לרעה בתכונה זו יכול לגרום לך לאסור להשתמש ב-Bing! לחץ על \'הודעת מערכת\' לקבלת הוראות מלאות והודעת ברירת המחדל אם הושמטה, שהיא הקביעה המוגדרת מראש של \'Sydney\' שנחשבת בטוחה.',
   com_endpoint_system_message: 'הודעת מערכת',
   com_endpoint_message: 'הודעה',
   com_endpoint_message_not_appendable: 'ערוך את ההודעה שלך או צור מחדש.',
@@ -252,7 +257,7 @@ export default {
   com_endpoint_openai_prompt_prefix_placeholder:
     'הגדר הוראות מותאמות אישית לכלול בהודעת המערכת. ברירת מחדל: אין',
   com_endpoint_anthropic_temp:
-    "נע בין 0 ל-1. השתמש בטמפ' הקרובה יותר ל-0 עבור בחירה אנליטית / מרובה, וקרוב יותר ל-1 עבור משימות יצירתיות ויצירתיות. אנו ממליצים לשנות את זה או את Top P אבל לא את שניהם.",
+    'נע בין 0 ל-1. השתמש בטמפ\' הקרובה יותר ל-0 עבור בחירה אנליטית / מרובה, וקרוב יותר ל-1 עבור משימות יצירתיות ויצירתיות. אנו ממליצים לשנות את זה או את Top P אבל לא את שניהם.',
   com_endpoint_anthropic_topp:
     'Top-p משנה את האופן שבו המודל בוחר אסימונים לפלט. אסימונים נבחרים מבין רוב K (ראה פרמטר topK) הסביר לפחות עד שסכום ההסתברויות שלהם שווה לערך העליון-p.',
   com_endpoint_anthropic_topk:
@@ -339,7 +344,7 @@ export default {
     'השתמש בכלי מפתחים או בתוסף בזמן שאתה מחובר לאתר כדי להעתיק את התוכן של קובץ ה-cookie _U. אם זה נכשל, עקוב אחר אלה',
   com_endpoint_config_key_edge_instructions: 'הוראות',
   com_endpoint_config_key_edge_full_key_string: 'כדי לספק את מחרוזות העוגיות המלאות.',
-  com_endpoint_config_key_chatgpt: "כדי לקבל את אסימון הגישה שלך ל-ChatGPT 'גרסה חינמית', היכנס אל",
+  com_endpoint_config_key_chatgpt: 'כדי לקבל את אסימון הגישה שלך ל-ChatGPT \'גרסה חינמית\', היכנס אל',
   com_endpoint_config_key_chatgpt_then_visit: 'ואז בקר',
   com_endpoint_config_key_chatgpt_copy_token: 'העתק אסימון גישה.',
   com_endpoint_config_key_google_need_to: 'אתה צריך',
@@ -347,7 +352,7 @@ export default {
   com_endpoint_config_key_google_vertex_api: 'API ב-Google Cloud, אז',
   com_endpoint_config_key_google_service_account: 'צור חשבון שירות',
   com_endpoint_config_key_google_vertex_api_role:
-    "הקפד ללחוץ על 'צור והמשך' כדי לתת לפחות את התפקיד 'Vertex AI User'. לבסוף, צור מפתח JSON לייבא לכאן.",
+    'הקפד ללחוץ על \'צור והמשך\' כדי לתת לפחות את התפקיד \'Vertex AI User\'. לבסוף, צור מפתח JSON לייבא לכאן.',
   com_nav_welcome_message: 'איך אני יכול לעזור לך היום?',
   com_nav_auto_scroll: 'Auto-s גלול אל הכי חדש בפתיחה',
   com_nav_hide_panel: 'הסתר לוח הצד הימני ביותר',
@@ -524,7 +529,7 @@ export const comparisons = {
     translated: 'שיחה חדשה',
   },
   com_ui_happy_birthday: {
-    english: "It's my 1st birthday!",
+    english: 'It\'s my 1st birthday!',
     translated: 'זה יום ההולדת הראשון שלי!',
   },
   com_ui_example_quantum_computing: {
@@ -532,7 +537,7 @@ export const comparisons = {
     translated: 'הסבר מחשוב קוונטי במונחים פשוטים',
   },
   com_ui_example_10_year_old_b_day: {
-    english: "Got any creative ideas for a 10 year old's birthday?",
+    english: 'Got any creative ideas for a 10 year old\'s birthday?',
     translated: 'יש לך רעיונות יצירתיים ליום הולדת של ילד בן 10?',
   },
   com_ui_example_http_in_js: {
@@ -785,7 +790,7 @@ export const comparisons = {
   },
   com_ui_share_link_to_chat: {
     english: 'Share link to chat',
-    translated: "שתף קישור בצ'אט",
+    translated: 'שתף קישור בצ\'אט',
   },
   com_ui_share_retrieve_error: {
     english: 'There was an error deleting the shared link.',
@@ -797,7 +802,7 @@ export const comparisons = {
   },
   com_ui_share_error: {
     english: 'There was an error sharing the chat link',
-    translated: "אירעה שגיאה בעת שיתוף קישור הצ'אט",
+    translated: 'אירעה שגיאה בעת שיתוף קישור הצ\'אט',
   },
   com_ui_share_create_message: {
     english: 'Your name and any messages you add after sharing stay private.',
@@ -942,7 +947,7 @@ export const comparisons = {
     translated: 'הייתה שגיאת שרת פנימית. אנא המתן מספר רגעים ונסה שוב.',
   },
   com_auth_no_account: {
-    english: "Don't have an account?",
+    english: 'Don\'t have an account?',
     translated: 'אין לך חשבון?',
   },
   com_auth_sign_up: {
@@ -1153,15 +1158,15 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
+      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
     translated:
-      "בינג יכול להשתמש בעד 7,000 אסימונים עבור 'הקשר', שאליהם הוא יכול להתייחס לשיחה. המגבלה הספציפית אינה ידועה אך עשויה להיתקל בשגיאות העולות על 7,000 אסימונים",
+      'בינג יכול להשתמש בעד 7,000 אסימונים עבור \'הקשר\', שאליהם הוא יכול להתייחס לשיחה. המגבלה הספציפית אינה ידועה אך עשויה להיתקל בשגיאות העולות על 7,000 אסימונים',
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
+      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
     translated:
-      "אזהרה: שימוש לרעה בתכונה זו יכול לגרום לך לאסור להשתמש ב-Bing! לחץ על 'הודעת מערכת' לקבלת הוראות מלאות והודעת ברירת המחדל אם הושמטה, שהיא הקביעה המוגדרת מראש של 'Sydney' שנחשבת בטוחה.",
+      'אזהרה: שימוש לרעה בתכונה זו יכול לגרום לך לאסור להשתמש ב-Bing! לחץ על \'הודעת מערכת\' לקבלת הוראות מלאות והודעת ברירת המחדל אם הושמטה, שהיא הקביעה המוגדרת מראש של \'Sydney\' שנחשבת בטוחה.',
   },
   com_endpoint_system_message: {
     english: 'System Message',
@@ -1225,7 +1230,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'Top-k משנה את האופן שבו המודל בוחר אסימונים לפלט. Top-k של 1 פירושו שהאסימון שנבחר הוא הסביר ביותר מבין כל האסימונים באוצר המילים של הדגם (נקרא גם פענוח חמדן), בעוד ש-top-k של 3 פירושו שהאסימון הבא נבחר מבין 3 הכי הרבה. אסימונים סבירים (באמצעות טמפרטורה).',
   },
@@ -1250,7 +1255,7 @@ export const comparisons = {
   },
   com_endpoint_prompt_prefix_assistants_placeholder: {
     english:
-      "Set additional instructions or context on top of the Assistant's main instructions. Ignored if empty.",
+      'Set additional instructions or context on top of the Assistant\'s main instructions. Ignored if empty.',
     translated: 'הגדר הוראות נוספות או הקשר על גבי ההנחיות הראשיות של ה-סייען. התעלמו אם ריק.',
   },
   com_endpoint_custom_name: {
@@ -1297,7 +1302,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
+      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
     translated:
       'האסימונים המקסימליים להפיק. האורך הכולל של אסימוני קלט ואסימונים שנוצרו מוגבל על ידי אורך ההקשר של המודל.',
   },
@@ -1309,13 +1314,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
     translated:
       'מספר בין -2.0 ל-2.0. ערכים חיוביים מענישים אסימונים חדשים בהתבסס על התדירות הקיימת שלהם בטקסט עד כה, ומקטינים את הסבירות של המודל לחזור על אותה שורה מילה במילה.',
   },
   com_endpoint_openai_pres: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
     translated:
       'מספר בין -2.0 ל-2.0. ערכים חיוביים מענישים אסימונים חדשים על סמך האם הם מופיעים בטקסט עד כה, ומגדילים את הסבירות של המודל לדבר על נושאים חדשים.',
   },
@@ -1343,7 +1348,7 @@ export const comparisons = {
     english:
       'Ranges from 0 to 1. Use temp closer to 0 for analytical / multiple choice, and closer to 1 for creative and generative tasks. We recommend altering this or Top P but not both.',
     translated:
-      "נע בין 0 ל-1. השתמש בטמפ' הקרובה יותר ל-0 עבור בחירה אנליטית / מרובה, וקרוב יותר ל-1 עבור משימות יצירתיות ויצירתיות. אנו ממליצים לשנות את זה או את Top P אבל לא את שניהם.",
+      'נע בין 0 ל-1. השתמש בטמפ\' הקרובה יותר ל-0 עבור בחירה אנליטית / מרובה, וקרוב יותר ל-1 עבור משימות יצירתיות ויצירתיות. אנו ממליצים לשנות את זה או את Top P אבל לא את שניהם.',
   },
   com_endpoint_anthropic_topp: {
     english:
@@ -1353,7 +1358,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'Top-k משנה את האופן שבו המודל בוחר אסימונים לפלט. Top-k של 1 פירושו שהאסימון שנבחר הוא הסביר ביותר מבין כל האסימונים באוצר המילים של הדגם (נקרא גם פענוח חמדן), בעוד ש-top-k של 3 פירושו שהאסימון הבא נבחר מבין 3 הכי הרבה. אסימונים סבירים (באמצעות טמפרטורה).',
   },
@@ -1659,8 +1664,8 @@ export const comparisons = {
     translated: 'כדי לספק את מחרוזות העוגיות המלאות.',
   },
   com_endpoint_config_key_chatgpt: {
-    english: "To get your Access token For ChatGPT 'Free Version', login to",
-    translated: "כדי לקבל את אסימון הגישה שלך ל-ChatGPT 'גרסה חינמית', היכנס אל",
+    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
+    translated: 'כדי לקבל את אסימון הגישה שלך ל-ChatGPT \'גרסה חינמית\', היכנס אל',
   },
   com_endpoint_config_key_chatgpt_then_visit: {
     english: 'then visit',
@@ -1688,9 +1693,9 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
+      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
     translated:
-      "הקפד ללחוץ על 'צור והמשך' כדי לתת לפחות את התפקיד 'Vertex AI User'. לבסוף, צור מפתח JSON לייבא לכאן.",
+      'הקפד ללחוץ על \'צור והמשך\' כדי לתת לפחות את התפקיד \'Vertex AI User\'. לבסוף, צור מפתח JSON לייבא לכאן.',
   },
   com_nav_welcome_message: {
     english: 'How can I help you today?',

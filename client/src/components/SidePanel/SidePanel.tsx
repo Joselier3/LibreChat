@@ -206,7 +206,7 @@ const SidePanel = ({
             </ResizablePanel>
           </>
         )}
-        <div
+        {/* <div
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
           className="relative flex w-px items-center justify-center"
@@ -225,8 +225,8 @@ const SidePanel = ({
             translateX={false}
             side="right"
           />
-        </div>
-        {(!isCollapsed || minSize > 0) && !isSmallScreen && !fullCollapse && (
+        </div> */}
+        {/* {(!isCollapsed || minSize > 0) && !isSmallScreen && !fullCollapse && (
           <ResizableHandleAlt withHandle className="bg-transparent dark:text-white" />
         )}
         <ResizablePanel
@@ -281,7 +281,7 @@ const SidePanel = ({
             defaultActive={defaultActive}
             links={Links}
           />
-        </ResizablePanel>
+        </ResizablePanel> */}
       </ResizablePanelGroup>
       <button
         aria-label="Close right side panel"

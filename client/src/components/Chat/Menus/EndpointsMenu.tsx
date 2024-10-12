@@ -6,8 +6,12 @@ import { useChatContext, useAssistantsMapContext } from '~/Providers';
 import EndpointItems from './Endpoints/MenuItems';
 import TitleButton from './UI/TitleButton';
 import { mapEndpoints } from '~/utils';
+import { useWorkspace } from '~/components/dashboardFalitech/workspaceContext';
 
 const EndpointsMenu: FC = () => {
+
+  const { selectedWorkspace, selectWorkspace } = useWorkspace();
+
   const { data: endpoints = [] } = useGetEndpointsQuery({
     select: mapEndpoints,
   });
@@ -18,7 +22,7 @@ const EndpointsMenu: FC = () => {
 
   const assistant =
     isAssistantsEndpoint(endpoint) && assistantMap?.[endpoint ?? '']?.[assistant_id ?? ''];
-  const assistantName = (assistant && assistant?.name) || 'Assistant';
+  const assistantName = (assistant && assistant.name) || 'Assistant';
 
   if (!endpoint) {
     console.warn('No endpoint selected');

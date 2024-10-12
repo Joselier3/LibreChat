@@ -3,6 +3,13 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_nav_dashboard: 'cruscotto',
+  com_auth_workspace_required: 'È richiesto il nome dello spazio di lavoro',
+  com_auth_workspace_min_length:
+    'Il nome dello spazio di lavoro deve essere lungo almeno 3 caratteri',
+  com_auth_workspace_max_length:
+    'Il nome dello spazio di lavoro deve essere inferiore a 80 caratteri',
+  com_auth_workspace: 'Nome dello spazio di lavoro',
   com_error_moderation:
     'Sembra che il contenuto inviato sia stato contrassegnato dal nostro sistema di moderazione per non essere allineato con le nostre linee guida della community. Non possiamo procedere con questo argomento specifico. Se hai altre domande o argomenti che vorresti esplorare, modifica il tuo messaggio o crea una nuova conversazione.',
   com_error_no_user_key: 'Nessuna chiave trovata. Fornisci una chiave e riprova.',
@@ -25,7 +32,7 @@ export default {
   com_assistants_knowledge_info:
     'Se carichi file sotto Conoscenza, le conversazioni con il tuo Assistente potrebbero includere i contenuti dei file.',
   com_assistants_knowledge_disabled:
-    "L'Assistente deve essere creato, e Code Interpreter o Retrieval devono essere abilitati e salvati prima di caricare file come Conoscenza.",
+    'L\'Assistente deve essere creato, e Code Interpreter o Retrieval devono essere abilitati e salvati prima di caricare file come Conoscenza.',
   com_assistants_image_vision: 'Visione Immagine',
   com_assistants_code_interpreter: 'Interprete Codice',
   com_assistants_code_interpreter_files:
@@ -40,42 +47,42 @@ export default {
   com_assistants_running_action: 'Azione in corso',
   com_assistants_completed_action: 'Parlato con {0}',
   com_assistants_completed_function: 'Eseguito {0}',
-  com_assistants_function_use: "L'Assistente ha usato {0}",
-  com_assistants_domain_info: "L'Assistente ha inviato queste informazioni a {0}",
-  com_assistants_delete_actions_success: "Azione eliminata dall'Assistente con successo",
+  com_assistants_function_use: 'L\'Assistente ha usato {0}',
+  com_assistants_domain_info: 'L\'Assistente ha inviato queste informazioni a {0}',
+  com_assistants_delete_actions_success: 'Azione eliminata dall\'Assistente con successo',
   com_assistants_update_actions_success: 'Azione creata o aggiornata con successo',
   com_assistants_update_actions_error:
-    "Si è verificato un errore durante la creazione o l'aggiornamento dell'azione.",
+    'Si è verificato un errore durante la creazione o l\'aggiornamento dell\'azione.',
   com_assistants_delete_actions_error:
-    "Si è verificato un errore durante l'eliminazione dell'azione.",
+    'Si è verificato un errore durante l\'eliminazione dell\'azione.',
   com_assistants_actions_info:
     'Permetti al tuo Assistente di recuperare informazioni o eseguire azioni tramite API',
-  com_assistants_name_placeholder: "Opzionale: Il nome dell'assistente",
-  com_assistants_instructions_placeholder: "Le istruzioni di sistema che l'assistente utilizza",
+  com_assistants_name_placeholder: 'Opzionale: Il nome dell\'assistente',
+  com_assistants_instructions_placeholder: 'Le istruzioni di sistema che l\'assistente utilizza',
   com_assistants_description_placeholder: 'Opzionale: Descrivi qui il tuo Assistente',
   com_assistants_actions_disabled: 'Devi prima creare un assistente prima di aggiungere azioni.',
   com_assistants_update_success: 'Aggiornamento avvenuto con successo',
   com_assistants_update_error:
-    "Si è verificato un errore durante l'aggiornamento del tuo assistente.",
+    'Si è verificato un errore durante l\'aggiornamento del tuo assistente.',
   com_assistants_create_success: 'Creazione avvenuta con successo',
   com_assistants_create_error: 'Si è verificato un errore durante la creazione del tuo assistente.',
   com_ui_field_required: 'Questo campo è obbligatorio',
   com_ui_download_error:
     'Errore durante il download del file. Il file potrebbe essere stato eliminato.',
-  com_ui_attach_error_type: "Tipo di file non supportato per l'endpoint:",
-  com_ui_attach_error_size: "Limite dimensione file superato per l'endpoint:",
+  com_ui_attach_error_type: 'Tipo di file non supportato per l\'endpoint:',
+  com_ui_attach_error_size: 'Limite dimensione file superato per l\'endpoint:',
   com_ui_attach_error:
     'Impossibile allegare il file. Crea o seleziona una conversazione, oppure prova a ricaricare la pagina.',
   com_ui_examples: 'Esempi',
   com_ui_new_chat: 'Nuova chat',
   com_ui_happy_birthday: 'È il mio 1° compleanno!',
-  com_ui_example_quantum_computing: "Spiega l'informatica quantistica in termini semplici",
+  com_ui_example_quantum_computing: 'Spiega l\'informatica quantistica in termini semplici',
   com_ui_example_10_year_old_b_day:
     'Hai qualche idea creativa per il compleanno di un bambino di 10 anni?',
   com_ui_example_http_in_js: 'Come faccio a fare una richiesta HTTP in Javascript?',
   com_ui_capabilities: 'Capacità',
-  com_ui_capability_remember: "Ricorda ciò che l'utente ha detto prima nella conversazione",
-  com_ui_capability_correction: "Permette all'utente di fornire correzioni successive",
+  com_ui_capability_remember: 'Ricorda ciò che l\'utente ha detto prima nella conversazione',
+  com_ui_capability_correction: 'Permette all\'utente di fornire correzioni successive',
   com_ui_capability_decline_requests: 'Addestrato a rifiutare richieste inappropriate',
   com_ui_limitations: 'Limitazioni',
   com_ui_limitation_incorrect_info: 'Potrebbe occasionalmente generare informazioni non corrette',
@@ -143,7 +150,7 @@ export default {
   com_ui_fork_info_target:
     'Questa opzione duplica tutti i messaggi che portano al messaggio di destinazione, inclusi i suoi vicini; in altre parole, sono inclusi tutti i rami di messaggi, sia che siano visibili o meno o lungo lo stesso percorso.',
   com_ui_fork_info_start:
-    "Se selezionato, la duplicazione partirà da questo messaggio fino all'ultimo messaggio della conversazione, in base al comportamento selezionato sopra.",
+    'Se selezionato, la duplicazione partirà da questo messaggio fino all\'ultimo messaggio della conversazione, in base al comportamento selezionato sopra.',
   com_ui_fork_info_remember:
     'Seleziona questa opzione per ricordare le opzioni selezionate per un futuro utilizzo, rendendo più veloce la duplicazione delle conversazioni come preferito.',
   com_ui_fork_success: 'Conversazione duplicata con successo',
@@ -156,11 +163,11 @@ export default {
     'Avvia la duplicazione dal messaggio di destinazione per impostazione predefinita',
   com_ui_fork_split_target: 'Avvia la duplicazione da qui',
   com_ui_fork_remember_checked:
-    "La tua selezione verrà ricordata dopo l'utilizzo. Puoi cambiarla in qualsiasi momento nelle impostazioni.",
+    'La tua selezione verrà ricordata dopo l\'utilizzo. Puoi cambiarla in qualsiasi momento nelle impostazioni.',
   com_ui_fork_all_target: 'Includi tutto da/per qui',
   com_ui_fork_branches: 'Includi rami correlati',
   com_ui_fork_visible: 'Solo messaggi visibili',
-  com_ui_fork_from_message: "Seleziona un'opzione di duplicazione",
+  com_ui_fork_from_message: 'Seleziona un\'opzione di duplicazione',
   com_ui_regenerate: 'Rigenera',
   com_ui_continue: 'Continua',
   com_ui_edit: 'Modifica',
@@ -168,12 +175,12 @@ export default {
   com_ui_all: 'tutto',
   com_ui_clear: 'Cancella',
   com_ui_revoke: 'Revoca',
-  com_ui_revoke_info: "Revoca tutte le credenziali fornite dall'utente",
+  com_ui_revoke_info: 'Revoca tutte le credenziali fornite dall\'utente',
   com_ui_import_conversation: 'Importa',
   com_ui_import_conversation_info: 'Importa conversazioni da un file JSON',
   com_ui_import_conversation_success: 'Conversazioni importate con successo',
   com_ui_import_conversation_error:
-    "Si è verificato un errore durante l'importazione delle conversazioni",
+    'Si è verificato un errore durante l\'importazione delle conversazioni',
   com_ui_import_conversation_file_type_error: 'Tipo di importazione non supportato',
   com_ui_confirm_action: 'Conferma Azione',
   com_ui_chats: 'chat',
@@ -194,8 +201,8 @@ export default {
   com_ui_share_link_to_chat: 'Condividi link a chat',
   com_ui_share_error: 'Si è verificato un errore durante la condivisione del link della chat',
   com_ui_share_retrieve_error:
-    "Si è verificato un errore durante l'eliminazione del link condiviso.",
-  com_ui_share_delete_error: "Si è verificato un errore durante l'eliminazione del link condiviso.",
+    'Si è verificato un errore durante l\'eliminazione del link condiviso.',
+  com_ui_share_delete_error: 'Si è verificato un errore durante l\'eliminazione del link condiviso.',
   com_ui_share_create_message:
     'Il tuo nome e qualsiasi messaggio aggiunto dopo la condivisione rimarranno privati.',
   com_ui_share_created_message:
@@ -209,7 +216,7 @@ export default {
   com_ui_delete_confirm: 'Questo eliminerà',
   com_ui_rename: 'Rinomina',
   com_ui_archive: 'Archivia',
-  com_ui_archive_error: "Errore durante l'archiviazione della conversazione",
+  com_ui_archive_error: 'Errore durante l\'archiviazione della conversazione',
   com_ui_unarchive: 'Disarchivia',
   com_ui_unarchive_error: 'Impossibile disarchiviare la conversazione',
   com_ui_more_options: 'Più',
@@ -236,11 +243,11 @@ export default {
   com_ui_bookmarks_update_success: 'Segnalibro aggiornato con successo',
   com_ui_bookmarks_delete_success: 'Segnalibro eliminato con successo',
   com_ui_bookmarks_create_error: 'Si è verificato un errore durante la creazione del segnalibro',
-  com_ui_bookmarks_update_error: "Si è verificato un errore durante l'aggiornamento del segnalibro",
-  com_ui_bookmarks_delete_error: "Si è verificato un errore durante l'eliminazione del segnalibro",
+  com_ui_bookmarks_update_error: 'Si è verificato un errore durante l\'aggiornamento del segnalibro',
+  com_ui_bookmarks_delete_error: 'Si è verificato un errore durante l\'eliminazione del segnalibro',
   com_ui_bookmarks_add_to_conversation: 'Aggiungi alla conversazione attuale',
   com_auth_error_login:
-    "Impossibile eseguire l'accesso con le informazioni fornite. Controlla le tue credenziali e riprova.",
+    'Impossibile eseguire l\'accesso con le informazioni fornite. Controlla le tue credenziali e riprova.',
   com_auth_error_login_rl:
     'Troppi tentativi di accesso in un breve periodo di tempo. Riprova più tardi.',
   com_auth_error_login_ban:
@@ -255,9 +262,9 @@ export default {
   com_auth_github_login: 'Continua con Github',
   com_auth_discord_login: 'Continua con Discord',
   com_auth_email: 'Email',
-  com_auth_email_required: "L'email è obbligatoria",
-  com_auth_email_min_length: "L'email deve essere di almeno 6 caratteri",
-  com_auth_email_max_length: "L'email non deve superare i 120 caratteri",
+  com_auth_email_required: 'L\'email è obbligatoria',
+  com_auth_email_min_length: 'L\'email deve essere di almeno 6 caratteri',
+  com_auth_email_max_length: 'L\'email non deve superare i 120 caratteri',
   com_auth_email_pattern: 'Devi inserire un indirizzo email valido',
   com_auth_email_address: 'Indirizzo email',
   com_auth_password: 'Password',
@@ -287,9 +294,9 @@ export default {
   com_auth_to_reset_your_password: 'per reimpostare la tua password.',
   com_auth_reset_password_link_sent: 'Email inviata',
   com_auth_reset_password_email_sent:
-    "Ti è stata inviata un'email con ulteriori istruzioni per reimpostare la tua password.",
+    'Ti è stata inviata un\'email con ulteriori istruzioni per reimpostare la tua password.',
   com_auth_error_reset_password:
-    "Si è verificato un problema durante il reset della tua password. Nessun utente trovato con l'indirizzo email fornito. Riprova.",
+    'Si è verificato un problema durante il reset della tua password. Nessun utente trovato con l\'indirizzo email fornito. Riprova.',
   com_auth_reset_password_success: 'Reset della password avvenuto con successo',
   com_auth_login_with_new_password: 'Ora puoi accedere con la tua nuova password.',
   com_auth_error_invalid_reset_token: 'Questo token di reset della password non è più valido.',
@@ -297,7 +304,7 @@ export default {
   com_auth_to_try_again: 'per riprovare.',
   com_auth_submit_registration: 'Invia registrazione',
   com_auth_welcome_back: 'Ben tornato',
-  com_auth_back_to_login: "Torna all'accesso",
+  com_auth_back_to_login: 'Torna all\'accesso',
   com_endpoint_open_menu: 'Apri menu',
   com_endpoint_bing_enable_sydney: 'Abilita Sydney',
   com_endpoint_bing_to_enable_sydney: 'Per abilitare Sydney',
@@ -321,18 +328,18 @@ export default {
   com_endpoint_google_temp:
     'Valori più alti = più casualità, mentre valori più bassi = più focalizzati e deterministici. Consigliamo di modificare questo o Top P ma non entrambi.',
   com_endpoint_google_topp:
-    "Top-p cambia il modo in cui il modello seleziona i token per l'output. I token vengono selezionati dai più probabili K (vedi parametro topK) ai meno probabili fino a quando la somma delle loro probabilità eguaglia il valore top-p.",
+    'Top-p cambia il modo in cui il modello seleziona i token per l\'output. I token vengono selezionati dai più probabili K (vedi parametro topK) ai meno probabili fino a quando la somma delle loro probabilità eguaglia il valore top-p.',
   com_endpoint_google_topk:
-    "Top-k cambia il modo in cui il modello seleziona i token per l'output. Un top-k di 1 significa che il token selezionato è il più probabile tra tutti i token nel vocabolario del modello (anche chiamato greedy decoding), mentre un top-k di 3 significa che il prossimo token è selezionato tra i 3 più probabili (usando la temperatura).",
+    'Top-k cambia il modo in cui il modello seleziona i token per l\'output. Un top-k di 1 significa che il token selezionato è il più probabile tra tutti i token nel vocabolario del modello (anche chiamato greedy decoding), mentre un top-k di 3 significa che il prossimo token è selezionato tra i 3 più probabili (usando la temperatura).',
   com_endpoint_google_maxoutputtokens:
     'Numero massimo di token che possono essere generati nella risposta. Specifica un valore più basso per risposte più brevi e un valore più alto per risposte più lunghe.',
   com_endpoint_google_custom_name_placeholder: 'Imposta un nome personalizzato per Google',
   com_endpoint_prompt_prefix_placeholder:
     'Imposta istruzioni personalizzate o contesto. Ignorato se vuoto.',
   com_endpoint_instructions_assistants_placeholder:
-    "Sovrascrive le istruzioni dell'assistente. Utile per modificare il comportamento su base singola.",
+    'Sovrascrive le istruzioni dell\'assistente. Utile per modificare il comportamento su base singola.',
   com_endpoint_prompt_prefix_assistants_placeholder:
-    "Imposta istruzioni o contesto aggiuntivi oltre alle istruzioni principali dell'Assistente. Ignorato se vuoto.",
+    'Imposta istruzioni o contesto aggiuntivi oltre alle istruzioni principali dell\'Assistente. Ignorato se vuoto.',
   com_endpoint_custom_name: 'Nome personalizzato',
   com_endpoint_prompt_prefix: 'Istruzioni personalizzate',
   com_endpoint_prompt_prefix_assistants: 'Istruzioni aggiuntive',
@@ -349,7 +356,7 @@ export default {
   com_endpoint_openai_max:
     'I token massimi da generare. La lunghezza totale dei token di input e dei token generati è limitata dalla lunghezza del contesto del modello.',
   com_endpoint_openai_topp:
-    "Un'alternativa al campionamento con temperatura, chiamata nucleus sampling, in cui il modello considera i risultati dei token con probabilità di massa top_p. Quindi 0,1 significa che vengono considerati solo i token che compongono la massa di probabilità superiore al 10%. Consigliamo di modificare questo o la temperatura ma non entrambi.",
+    'Un\'alternativa al campionamento con temperatura, chiamata nucleus sampling, in cui il modello considera i risultati dei token con probabilità di massa top_p. Quindi 0,1 significa che vengono considerati solo i token che compongono la massa di probabilità superiore al 10%. Consigliamo di modificare questo o la temperatura ma non entrambi.',
   com_endpoint_openai_freq:
     'Numero compreso tra -2.0 e 2.0. Valori positivi penalizzano i nuovi token basati sulla loro frequenza esistente nel testo fino a quel momento, diminuendo la probabilità del modello di ripetere la stessa riga verbatim.',
   com_endpoint_openai_pres:
@@ -360,17 +367,17 @@ export default {
     'Invia nuovamente tutti i file allegati in precedenza. Nota: questo aumenterà il costo dei token e potresti incontrare errori con molti allegati.',
   com_endpoint_openai_detail:
     'La risoluzione per le richieste Vision. "Bassa" è più economica e veloce, "Alta" è più dettagliata e costosa, e "Auto" sceglierà automaticamente tra le due in base alla risoluzione dell\'immagine.',
-  com_endpoint_openai_stop: "Fino a 4 sequenze in cui l'API smetterà di generare ulteriori token.",
-  com_endpoint_openai_custom_name_placeholder: "Imposta un nome personalizzato per l'IA",
+  com_endpoint_openai_stop: 'Fino a 4 sequenze in cui l\'API smetterà di generare ulteriori token.',
+  com_endpoint_openai_custom_name_placeholder: 'Imposta un nome personalizzato per l\'IA',
   com_endpoint_openai_prompt_prefix_placeholder:
     'Imposta istruzioni personalizzate da includere nel Messaggio di Sistema. Predefinito: nessuno',
   com_endpoint_anthropic_temp:
     'Varia da 0 a 1. Usa temp più vicino a 0 per analitica / scelta multipla, e più vicino a 1 per compiti creativi e generativi. Consigliamo di modificare questo o Top P ma non entrambi.',
   com_endpoint_anthropic_topp:
-    "Top-p cambia il modo in cui il modello seleziona i token per l'output. I token vengono selezionati dai più probabili K (vedi parametro topK) ai meno probabili fino a quando la somma delle loro probabilità eguaglia il valore top-p.",
+    'Top-p cambia il modo in cui il modello seleziona i token per l\'output. I token vengono selezionati dai più probabili K (vedi parametro topK) ai meno probabili fino a quando la somma delle loro probabilità eguaglia il valore top-p.',
 
   com_endpoint_anthropic_topk:
-    "Top-k cambia il modo in cui il modello seleziona i token per l'output. Un top-k di 1 significa che il token selezionato è il più probabile tra tutti i token nel vocabolario del modello (anche chiamato greedy decoding), mentre un top-k di 3 significa che il prossimo token è selezionato tra i 3 più probabili (usando la temperatura).",
+    'Top-k cambia il modo in cui il modello seleziona i token per l\'output. Un top-k di 1 significa che il token selezionato è il più probabile tra tutti i token nel vocabolario del modello (anche chiamato greedy decoding), mentre un top-k di 3 significa che il prossimo token è selezionato tra i 3 più probabili (usando la temperatura).',
   com_endpoint_anthropic_maxoutputtokens:
     'Numero massimo di token che possono essere generati nella risposta. Specifica un valore più basso per risposte più brevi e un valore più alto per risposte più lunghe.',
   com_endpoint_anthropic_custom_name_placeholder: 'Imposta un nome personalizzato per Anthropic',
@@ -393,11 +400,11 @@ export default {
     'Sei sicuro di voler eliminare tutte le tue preimpostazioni?',
   com_endpoint_preset_import: 'Preimpostazione importata!',
   com_endpoint_preset_import_error:
-    "Si è verificato un errore durante l'importazione della preimpostazione. Riprova.",
+    'Si è verificato un errore durante l\'importazione della preimpostazione. Riprova.',
   com_endpoint_preset_save_error:
     'Si è verificato un errore durante il salvataggio della preimpostazione. Riprova.',
   com_endpoint_preset_delete_error:
-    "Si è verificato un errore durante l'eliminazione della preimpostazione. Riprova.",
+    'Si è verificato un errore durante l\'eliminazione della preimpostazione. Riprova.',
   com_endpoint_preset_default_removed: 'non è più la preimpostazione predefinita.',
   com_endpoint_preset_default_item: 'Predefinita:',
   com_endpoint_preset_default_none: 'Nessuna preimpostazione predefinita attiva.',
@@ -433,7 +440,7 @@ export default {
   com_endpoint_my_preset: 'La mia preimpostazione',
   com_endpoint_agent_model: 'Modello Agente (Consigliato: GPT-3.5)',
   com_endpoint_completion_model: 'Modello Completamento (Consigliato: GPT-4)',
-  com_endpoint_func_hover: "Abilita l'uso di Plugin come OpenAI Functions",
+  com_endpoint_func_hover: 'Abilita l\'uso di Plugin come OpenAI Functions',
   com_endpoint_skip_hover:
     'Abilita la possibilità di saltare il passaggio di completamento, che rivede la risposta finale e i passaggi generati',
   com_endpoint_config_key: 'Imposta chiave API',
@@ -459,7 +466,7 @@ export default {
     'Chiave JSON Account di Servizio non valida, hai importato il file corretto?',
   com_endpoint_config_key_get_edge_key: 'Per ottenere il tuo token di accesso per Bing, accedi a',
   com_endpoint_config_key_get_edge_key_dev_tool:
-    "Usa gli strumenti di sviluppo o un'estensione mentre sei connesso al sito per copiare il contenuto del cookie _U. Se questo fallisce, segui queste",
+    'Usa gli strumenti di sviluppo o un\'estensione mentre sei connesso al sito per copiare il contenuto del cookie _U. Se questo fallisce, segui queste',
   com_endpoint_config_key_edge_instructions: 'istruzioni',
   com_endpoint_config_key_edge_full_key_string: 'per fornire le stringhe complete dei cookie.',
   com_endpoint_config_key_chatgpt:
@@ -474,7 +481,7 @@ export default {
     'Assicurati di cliccare su "Crea e Continua" per assegnare almeno il ruolo "Utente Vertex AI". Infine, crea una chiave JSON da importare qui.',
   com_nav_welcome_assistant: 'Seleziona un Assistente',
   com_nav_welcome_message: 'Come posso aiutarti oggi?',
-  com_nav_auto_scroll: "Scorri automaticamente ai nuovi messaggi all'apertura",
+  com_nav_auto_scroll: 'Scorri automaticamente ai nuovi messaggi all\'apertura',
   com_nav_hide_panel: 'Nascondi il Pannello laterale più a destra',
   com_nav_modular_chat: 'Abilita il cambio di Endpoint a metà conversazione',
   com_nav_latex_parsing: 'Analizza LaTeX nei messaggi (potrebbe influire sulle prestazioni)',
@@ -487,7 +494,7 @@ export default {
   com_nav_tool_remove: 'Rimuovi',
   com_nav_tool_dialog: 'Strumenti Assistente',
   com_nav_tool_dialog_description:
-    "L'Assistente deve essere salvato per conservare le selezioni degli strumenti.",
+    'L\'Assistente deve essere salvato per conservare le selezioni degli strumenti.',
   com_show_agent_settings: 'Mostra impostazioni Agente',
   com_show_completion_settings: 'Mostra impostazioni Completamento',
   com_hide_examples: 'Nascondi esempi',
@@ -520,7 +527,7 @@ export default {
   com_nav_enter_to_send: 'Premi Invio per inviare messaggi',
   com_nav_user_name_display: 'Mostra nome utente nei messaggi',
   com_nav_save_drafts: 'Salva bozze localmente',
-  com_nav_show_code: "Mostra sempre il codice quando si usa l'interprete di codice",
+  com_nav_show_code: 'Mostra sempre il codice quando si usa l\'interprete di codice',
   com_nav_clear_all_chats: 'Cancella tutte le chat',
   com_nav_confirm_clear: 'Conferma cancellazione',
   com_nav_close_sidebar: 'Chiudi barra laterale',
@@ -560,14 +567,14 @@ export default {
   /* The following are AI Translated */
   com_assistants_file_search: 'Ricerca File',
   com_assistants_file_search_info:
-    "L'aggiunta di archivi vettoriali per la Ricerca File non è ancora supportata. Puoi aggiungerli dal Provider Playground o allegare file ai messaggi per la ricerca file su base di thread.",
+    'L\'aggiunta di archivi vettoriali per la Ricerca File non è ancora supportata. Puoi aggiungerli dal Provider Playground o allegare file ai messaggi per la ricerca file su base di thread.',
   com_assistants_non_retrieval_model:
     'La ricerca di file non è abilitata su questo modello. Seleziona un altro modello.',
-  com_ui_attach_error_openai: "Non è possibile allegare file dell'Assistente ad altri endpoint",
+  com_ui_attach_error_openai: 'Non è possibile allegare file dell\'Assistente ad altri endpoint',
   com_ui_attach_warn_endpoint:
     'Attenzione: i file non compatibili con lo strumento potrebbero essere ignorati',
   com_ui_assistant_deleted: 'Assistente eliminato con successo',
-  com_ui_assistant_delete_error: "Si è verificato un errore durante l'eliminazione dell'assistente",
+  com_ui_assistant_delete_error: 'Si è verificato un errore durante l\'eliminazione dell\'assistente',
   com_ui_copied: 'Copiato!',
   com_ui_copy_code: 'Copia codice',
   com_nav_source_chat: 'Visualizza chat sorgente',
@@ -594,8 +601,8 @@ export default {
   com_ui_mention: 'Menziona un endpoint, assistente o preset per passare rapidamente ad esso',
   com_ui_accept: 'Accetto',
   com_ui_decline: 'Non accetto',
-  com_ui_terms_and_conditions: "Termini d'uso",
-  com_ui_no_terms_content: "Nessun contenuto dei termini d'uso da visualizzare",
+  com_ui_terms_and_conditions: 'Termini d\'uso',
+  com_ui_no_terms_content: 'Nessun contenuto dei termini d\'uso da visualizzare',
   com_endpoint_context_tokens: 'Token di Contesto Massimi',
   com_endpoint_context_info:
     'Il numero massimo di token che possono essere utilizzati per il contesto. Usalo per controllare quanti token vengono inviati per richiesta. Se non specificato, verranno utilizzate le impostazioni di sistema predefinite in base alle dimensioni del contesto dei modelli noti. Impostare valori più alti potrebbe causare errori e/o costi di token più elevati.',
@@ -627,7 +634,7 @@ export default {
 export const comparisons = {
   com_error_moderation: {
     english:
-      "It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We're unable to proceed with this specific topic. If you have any other questions or topics you'd like to explore, please edit your message, or create a new conversation.",
+      'It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We\'re unable to proceed with this specific topic. If you have any other questions or topics you\'d like to explore, please edit your message, or create a new conversation.',
     translated:
       'Sembra che il contenuto inviato sia stato contrassegnato dal nostro sistema di moderazione per non essere allineato con le nostre linee guida della community. Non possiamo procedere con questo argomento specifico. Se hai altre domande o argomenti che vorresti esplorare, modifica il tuo messaggio o crea una nuova conversazione.',
   },
@@ -705,7 +712,7 @@ export const comparisons = {
     english:
       'Assistant must be created, and Code Interpreter or Retrieval must be enabled and saved before uploading files as Knowledge.',
     translated:
-      "L'Assistente deve essere creato, e Code Interpreter o Retrieval devono essere abilitati e salvati prima di caricare file come Conoscenza.",
+      'L\'Assistente deve essere creato, e Code Interpreter o Retrieval devono essere abilitati e salvati prima di caricare file come Conoscenza.',
   },
   com_assistants_image_vision: {
     english: 'Image Vision',
@@ -761,15 +768,15 @@ export const comparisons = {
   },
   com_assistants_function_use: {
     english: 'Assistant used {0}',
-    translated: "L'Assistente ha usato {0}",
+    translated: 'L\'Assistente ha usato {0}',
   },
   com_assistants_domain_info: {
     english: 'Assistant sent this info to {0}',
-    translated: "L'Assistente ha inviato queste informazioni a {0}",
+    translated: 'L\'Assistente ha inviato queste informazioni a {0}',
   },
   com_assistants_delete_actions_success: {
     english: 'Successfully deleted Action from Assistant',
-    translated: "Azione eliminata dall'Assistente con successo",
+    translated: 'Azione eliminata dall\'Assistente con successo',
   },
   com_assistants_update_actions_success: {
     english: 'Successfully created or updated Action',
@@ -777,24 +784,24 @@ export const comparisons = {
   },
   com_assistants_update_actions_error: {
     english: 'There was an error creating or updating the action.',
-    translated: "Si è verificato un errore durante la creazione o l'aggiornamento dell'azione.",
+    translated: 'Si è verificato un errore durante la creazione o l\'aggiornamento dell\'azione.',
   },
   com_assistants_delete_actions_error: {
     english: 'There was an error deleting the action.',
-    translated: "Si è verificato un errore durante l'eliminazione dell'azione.",
+    translated: 'Si è verificato un errore durante l\'eliminazione dell\'azione.',
   },
   com_assistants_actions_info: {
-    english: "Let your Assistant retrieve information or take actions via API's",
+    english: 'Let your Assistant retrieve information or take actions via API\'s',
     translated:
       'Permetti al tuo Assistente di recuperare informazioni o eseguire azioni tramite API',
   },
   com_assistants_name_placeholder: {
     english: 'Optional: The name of the assistant',
-    translated: "Opzionale: Il nome dell'assistente",
+    translated: 'Opzionale: Il nome dell\'assistente',
   },
   com_assistants_instructions_placeholder: {
     english: 'The system instructions that the assistant uses',
-    translated: "Le istruzioni di sistema che l'assistente utilizza",
+    translated: 'Le istruzioni di sistema che l\'assistente utilizza',
   },
   com_assistants_description_placeholder: {
     english: 'Optional: Describe your Assistant here',
@@ -810,7 +817,7 @@ export const comparisons = {
   },
   com_assistants_update_error: {
     english: 'There was an error updating your assistant.',
-    translated: "Si è verificato un errore durante l'aggiornamento del tuo assistente.",
+    translated: 'Si è verificato un errore durante l\'aggiornamento del tuo assistente.',
   },
   com_assistants_create_success: {
     english: 'Successfully created',
@@ -830,11 +837,11 @@ export const comparisons = {
   },
   com_ui_attach_error_type: {
     english: 'Unsupported file type for endpoint:',
-    translated: "Tipo di file non supportato per l'endpoint:",
+    translated: 'Tipo di file non supportato per l\'endpoint:',
   },
   com_ui_attach_error_size: {
     english: 'File size limit exceeded for endpoint:',
-    translated: "Limite dimensione file superato per l'endpoint:",
+    translated: 'Limite dimensione file superato per l\'endpoint:',
   },
   com_ui_attach_error: {
     english: 'Cannot attach file. Create or select a conversation, or try refreshing the page.',
@@ -850,15 +857,15 @@ export const comparisons = {
     translated: 'Nuova chat',
   },
   com_ui_happy_birthday: {
-    english: "It's my 1st birthday!",
+    english: 'It\'s my 1st birthday!',
     translated: 'È il mio 1° compleanno!',
   },
   com_ui_example_quantum_computing: {
     english: 'Explain quantum computing in simple terms',
-    translated: "Spiega l'informatica quantistica in termini semplici",
+    translated: 'Spiega l\'informatica quantistica in termini semplici',
   },
   com_ui_example_10_year_old_b_day: {
-    english: "Got any creative ideas for a 10 year old's birthday?",
+    english: 'Got any creative ideas for a 10 year old\'s birthday?',
     translated: 'Hai qualche idea creativa per il compleanno di un bambino di 10 anni?',
   },
   com_ui_example_http_in_js: {
@@ -871,11 +878,11 @@ export const comparisons = {
   },
   com_ui_capability_remember: {
     english: 'Remembers what user said earlier in the conversation',
-    translated: "Ricorda ciò che l'utente ha detto prima nella conversazione",
+    translated: 'Ricorda ciò che l\'utente ha detto prima nella conversazione',
   },
   com_ui_capability_correction: {
     english: 'Allows user to provide follow-up corrections',
-    translated: "Permette all'utente di fornire correzioni successive",
+    translated: 'Permette all\'utente di fornire correzioni successive',
   },
   com_ui_capability_decline_requests: {
     english: 'Trained to decline inappropriate requests',
@@ -1071,7 +1078,7 @@ export const comparisons = {
   },
   com_ui_upload_invalid: {
     english: 'Invalid file for upload. Must be an image not exceeding 2 MB',
-    translated: "File non valido per il caricamento. Deve essere un'immagine non superiore a 2 MB",
+    translated: 'File non valido per il caricamento. Deve essere un\'immagine non superiore a 2 MB',
   },
   com_ui_cancel: {
     english: 'Cancel',
@@ -1131,7 +1138,7 @@ export const comparisons = {
     english:
       'If checked, forking will commence from this message to the latest message in the conversation, according to the behavior selected above.',
     translated:
-      "Se selezionato, la duplicazione partirà da questo messaggio fino all'ultimo messaggio della conversazione, in base al comportamento selezionato sopra.",
+      'Se selezionato, la duplicazione partirà da questo messaggio fino all\'ultimo messaggio della conversazione, in base al comportamento selezionato sopra.',
   },
   com_ui_fork_info_remember: {
     english:
@@ -1175,7 +1182,7 @@ export const comparisons = {
     english:
       'Your selection will be remembered after usage. Change this at any time in the settings.',
     translated:
-      "La tua selezione verrà ricordata dopo l'utilizzo. Puoi cambiarla in qualsiasi momento nelle impostazioni.",
+      'La tua selezione verrà ricordata dopo l\'utilizzo. Puoi cambiarla in qualsiasi momento nelle impostazioni.',
   },
   com_ui_fork_all_target: {
     english: 'Include all to/from here',
@@ -1191,7 +1198,7 @@ export const comparisons = {
   },
   com_ui_fork_from_message: {
     english: 'Select a fork option',
-    translated: "Seleziona un'opzione di duplicazione",
+    translated: 'Seleziona un\'opzione di duplicazione',
   },
   com_ui_regenerate: {
     english: 'Regenerate',
@@ -1223,7 +1230,7 @@ export const comparisons = {
   },
   com_ui_revoke_info: {
     english: 'Revoke all user provided credentials',
-    translated: "Revoca tutte le credenziali fornite dall'utente",
+    translated: 'Revoca tutte le credenziali fornite dall\'utente',
   },
   com_ui_import_conversation: {
     english: 'Import',
@@ -1239,7 +1246,7 @@ export const comparisons = {
   },
   com_ui_import_conversation_error: {
     english: 'There was an error importing your conversations',
-    translated: "Si è verificato un errore durante l'importazione delle conversazioni",
+    translated: 'Si è verificato un errore durante l\'importazione delle conversazioni',
   },
   com_ui_import_conversation_file_type_error: {
     english: 'Unsupported import type',
@@ -1315,11 +1322,11 @@ export const comparisons = {
   },
   com_ui_share_retrieve_error: {
     english: 'There was an error deleting the shared link.',
-    translated: "Si è verificato un errore durante l'eliminazione del link condiviso.",
+    translated: 'Si è verificato un errore durante l\'eliminazione del link condiviso.',
   },
   com_ui_share_delete_error: {
     english: 'There was an error deleting the shared link.',
-    translated: "Si è verificato un errore durante l'eliminazione del link condiviso.",
+    translated: 'Si è verificato un errore durante l\'eliminazione del link condiviso.',
   },
   com_ui_share_error: {
     english: 'There was an error sharing the chat link',
@@ -1369,7 +1376,7 @@ export const comparisons = {
   },
   com_ui_archive_error: {
     english: 'Failed to archive conversation',
-    translated: "Errore durante l'archiviazione della conversazione",
+    translated: 'Errore durante l\'archiviazione della conversazione',
   },
   com_ui_unarchive: {
     english: 'Unarchive',
@@ -1468,11 +1475,11 @@ export const comparisons = {
   },
   com_ui_bookmarks_update_error: {
     english: 'There was an error updating the bookmark',
-    translated: "Si è verificato un errore durante l'aggiornamento del segnalibro",
+    translated: 'Si è verificato un errore durante l\'aggiornamento del segnalibro',
   },
   com_ui_bookmarks_delete_error: {
     english: 'There was an error deleting the bookmark',
-    translated: "Si è verificato un errore durante l'eliminazione del segnalibro",
+    translated: 'Si è verificato un errore durante l\'eliminazione del segnalibro',
   },
   com_ui_bookmarks_add_to_conversation: {
     english: 'Add to current conversation',
@@ -1482,7 +1489,7 @@ export const comparisons = {
     english:
       'Unable to login with the information provided. Please check your credentials and try again.',
     translated:
-      "Impossibile eseguire l'accesso con le informazioni fornite. Controlla le tue credenziali e riprova.",
+      'Impossibile eseguire l\'accesso con le informazioni fornite. Controlla le tue credenziali e riprova.',
   },
   com_auth_error_login_rl: {
     english: 'Too many login attempts in a short amount of time. Please try again later.',
@@ -1498,7 +1505,7 @@ export const comparisons = {
     translated: 'Si è verificato un errore interno del server. Attendi qualche istante e riprova.',
   },
   com_auth_no_account: {
-    english: "Don't have an account?",
+    english: 'Don\'t have an account?',
     translated: 'Non hai un account?',
   },
   com_auth_sign_up: {
@@ -1531,15 +1538,15 @@ export const comparisons = {
   },
   com_auth_email_required: {
     english: 'Email is required',
-    translated: "L'email è obbligatoria",
+    translated: 'L\'email è obbligatoria',
   },
   com_auth_email_min_length: {
     english: 'Email must be at least 6 characters',
-    translated: "L'email deve essere di almeno 6 caratteri",
+    translated: 'L\'email deve essere di almeno 6 caratteri',
   },
   com_auth_email_max_length: {
     english: 'Email should not be longer than 120 characters',
-    translated: "L'email non deve superare i 120 caratteri",
+    translated: 'L\'email non deve superare i 120 caratteri',
   },
   com_auth_email_pattern: {
     english: 'You must enter a valid email address',
@@ -1653,13 +1660,13 @@ export const comparisons = {
   com_auth_reset_password_email_sent: {
     english: 'An email has been sent to you with further instructions to reset your password.',
     translated:
-      "Ti è stata inviata un'email con ulteriori istruzioni per reimpostare la tua password.",
+      'Ti è stata inviata un\'email con ulteriori istruzioni per reimpostare la tua password.',
   },
   com_auth_error_reset_password: {
     english:
       'There was a problem resetting your password. There was no user found with the email address provided. Please try again.',
     translated:
-      "Si è verificato un problema durante il reset della tua password. Nessun utente trovato con l'indirizzo email fornito. Riprova.",
+      'Si è verificato un problema durante il reset della tua password. Nessun utente trovato con l\'indirizzo email fornito. Riprova.',
   },
   com_auth_reset_password_success: {
     english: 'Password Reset Success',
@@ -1691,7 +1698,7 @@ export const comparisons = {
   },
   com_auth_back_to_login: {
     english: 'Back to Login',
-    translated: "Torna all'accesso",
+    translated: 'Torna all\'accesso',
   },
   com_endpoint_open_menu: {
     english: 'Open Menu',
@@ -1711,13 +1718,13 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
+      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
     translated:
       'Bing può utilizzare fino a 7k token per il "contesto", che può riferire per la conversazione. Il limite specifico non è noto ma potrebbe incontrare errori superando 7k token',
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
+      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
     translated:
       'ATTENZIONE: L\'uso improprio di questa funzione può farti BANNARE dall\'utilizzo di Bing! Clicca su "Messaggio di sistema" per le istruzioni complete e il messaggio predefinito se omesso, che è il preset "Sydney" considerato sicuro.',
   },
@@ -1779,13 +1786,13 @@ export const comparisons = {
     english:
       'Top-p changes how the model selects tokens for output. Tokens are selected from most K (see topK parameter) probable to least until the sum of their probabilities equals the top-p value.',
     translated:
-      "Top-p cambia il modo in cui il modello seleziona i token per l'output. I token vengono selezionati dai più probabili K (vedi parametro topK) ai meno probabili fino a quando la somma delle loro probabilità eguaglia il valore top-p.",
+      'Top-p cambia il modo in cui il modello seleziona i token per l\'output. I token vengono selezionati dai più probabili K (vedi parametro topK) ai meno probabili fino a quando la somma delle loro probabilità eguaglia il valore top-p.',
   },
   com_endpoint_google_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
-      "Top-k cambia il modo in cui il modello seleziona i token per l'output. Un top-k di 1 significa che il token selezionato è il più probabile tra tutti i token nel vocabolario del modello (anche chiamato greedy decoding), mentre un top-k di 3 significa che il prossimo token è selezionato tra i 3 più probabili (usando la temperatura).",
+      'Top-k cambia il modo in cui il modello seleziona i token per l\'output. Un top-k di 1 significa che il token selezionato è il più probabile tra tutti i token nel vocabolario del modello (anche chiamato greedy decoding), mentre un top-k di 3 significa che il prossimo token è selezionato tra i 3 più probabili (usando la temperatura).',
   },
   com_endpoint_google_maxoutputtokens: {
     english:
@@ -1805,13 +1812,13 @@ export const comparisons = {
     english:
       'Overrides the instructions of the assistant. This is useful for modifying the behavior on a per-run basis.',
     translated:
-      "Sovrascrive le istruzioni dell'assistente. Utile per modificare il comportamento su base singola.",
+      'Sovrascrive le istruzioni dell\'assistente. Utile per modificare il comportamento su base singola.',
   },
   com_endpoint_prompt_prefix_assistants_placeholder: {
     english:
-      "Set additional instructions or context on top of the Assistant's main instructions. Ignored if empty.",
+      'Set additional instructions or context on top of the Assistant\'s main instructions. Ignored if empty.',
     translated:
-      "Imposta istruzioni o contesto aggiuntivi oltre alle istruzioni principali dell'Assistente. Ignorato se vuoto.",
+      'Imposta istruzioni o contesto aggiuntivi oltre alle istruzioni principali dell\'Assistente. Ignorato se vuoto.',
   },
   com_endpoint_custom_name: {
     english: 'Custom Name',
@@ -1865,7 +1872,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
+      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
     translated:
       'I token massimi da generare. La lunghezza totale dei token di input e dei token generati è limitata dalla lunghezza del contesto del modello.',
   },
@@ -1873,17 +1880,17 @@ export const comparisons = {
     english:
       'An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We recommend altering this or temperature but not both.',
     translated:
-      "Un'alternativa al campionamento con temperatura, chiamata nucleus sampling, in cui il modello considera i risultati dei token con probabilità di massa top_p. Quindi 0,1 significa che vengono considerati solo i token che compongono la massa di probabilità superiore al 10%. Consigliamo di modificare questo o la temperatura ma non entrambi.",
+      'Un\'alternativa al campionamento con temperatura, chiamata nucleus sampling, in cui il modello considera i risultati dei token con probabilità di massa top_p. Quindi 0,1 significa che vengono considerati solo i token che compongono la massa di probabilità superiore al 10%. Consigliamo di modificare questo o la temperatura ma non entrambi.',
   },
   com_endpoint_openai_freq: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
     translated:
       'Numero compreso tra -2.0 e 2.0. Valori positivi penalizzano i nuovi token basati sulla loro frequenza esistente nel testo fino a quel momento, diminuendo la probabilità del modello di ripetere la stessa riga verbatim.',
   },
   com_endpoint_openai_pres: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
     translated:
       'Numero compreso tra -2.0 e 2.0. Valori positivi penalizzano i nuovi token in base a se compaiono nel testo fino a quel momento, aumentando la probabilità del modello di parlare di nuovi argomenti.',
   },
@@ -1907,11 +1914,11 @@ export const comparisons = {
   },
   com_endpoint_openai_stop: {
     english: 'Up to 4 sequences where the API will stop generating further tokens.',
-    translated: "Fino a 4 sequenze in cui l'API smetterà di generare ulteriori token.",
+    translated: 'Fino a 4 sequenze in cui l\'API smetterà di generare ulteriori token.',
   },
   com_endpoint_openai_custom_name_placeholder: {
     english: 'Set a custom name for the AI',
-    translated: "Imposta un nome personalizzato per l'IA",
+    translated: 'Imposta un nome personalizzato per l\'IA',
   },
   com_endpoint_openai_prompt_prefix_placeholder: {
     english: 'Set custom instructions to include in System Message. Default: none',
@@ -1928,13 +1935,13 @@ export const comparisons = {
     english:
       'Top-p changes how the model selects tokens for output. Tokens are selected from most K (see topK parameter) probable to least until the sum of their probabilities equals the top-p value.',
     translated:
-      "Top-p cambia il modo in cui il modello seleziona i token per l'output. I token vengono selezionati dai più probabili K (vedi parametro topK) ai meno probabili fino a quando la somma delle loro probabilità eguaglia il valore top-p.",
+      'Top-p cambia il modo in cui il modello seleziona i token per l\'output. I token vengono selezionati dai più probabili K (vedi parametro topK) ai meno probabili fino a quando la somma delle loro probabilità eguaglia il valore top-p.',
   },
   com_endpoint_anthropic_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
-      "Top-k cambia il modo in cui il modello seleziona i token per l'output. Un top-k di 1 significa che il token selezionato è il più probabile tra tutti i token nel vocabolario del modello (anche chiamato greedy decoding), mentre un top-k di 3 significa che il prossimo token è selezionato tra i 3 più probabili (usando la temperatura).",
+      'Top-k cambia il modo in cui il modello seleziona i token per l\'output. Un top-k di 1 significa che il token selezionato è il più probabile tra tutti i token nel vocabolario del modello (anche chiamato greedy decoding), mentre un top-k di 3 significa che il prossimo token è selezionato tra i 3 più probabili (usando la temperatura).',
   },
   com_endpoint_anthropic_maxoutputtokens: {
     english:
@@ -2009,7 +2016,7 @@ export const comparisons = {
   },
   com_endpoint_preset_import_error: {
     english: 'There was an error importing your preset. Please try again.',
-    translated: "Si è verificato un errore durante l'importazione della preimpostazione. Riprova.",
+    translated: 'Si è verificato un errore durante l\'importazione della preimpostazione. Riprova.',
   },
   com_endpoint_preset_save_error: {
     english: 'There was an error saving your preset. Please try again.',
@@ -2017,7 +2024,7 @@ export const comparisons = {
   },
   com_endpoint_preset_delete_error: {
     english: 'There was an error deleting your preset. Please try again.',
-    translated: "Si è verificato un errore durante l'eliminazione della preimpostazione. Riprova.",
+    translated: 'Si è verificato un errore durante l\'eliminazione della preimpostazione. Riprova.',
   },
   com_endpoint_preset_default_removed: {
     english: 'is no longer the default preset.',
@@ -2154,7 +2161,7 @@ export const comparisons = {
   },
   com_endpoint_func_hover: {
     english: 'Enable use of Plugins as OpenAI Functions',
-    translated: "Abilita l'uso di Plugin come OpenAI Functions",
+    translated: 'Abilita l\'uso di Plugin come OpenAI Functions',
   },
   com_endpoint_skip_hover: {
     english:
@@ -2242,7 +2249,7 @@ export const comparisons = {
     english:
       'Use dev tools or an extension while logged into the site to copy the content of the _U cookie. If this fails, follow these',
     translated:
-      "Usa gli strumenti di sviluppo o un'estensione mentre sei connesso al sito per copiare il contenuto del cookie _U. Se questo fallisce, segui queste",
+      'Usa gli strumenti di sviluppo o un\'estensione mentre sei connesso al sito per copiare il contenuto del cookie _U. Se questo fallisce, segui queste',
   },
   com_endpoint_config_key_edge_instructions: {
     english: 'instructions',
@@ -2253,7 +2260,7 @@ export const comparisons = {
     translated: 'per fornire le stringhe complete dei cookie.',
   },
   com_endpoint_config_key_chatgpt: {
-    english: "To get your Access token For ChatGPT 'Free Version', login to",
+    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
     translated: 'Per ottenere il tuo token di accesso per ChatGPT "Versione Gratuita", accedi a',
   },
   com_endpoint_config_key_chatgpt_then_visit: {
@@ -2282,7 +2289,7 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
+      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
     translated:
       'Assicurati di cliccare su "Crea e Continua" per assegnare almeno il ruolo "Utente Vertex AI". Infine, crea una chiave JSON da importare qui.',
   },
@@ -2296,7 +2303,7 @@ export const comparisons = {
   },
   com_nav_auto_scroll: {
     english: 'Auto-Scroll to latest message on chat open',
-    translated: "Scorri automaticamente ai nuovi messaggi all'apertura",
+    translated: 'Scorri automaticamente ai nuovi messaggi all\'apertura',
   },
   com_nav_hide_panel: {
     english: 'Hide right-most side panel',
@@ -2344,7 +2351,7 @@ export const comparisons = {
   },
   com_nav_tool_dialog_description: {
     english: 'Assistant must be saved to persist tool selections.',
-    translated: "L'Assistente deve essere salvato per conservare le selezioni degli strumenti.",
+    translated: 'L\'Assistente deve essere salvato per conservare le selezioni degli strumenti.',
   },
   com_show_agent_settings: {
     english: 'Show Agent Settings',
@@ -2477,7 +2484,7 @@ export const comparisons = {
   },
   com_nav_show_code: {
     english: 'Always show code when using code interpreter',
-    translated: "Mostra sempre il codice quando si usa l'interprete di codice",
+    translated: 'Mostra sempre il codice quando si usa l\'interprete di codice',
   },
   com_nav_clear_all_chats: {
     english: 'Clear all chats',
@@ -2586,7 +2593,7 @@ export const comparisons = {
     english:
       'Attaching vector stores for File Search is not yet supported. You can attach them from the Provider Playground or attach files to messages for file search on a thread basis.',
     translated:
-      "L'aggiunta di archivi vettoriali per la Ricerca File non è ancora supportata. Puoi aggiungerli dal Provider Playground o allegare file ai messaggi per la ricerca file su base di thread.",
+      'L\'aggiunta di archivi vettoriali per la Ricerca File non è ancora supportata. Puoi aggiungerli dal Provider Playground o allegare file ai messaggi per la ricerca file su base di thread.',
   },
   com_assistants_non_retrieval_model: {
     english: 'File search is not enabled on this model. Please select another model.',
@@ -2594,7 +2601,7 @@ export const comparisons = {
   },
   com_ui_attach_error_openai: {
     english: 'Cannot attach Assistant files to other endpoints',
-    translated: "Non è possibile allegare file dell'Assistente ad altri endpoint",
+    translated: 'Non è possibile allegare file dell\'Assistente ad altri endpoint',
   },
   com_ui_attach_warn_endpoint: {
     english: 'Non-Assistant files may be ignored without a compatible tool',
@@ -2606,7 +2613,7 @@ export const comparisons = {
   },
   com_ui_assistant_delete_error: {
     english: 'There was an error deleting the assistant',
-    translated: "Si è verificato un errore durante l'eliminazione dell'assistente",
+    translated: 'Si è verificato un errore durante l\'eliminazione dell\'assistente',
   },
   com_ui_copied: {
     english: 'Copied!',
@@ -2710,7 +2717,7 @@ export const comparisons = {
   },
   com_endpoint_context_info: {
     english:
-      "The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models' context size. Setting higher values may result in errors and/or higher token cost.",
+      'The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models\' context size. Setting higher values may result in errors and/or higher token cost.',
     translated:
       'Il numero massimo di token che possono essere utilizzati per il contesto. Usalo per controllare quanti token vengono inviati per richiesta. Se non specificato, verranno utilizzate le impostazioni di sistema predefinite in base alle dimensioni del contesto dei modelli noti. Impostare valori più alti potrebbe causare errori e/o costi di token più elevati.',
   },

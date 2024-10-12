@@ -42,6 +42,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:conversationId', async (req, res) => {
   const { conversationId } = req.params;
+  console.log({ conversationId, userID:req.user.id });
   const convo = await getConvo(req.user.id, conversationId);
 
   if (convo) {
@@ -67,7 +68,7 @@ router.post('/gen_title', async (req, res) => {
     res.status(200).json({ title });
   } else {
     res.status(404).json({
-      message: "Title not found or method not implemented for the conversation's endpoint",
+      message: 'Title not found or method not implemented for the conversation\'s endpoint',
     });
   }
 });

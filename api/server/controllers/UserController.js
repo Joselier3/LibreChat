@@ -7,6 +7,8 @@ const {
   deletePresets,
   deleteMessages,
   deleteUserById,
+  updateUser,
+  getUserById,
 } = require('~/models');
 const User = require('~/models/User');
 const { updateUserPluginAuth, deleteUserPluginAuth } = require('~/server/services/PluginService');
@@ -21,9 +23,40 @@ const getUserController = async (req, res) => {
   res.status(200).send(req.user);
 };
 
+const getUserIdController = async (req, res) => {
+  try {
+    const user = await getUserById(req.params.id);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    logger.error('[getUserIdController]', error);
+    res.status(500).json({ message: 'Error fetching User' });
+  }
+};
+
+const updateUserController = async (req, res) => {
+  const updateData = { workspaces: req.body.workspaces };
+  try {
+    const user = await updateUser(req.body.id, updateData, {
+      new: true,
+    });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    logger.error('[getUserIdController]', error);
+    res.status(500).json({ message: 'Error fetching User' });
+  }
+};
+
 const getTermsStatusController = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id);
+    const user = await getUserById(req.user.id);
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
@@ -37,6 +70,7 @@ const getTermsStatusController = async (req, res) => {
 const acceptTermsController = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.user.id, { termsAccepted: true }, { new: true });
+
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
@@ -162,6 +196,8 @@ const resendVerificationController = async (req, res) => {
 
 module.exports = {
   getUserController,
+  getUserIdController,
+  updateUserController,
   getTermsStatusController,
   acceptTermsController,
   deleteUserController,

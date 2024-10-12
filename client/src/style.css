@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+@keyframes r {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+#splash {
+  transition: all 0.3s linear;
+}
+
+.gear {
+  animation: r 0.5s infinite linear;
+}
+
 /* Custom Variables */
 :root {
   --white: #fff;
@@ -1217,6 +1242,22 @@ button {
   --tw-gradient-to: hsla(0, 0%, 100%, 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+
+.reset-scrollbar::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.reset-scrollbar::-webkit-scrollbar-thumb  {
+  background-color: #d4d4d4 !important;
+  border-radius: 10px !important;
+}
+
+.reset-scrollbar::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 0px !important;
+}
+
 
 /* Webkit scrollbar */
 ::-webkit-scrollbar {

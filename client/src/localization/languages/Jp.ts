@@ -3,6 +3,11 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_nav_dashboard: 'ダッシュボード',
+  com_auth_workspace_required: 'ワークスペース名は必須です',
+  com_auth_workspace_min_length: 'ワークスペース名は少なくとも3文字でなければなりません',
+  com_auth_workspace_max_length: 'ワークスペース名は80文字未満でなければなりません',
+  com_auth_workspace: 'ワークスペース名',
   com_nav_convo_menu_options: '会話メニューオプション',
   com_ui_artifacts: 'アーティファクト',
   com_ui_artifacts_toggle: 'アーティファクト UI の切替',
@@ -69,7 +74,7 @@ export default {
   com_assistants_update_actions_error: 'アクションの作成または更新中にエラーが発生しました。',
   com_assistants_delete_actions_error: 'アクションの削除中にエラーが発生しました。',
   com_assistants_actions_info:
-    "アシスタントが API を介して情報を取得したり、アクションを実行したりできるようにします's",
+    'アシスタントが API を介して情報を取得したり、アクションを実行したりできるようにします\'s',
   com_assistants_name_placeholder: 'オプション: アシスタントの名前',
   com_assistants_instructions_placeholder: 'アシスタントが使用するシステム指示',
   com_assistants_description_placeholder: 'オプション: ここにアシスタントについて説明します',
@@ -812,7 +817,7 @@ export default {
 export const comparisons = {
   com_error_moderation: {
     english:
-      "It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We're unable to proceed with this specific topic. If you have any other questions or topics you'd like to explore, please edit your message, or create a new conversation.",
+      'It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We\'re unable to proceed with this specific topic. If you have any other questions or topics you\'d like to explore, please edit your message, or create a new conversation.',
     translated:
       '送信されたコンテンツは、コミュニティガイドラインに準拠していないとして、投稿監視システムによって検知されました。この特定のトピックについては処理を続行できません。他に質問や調べたいトピックがある場合は、メッセージを編集するか、新しい会話を作成してください。',
   },
@@ -965,9 +970,9 @@ export const comparisons = {
     translated: 'アクションの削除中にエラーが発生しました。',
   },
   com_assistants_actions_info: {
-    english: "Let your Assistant retrieve information or take actions via API's",
+    english: 'Let your Assistant retrieve information or take actions via API\'s',
     translated:
-      "アシスタントが API を介して情報を取得したり、アクションを実行したりできるようにします's",
+      'アシスタントが API を介して情報を取得したり、アクションを実行したりできるようにします\'s',
   },
   com_assistants_name_placeholder: {
     english: 'Optional: The name of the assistant',
@@ -1032,7 +1037,7 @@ export const comparisons = {
     translated: '新規チャット',
   },
   com_ui_happy_birthday: {
-    english: "It's my 1st birthday!",
+    english: 'It\'s my 1st birthday!',
     translated: '初めての誕生日です！',
   },
   com_ui_example_quantum_computing: {
@@ -1040,7 +1045,7 @@ export const comparisons = {
     translated: '量子コンピュータを簡潔に説明してください',
   },
   com_ui_example_10_year_old_b_day: {
-    english: "Got any creative ideas for a 10 year old's birthday?",
+    english: 'Got any creative ideas for a 10 year old\'s birthday?',
     translated: '10歳の誕生日で行うクリエイティブなアイデアはありますか？',
   },
   com_ui_example_http_in_js: {
@@ -1562,7 +1567,7 @@ export const comparisons = {
     translated: 'サーバーエラーが発生しています。。しばらくしてから再度お試しください。',
   },
   com_auth_no_account: {
-    english: "Don't have an account?",
+    english: 'Don\'t have an account?',
     translated: 'アカウントをお持ちでない場合はこちら',
   },
   com_auth_sign_up: {
@@ -1773,13 +1778,13 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
+      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
     translated:
       'Bingは最大7kトークンの「コンテキスト」を参照できます。具体的な上限は不明ですが、7kトークンを超えるとエラーになる可能性があります。',
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
+      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
     translated:
       '警告: この機能を悪用するとBingの利用を「制限」される可能性があります。すべての内容を表示するには「System Message」をクリックしてください。省略された場合は、安全と考えられる「Sydney」プリセットが使われます',
   },
@@ -1845,7 +1850,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'Top-k はモデルがトークンをどのように選択して出力するかを変更します。top-kが1の場合はモデルの語彙に含まれるすべてのトークンの中で最も確率が高い1つが選択されます(greedy decodingと呼ばれている)。top-kが3の場合は上位3つのトークンの中から選択されます。(temperatureを使用)',
   },
@@ -1879,7 +1884,7 @@ export const comparisons = {
   },
   com_endpoint_prompt_prefix_assistants_placeholder: {
     english:
-      "Set additional instructions or context on top of the Assistant's main instructions. Ignored if empty.",
+      'Set additional instructions or context on top of the Assistant\'s main instructions. Ignored if empty.',
     translated:
       'アシスタントの主な指示に加えて、追加の指示やコンテキストを設定します。空欄の場合は無視されます。',
   },
@@ -1911,7 +1916,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
+      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
     translated:
       '生成されるトークンの最大値。入力トークンと出力トークンの長さの合計は、モデルのコンテキスト長によって制限されます。',
   },
@@ -1923,13 +1928,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
     translated:
       '-2.0から2.0の値。正の値を入力すると、テキストの繰り返し頻度に基づいたペナルティを課し、文字通り「同じ文言」を繰り返す可能性を減少させる。',
   },
   com_endpoint_openai_pres: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
     translated:
       '-2.0から2.0の値。正の値は入力すると、新規トークンの出現に基づいたペナルティを課し、新しいトピックについて話す可能性を高める。',
   },
@@ -1973,7 +1978,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'Top-k はモデルがトークンをどのように選択して出力するかを変更する。top-kが1の場合はモデルの語彙に含まれるすべてのトークンの中で最も確率が高い1つが選択される(greedy decodingと呼ばれている)。top-kが3の場合は上位3つのトークンの中から選択される。(temperatureを使用)',
   },
@@ -2304,7 +2309,7 @@ export const comparisons = {
     translated: 'to provide the full cookie strings.',
   },
   com_endpoint_config_key_chatgpt: {
-    english: "To get your Access token For ChatGPT 'Free Version', login to",
+    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
     translated: 'ChatGPTの「無料版」のアクセストークンを入手するためにへログインをしてください:',
   },
   com_endpoint_config_key_chatgpt_then_visit: {
@@ -2333,7 +2338,7 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
+      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
     translated:
       '必ず「作成して続行」をクリックして、少なくとも「Vertex AI ユーザー」権限を与えてください。最後にここにインポートするJSONキーを作成してください。',
   },
@@ -2873,7 +2878,7 @@ export const comparisons = {
   },
   com_endpoint_context_info: {
     english:
-      "The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models' context size. Setting higher values may result in errors and/or higher token cost.",
+      'The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models\' context size. Setting higher values may result in errors and/or higher token cost.',
     translated:
       'コンテキストに使用できるトークンの最大数です。リクエストごとに送信されるトークン数を制御するために使用します。指定しない場合は、既知のモデルのコンテキストサイズに基づいてシステムのデフォルト値が使用されます。高い値を設定すると、エラーが発生したり、トークンコストが高くなる可能性があります。',
   },

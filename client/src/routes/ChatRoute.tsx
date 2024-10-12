@@ -14,12 +14,14 @@ import ChatView from '~/components/Chat/ChatView';
 import useAuthRedirect from './useAuthRedirect';
 import { Spinner } from '~/components/svg';
 import store from '~/store';
+import { useWorkspace } from '~/components/dashboardFalitech/workspaceContext';
 
 export default function ChatRoute() {
   useHealthCheck();
   const { data: startupConfig } = useGetStartupConfig();
   const { isAuthenticated, user } = useAuthRedirect();
   useAppStartup({ startupConfig, user });
+  const { selectedWorkspace } = useWorkspace();
 
   const index = 0;
   const { conversationId } = useParams();
@@ -35,6 +37,7 @@ export default function ChatRoute() {
   const initialConvoQuery = useGetConvoIdQuery(conversationId ?? '', {
     enabled: isAuthenticated && conversationId !== Constants.NEW_CONVO,
   });
+
   const endpointsQuery = useGetEndpointsQuery({ enabled: isAuthenticated });
   const assistantListMap = useAssistantListMap();
 
@@ -52,14 +55,15 @@ export default function ChatRoute() {
       newConversation({
         modelsData: modelsQuery.data,
         template: conversation ? conversation : undefined,
+        workspaceId: selectedWorkspace?._id,
         ...(spec
           ? {
-              preset: {
-                ...spec.preset,
-                iconURL: getModelSpecIconURL(spec),
-                spec: spec.name,
-              },
-            }
+            preset: {
+              ...spec.preset,
+              iconURL: getModelSpecIconURL(spec),
+              spec: spec.name,
+            },
+          }
           : {}),
       });
 
@@ -71,6 +75,7 @@ export default function ChatRoute() {
         preset: initialConvoQuery.data as TPreset,
         modelsData: modelsQuery.data,
         keepLatestMessage: true,
+        workspaceId: selectedWorkspace?._id,
       });
       hasSetConversation.current = true;
     } else if (
@@ -82,14 +87,15 @@ export default function ChatRoute() {
       newConversation({
         modelsData: modelsQuery.data,
         template: conversation ? conversation : undefined,
+        workspaceId: selectedWorkspace?._id,
         ...(spec
           ? {
-              preset: {
-                ...spec.preset,
-                iconURL: getModelSpecIconURL(spec),
-                spec: spec.name,
-              },
-            }
+            preset: {
+              ...spec.preset,
+              iconURL: getModelSpecIconURL(spec),
+              spec: spec.name,
+            },
+          }
           : {}),
       });
       hasSetConversation.current = true;

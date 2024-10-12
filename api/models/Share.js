@@ -142,6 +142,7 @@ async function getSharedLinks(user, pageNumber = 1, pageSize = 25, isPublic = tr
  * @returns {Promise<object>} The created shared link
  */
 async function createSharedLink(user, { conversationId, ...shareData }) {
+  // console.log(user, { conversationId, ...shareData });
   try {
     const share = await SharedLink.findOne({ conversationId }).select('-_id -__v -user').lean();
     if (share) {

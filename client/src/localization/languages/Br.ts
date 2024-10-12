@@ -3,6 +3,11 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_nav_dashboard: 'painel de controle',
+  com_auth_workspace_required: 'Nome do espaço de trabalho é obrigatório',
+  com_auth_workspace_min_length: 'O nome do espaço de trabalho deve ter pelo menos 3 caracteres',
+  com_auth_workspace_max_length: 'O nome do espaço de trabalho deve ter menos de 80 caracteres',
+  com_auth_workspace: 'Nome do espaço de trabalho',
   com_nav_convo_menu_options: 'Opções do Menu de Conversa',
   com_ui_artifacts: 'Artefatos',
   com_ui_artifacts_toggle: 'Alternar UI de Artefatos',
@@ -73,7 +78,7 @@ export default {
   com_assistants_update_actions_error: 'Houve um erro ao criar ou atualizar a ação.',
   com_assistants_delete_actions_error: 'Houve um erro ao excluir a ação.',
   com_assistants_actions_info:
-    "Permita que seu Assistente recupere informações ou execute ações via API's",
+    'Permita que seu Assistente recupere informações ou execute ações via API\'s',
   com_assistants_name_placeholder: 'Opcional: O nome do assistente',
   com_assistants_instructions_placeholder: 'As instruções do sistema que o assistente usa',
   com_assistants_description_placeholder: 'Opcional: Descreva seu Assistente aqui',
@@ -931,7 +936,7 @@ export const comparisons = {
     translated: 'Ocorreu um erro ao excluir a ação.',
   },
   com_assistants_actions_info: {
-    english: "Let your Assistant retrieve information or take actions via API's",
+    english: 'Let your Assistant retrieve information or take actions via API\'s',
     translated: 'Permita que seu Assistente recupere informações ou execute ações via APIs',
   },
   com_assistants_name_placeholder: {
@@ -988,7 +993,7 @@ export const comparisons = {
     translated: 'Nova Conversa',
   },
   com_ui_happy_birthday: {
-    english: "It's my 1st birthday!",
+    english: 'It\'s my 1st birthday!',
     translated: 'É meu 1º aniversário!',
   },
   com_ui_example_quantum_computing: {
@@ -996,7 +1001,7 @@ export const comparisons = {
     translated: 'Explique computação quântica em termos simples',
   },
   com_ui_example_10_year_old_b_day: {
-    english: "Got any creative ideas for a 10 year old's birthday?",
+    english: 'Got any creative ideas for a 10 year old\'s birthday?',
     translated: 'Tem alguma ideia criativa para o aniversário de 10 anos?',
   },
   com_ui_example_http_in_js: {
@@ -1504,7 +1509,7 @@ export const comparisons = {
     translated: 'Ocorreu um erro interno do servidor. Aguarde alguns instantes e tente novamente.',
   },
   com_auth_no_account: {
-    english: "Don't have an account?",
+    english: 'Don\'t have an account?',
     translated: 'Não tem uma conta?',
   },
   com_auth_sign_up: {
@@ -1715,15 +1720,15 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
+      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
     translated:
-      "O Bing pode usar até 7k tokens para 'contexto', que ele pode referenciar para a conversa. O limite específico não é conhecido, mas pode causar erros ao exceder 7k tokens",
+      'O Bing pode usar até 7k tokens para \'contexto\', que ele pode referenciar para a conversa. O limite específico não é conhecido, mas pode causar erros ao exceder 7k tokens',
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
+      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
     translated:
-      "AVISO: O uso indevido deste recurso pode fazer com que você seja BANIDO de usar o Bing! Clique em 'Mensagem do Sistem' para obter instruções completas e a mensagem padrão, caso omitida, que é a predefinição 'Sydney', considerada segura.",
+      'AVISO: O uso indevido deste recurso pode fazer com que você seja BANIDO de usar o Bing! Clique em \'Mensagem do Sistem\' para obter instruções completas e a mensagem padrão, caso omitida, que é a predefinição \'Sydney\', considerada segura.',
   },
   com_endpoint_system_message: {
     english: 'System Message',
@@ -1787,7 +1792,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'O Top-k altera a forma como o modelo seleciona tokens para a saída. Um top-k de 1 significa que o token selecionado é o mais provável entre todos os tokens no vocabulário do modelo (também chamado de decodificação gulosa), enquanto um top-k de 3 significa que o próximo token é selecionado entre os 3 tokens mais prováveis (usando temperatura).',
   },
@@ -1813,7 +1818,7 @@ export const comparisons = {
   },
   com_endpoint_prompt_prefix_assistants_placeholder: {
     english:
-      "Set additional instructions or context on top of the Assistant's main instructions. Ignored if empty.",
+      'Set additional instructions or context on top of the Assistant\'s main instructions. Ignored if empty.',
     translated:
       'Defina instruções ou contexto adicionais além das instruções principais do Assistente. Ignorado se vazio.',
   },
@@ -1861,7 +1866,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
+      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
     translated:
       'O máximo de tokens a gerar. O comprimento total de tokens de entrada e tokens gerados é limitado pelo comprimento do contexto do modelo.',
   },
@@ -1873,13 +1878,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
     translated:
       'Número entre -2,0 e 2,0. Valores positivos penalizam novos tokens com base em sua frequência existente no texto até agora, diminuindo a probabilidade do modelo repetir a mesma linha literalmente.',
   },
   com_endpoint_openai_pres: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
     translated:
       'Número entre -2,0 e 2,0. Valores positivos penalizam novos tokens com base em sua aparição no texto até o momento, aumentando a probabilidade do modelo falar sobre novos tópicos.',
   },
@@ -1924,7 +1929,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'O Top-k altera a forma como o modelo seleciona tokens para a saída. Um top-k de 1 significa que o token selecionado é o mais provável entre todos os tokens no vocabulário do modelo (também chamado de decodificação gulosa), enquanto um top-k de 3 significa que o próximo token é selecionado entre os 3 tokens mais prováveis (usando temperatura).',
   },
@@ -2244,8 +2249,8 @@ export const comparisons = {
     translated: 'para fornecer as strings completas de cookies.',
   },
   com_endpoint_config_key_chatgpt: {
-    english: "To get your Access token For ChatGPT 'Free Version', login to",
-    translated: "Para obter seu Token de Acesso para o ChatGPT 'Versão Gratuita', faça login em",
+    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
+    translated: 'Para obter seu Token de Acesso para o ChatGPT \'Versão Gratuita\', faça login em',
   },
   com_endpoint_config_key_chatgpt_then_visit: {
     english: 'then visit',
@@ -2273,9 +2278,9 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
+      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
     translated:
-      "Certifique-se de clicar em 'Criar e Continuar' para dar pelo menos a função 'Usuário do Vertex AI'. Por último, crie uma chave JSON para importar aqui.",
+      'Certifique-se de clicar em \'Criar e Continuar\' para dar pelo menos a função \'Usuário do Vertex AI\'. Por último, crie uma chave JSON para importar aqui.',
   },
   com_nav_welcome_assistant: {
     english: 'Please Select an Assistant',

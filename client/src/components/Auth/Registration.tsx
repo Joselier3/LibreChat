@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
-import { useNavigate, useOutletContext, useLocation } from 'react-router-dom';
+import { useNavigate, useOutletContext, useLocation, useSearchParams } from 'react-router-dom';
 import { useRegisterUserMutation } from 'librechat-data-provider/react-query';
 import type { TRegisterUser, TError } from 'librechat-data-provider';
 import type { TLoginLayoutContext } from '~/common';
@@ -24,6 +24,8 @@ const Registration: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState<number>(3);
+  const [searchParams] = useSearchParams();
+  const invitationCode = searchParams.get('invitation');
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -65,16 +67,18 @@ const Registration: React.FC = () => {
           autoComplete={id}
           aria-label={localize(label)}
           {...register(
-            id as 'name' | 'email' | 'username' | 'password' | 'confirm_password',
+            id as 'workspace' | 'name' | 'email' | 'username' | 'password' | 'confirm_password',
             validation,
           )}
           aria-invalid={!!errors[id]}
           className="
             webkit-dark-styles transition-color peer w-full rounded-2xl border border-border-light
             bg-surface-primary px-3.5 pb-2.5 pt-3 text-text-primary duration-200 focus:border-green-500 focus:outline-none
-          "
+          disabled:cursor-not-allowed"
           placeholder=" "
           data-testid={id}
+          defaultValue={id === 'workspace' && invitationCode ? invitationCode : ''}
+          // disabled={id === 'workspace' && !!invitationCode}
         />
         <label
           htmlFor={id}
@@ -124,9 +128,20 @@ const Registration: React.FC = () => {
             aria-label="Registration form"
             method="POST"
             onSubmit={handleSubmit((data: TRegisterUser) =>
-              registerUser.mutate({ ...data, token: token ?? undefined }),
+              registerUser.mutate({ ...data, token: token ?? undefined, invitationCode: invitationCode ?? undefined }),
             )}
           >
+            {renderInput('workspace', 'com_auth_workspace', 'text', {
+              required: localize('com_auth_workspace_required'),
+              minLength: {
+                value: 3,
+                message: localize('com_auth_workspace_min_length'),
+              },
+              maxLength: {
+                value: 80,
+                message: localize('com_auth_workspace_max_length'),
+              },
+            })}
             {renderInput('name', 'com_auth_full_name', 'text', {
               required: localize('com_auth_name_required'),
               minLength: {

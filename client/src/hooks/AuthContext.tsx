@@ -47,6 +47,8 @@ const AuthContextProvider = ({
     (userContext: TUserContext) => {
       const { token, isAuthenticated, user, redirect } = userContext;
       if (user) {
+        // console.log(user.workspaces);
+        // getWorkspaceById('66f6ed4f35d875fac79047a7').then((x) => console.log(x));
         setUser(user);
       }
       setToken(token);
@@ -59,9 +61,11 @@ const AuthContextProvider = ({
     },
     [navigate, setUser],
   );
+
   const doSetError = useTimeout({ callback: (error) => setError(error as string | undefined) });
 
   const loginUser = useLoginUserMutation();
+
   const logoutUser = useLogoutUserMutation({
     onSuccess: () => {
       setUserContext({
@@ -91,6 +95,7 @@ const AuthContextProvider = ({
       onSuccess: (data: TLoginResponse) => {
         const { user, token } = data;
         setError(undefined);
+        // crear condicion para cuando el usuario sea admin
         setUserContext({ token, isAuthenticated: true, user, redirect: '/c/new' });
       },
       onError: (error: TResError | unknown) => {
@@ -130,6 +135,7 @@ const AuthContextProvider = ({
   }, []);
 
   useEffect(() => {
+    // console.log({ userQuery: userQuery.data });
     if (userQuery.data) {
       setUser(userQuery.data);
     } else if (userQuery.isError) {

@@ -3,6 +3,7 @@ const { logger } = require('~/config');
 
 const loginController = async (req, res) => {
   try {
+
     if (!req.user) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
@@ -11,7 +12,6 @@ const loginController = async (req, res) => {
     user.id = user._id.toString();
 
     const token = await setAuthTokens(req.user._id, res);
-
     return res.status(200).send({ token, user });
   } catch (err) {
     logger.error('[loginController]', err);

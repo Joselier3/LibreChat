@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { useMemo } from 'react';
 import { EModelEndpoint, isAssistantsEndpoint, Constants } from 'librechat-data-provider';
 import { useGetEndpointsQuery, useGetStartupConfig } from 'librechat-data-provider/react-query';
@@ -10,12 +11,14 @@ import { TooltipAnchor } from '~/components/ui';
 import { BirthdayIcon } from '~/components/svg';
 import { getIconEndpoint, cn } from '~/utils';
 import ConvoStarter from './ConvoStarter';
+import { useWorkspace } from '../dashboardFalitech/workspaceContext';
 
 export default function Landing({ Header }: { Header?: ReactNode }) {
   const { conversation } = useChatContext();
   const assistantMap = useAssistantsMapContext();
   const { data: startupConfig } = useGetStartupConfig();
   const { data: endpointsConfig } = useGetEndpointsQuery();
+  const { selectedWorkspace, selectWorkspace } = useWorkspace();
 
   const localize = useLocalize();
 
@@ -91,11 +94,16 @@ export default function Landing({ Header }: { Header?: ReactNode }) {
           </div> */}
           </div>
         ) : (
-          <h2 className="mb-5 max-w-[75vh] px-12 text-center text-lg font-medium dark:text-white md:px-0 md:text-2xl">
-            {isAssistant
-              ? conversation?.greeting ?? localize('com_nav_welcome_assistant')
-              : conversation?.greeting ?? localize('com_nav_welcome_message')}
-          </h2>
+          selectedWorkspace?.connections.length === 0
+            ? <div className='flex flex-col items-center justify-center'>
+              <h2 className="mb-5 max-w-[75vh] px-12 text-center text-lg font-medium dark:text-white md:px-0 md:text-2xl">Configura tu cuenta</h2>
+              <a href="/dashboard/workspaces" target="_blank" rel="noopener noreferrer" className='text-text-secondary underline'>Ir al panel</a>
+            </div>
+            : <h2 className="mb-5 max-w-[75vh] px-12 text-center text-lg font-medium dark:text-white md:px-0 md:text-2xl">
+              {isAssistant
+                ? conversation?.greeting ?? localize('com_nav_welcome_assistant')
+                : conversation?.greeting ?? localize('com_nav_welcome_message')}
+            </h2>
         )}
         <div className="mt-8 flex flex-wrap justify-center gap-3 px-4">
           {conversation_starters.length > 0 &&

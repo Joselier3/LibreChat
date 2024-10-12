@@ -1,6 +1,11 @@
 // Traditional Chinese phrases
 
 export default {
+  com_nav_dashboard: '儀表板',
+  com_auth_workspace_required: '工作空間名稱是必需的',
+  com_auth_workspace_min_length: '工作空間名稱必須至少有3個字符',
+  com_auth_workspace_max_length: '工作空間名稱必須少於80個字符',
+  com_auth_workspace: '工作區名稱',
   com_ui_examples: '範例',
   com_ui_new_chat: '新對話',
   com_ui_happy_birthday: '這是我的第一個生日！',
@@ -248,7 +253,7 @@ export default {
     '使用開發工具或擴充套件在登入網站時複製 _U cookie 的內容。如果此方法失敗，請按照這些',
   com_endpoint_config_key_edge_instructions: '說明',
   com_endpoint_config_key_edge_full_key_string: '提供完整的 cookie 字串。',
-  com_endpoint_config_key_chatgpt: "要取得 ChatGPT '免費版' 的存取權杖，請登入到",
+  com_endpoint_config_key_chatgpt: '要取得 ChatGPT \'免費版\' 的存取權杖，請登入到',
   com_endpoint_config_key_chatgpt_then_visit: '然後造訪',
   com_endpoint_config_key_chatgpt_copy_token: '複製存取權杖。',
   com_endpoint_config_key_google_need_to: '您需要',
@@ -575,7 +580,7 @@ export const comparisons = {
     translated: '新對話',
   },
   com_ui_happy_birthday: {
-    english: "It's my 1st birthday!",
+    english: 'It\'s my 1st birthday!',
     translated: '這是我的第一個生日！',
   },
   com_ui_example_quantum_computing: {
@@ -583,7 +588,7 @@ export const comparisons = {
     translated: '用簡單的方式解釋量子計算',
   },
   com_ui_example_10_year_old_b_day: {
-    english: "Got any creative ideas for a 10 year old's birthday?",
+    english: 'Got any creative ideas for a 10 year old\'s birthday?',
     translated: '有沒有創意十足的十歲生日派對點子？',
   },
   com_ui_example_http_in_js: {
@@ -926,7 +931,7 @@ export const comparisons = {
     translated: '發生內部伺服器錯誤。請稍候片刻，然後重試。',
   },
   com_auth_no_account: {
-    english: "Don't have an account?",
+    english: 'Don\'t have an account?',
     translated: '還沒有帳號？',
   },
   com_auth_sign_up: {
@@ -1136,13 +1141,13 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
+      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
     translated:
       'Bing 可以使用多達 7k 個 token 作為「前後文」，並在對話中引用。具體限制不詳，但可能會在超過 7k token 時出現錯誤',
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
+      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
     translated:
       '警告：不當使用此功能可能會導致您被禁止使用 Bing！如需完整指引和預設訊息（若未設定），請點選「系統訊息」，這是被認為安全的「Sydney」預設值。',
   },
@@ -1200,7 +1205,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'Top-k 調整模型如何選取輸出的 token。當 Top-k 設為 1 時，模型會選取在其詞彙庫中機率最高的 token 進行輸出（這也被稱為貪婪解碼）。相對地，當 Top-k 設為 3 時，模型會從機率最高的三個 token 中選取下一個輸出 token（這會涉及到所謂的「溫度」調整）',
   },
@@ -1254,7 +1259,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
+      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
     translated: '要生成的最大 token 數。輸入 token 和生成 token 的總長度受到模型前後文長度的限制。',
   },
   com_endpoint_openai_topp: {
@@ -1265,13 +1270,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
     translated:
       '數值範圍介於 -2.0 和 2.0 之間。正值會根據該 token 在目前的文字中出現的頻率進行懲罰，減少模型產生重複內容的可能性。',
   },
   com_endpoint_openai_pres: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
     translated:
       '數值範圍介於 -2.0 和 2.0 之間。正值會根據該 token 是否在目前的文字中出現來進行懲罰，增加模型談及新主題的可能性。',
   },
@@ -1297,7 +1302,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'Top-k 改變模型選擇輸出 token 的方式。Top-k 為 1 表示所選 token 在模型詞彙表中所有 token 中最可能（也稱為貪婪解碼），而 Top-k 為 3 表示下一個 token 從最可能的 3 個 token 中選擇（使用溫度）。',
   },
@@ -1503,8 +1508,8 @@ export const comparisons = {
     translated: '提供完整的 cookie 字串。',
   },
   com_endpoint_config_key_chatgpt: {
-    english: "To get your Access token For ChatGPT 'Free Version', login to",
-    translated: "要取得 ChatGPT '免費版' 的存取權杖，請登入到",
+    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
+    translated: '要取得 ChatGPT \'免費版\' 的存取權杖，請登入到',
   },
   com_endpoint_config_key_chatgpt_then_visit: {
     english: 'then visit',
@@ -1532,7 +1537,7 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
+      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
     translated:
       '確保點選「建立並繼續」並至少給予「Vertex AI 使用者」角色。最後，建立一個 JSON 金鑰以在此處匯入。',
   },
@@ -1834,7 +1839,7 @@ export const comparisons = {
   },
   com_error_moderation: {
     english:
-      "It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We're unable to proceed with this specific topic. If you have any other questions or topics you'd like to explore, please edit your message, or create a new conversation.",
+      'It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We\'re unable to proceed with this specific topic. If you have any other questions or topics you\'d like to explore, please edit your message, or create a new conversation.',
     translated:
       '似乎您所提交的內容被我們的內容審查系統標記為不符合社群準則。我們無法就此特定主題繼續進行。如果您有任何其他問題或想要探討的主題，請編輯您的訊息或開啟新的對話。',
   },
@@ -1990,7 +1995,7 @@ export const comparisons = {
     translated: '刪除操作時發生錯誤',
   },
   com_assistants_actions_info: {
-    english: "Let your Assistant retrieve information or take actions via API's",
+    english: 'Let your Assistant retrieve information or take actions via API\'s',
     translated: '讓您的助理透過 API 取得資訊或執行操作',
   },
   com_assistants_name_placeholder: {
@@ -2361,7 +2366,7 @@ export const comparisons = {
   },
   com_endpoint_context_info: {
     english:
-      "The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models' context size. Setting higher values may result in errors and/or higher token cost.",
+      'The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models\' context size. Setting higher values may result in errors and/or higher token cost.',
     translated:
       '可用於上下文的最大 token 數量。用於控制每個請求傳送的 token 數量。如果未指定，將根據已知模型的上下文大小使用系統預設值。設定較高的值可能會導致錯誤和/或更高的 token 成本。',
   },
@@ -2372,7 +2377,7 @@ export const comparisons = {
   },
   com_endpoint_prompt_prefix_assistants_placeholder: {
     english:
-      "Set additional instructions or context on top of the Assistant's main instructions. Ignored if empty.",
+      'Set additional instructions or context on top of the Assistant\'s main instructions. Ignored if empty.',
     translated: '在助理的主要提示指令之上設定額外的提示指令或上下文。如果為空白，則會被忽略。',
   },
   com_endpoint_prompt_prefix_assistants: {

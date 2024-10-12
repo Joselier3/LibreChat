@@ -1,6 +1,11 @@
 // Russian phrases
 
 export default {
+  com_nav_dashboard: 'приборная панель',
+  com_auth_workspace_required: 'Требуется имя рабочей области',
+  com_auth_workspace_min_length: 'Имя рабочей области должно содержать не менее 3 символов',
+  com_auth_workspace_max_length: 'Имя рабочей области должно содержать менее 80 символов',
+  com_auth_workspace: 'Название рабочего пространства',
   com_sidepanel_select_assistant: 'Выбрать Ассистента',
   com_sidepanel_assistant_builder: 'Конструктор Ассистента',
   com_sidepanel_attach_files: 'Прикрепить файлы',
@@ -316,7 +321,7 @@ export default {
   com_endpoint_config_key_google_vertex_api: 'API в Google Cloud, после',
   com_endpoint_config_key_google_service_account: 'Создать Service Account',
   com_endpoint_config_key_google_vertex_api_role:
-    "Убедитесь что нажали на 'Create and Continue' чтобы получить как минимум 'Vertex AI User'. Наконец, создайте JSON-ключ чтобы импортировать его сюда.",
+    'Убедитесь что нажали на \'Create and Continue\' чтобы получить как минимум \'Vertex AI User\'. Наконец, создайте JSON-ключ чтобы импортировать его сюда.',
   com_nav_welcome_message: 'Чем я могу помочь вам сегодня?',
   com_nav_auto_scroll: 'Автоматически проматывать к самым новым сообщениям при открытии',
   com_nav_hide_panel: 'Скрыть правую боковую панель',
@@ -638,7 +643,7 @@ export const comparisons = {
     translated: 'Создать чат',
   },
   com_ui_happy_birthday: {
-    english: "It's my 1st birthday!",
+    english: 'It\'s my 1st birthday!',
     translated: 'Это мой первый день рождения!',
   },
   com_ui_example_quantum_computing: {
@@ -646,7 +651,7 @@ export const comparisons = {
     translated: 'Объясни квантовые вычисления простыми словами',
   },
   com_ui_example_10_year_old_b_day: {
-    english: "Got any creative ideas for a 10 year old's birthday?",
+    english: 'Got any creative ideas for a 10 year old\'s birthday?',
     translated: 'У тебя есть креативные идеи для дня рождения 10-летнего ребенка?',
   },
   com_ui_example_http_in_js: {
@@ -1025,7 +1030,7 @@ export const comparisons = {
       'Произошла внутренняя ошибка сервера. Пожалуйста, подождите несколько минут и повторите попытку.',
   },
   com_auth_no_account: {
-    english: "Don't have an account?",
+    english: 'Don\'t have an account?',
     translated: 'Еще не зарегистрированы?',
   },
   com_auth_sign_up: {
@@ -1237,13 +1242,13 @@ export const comparisons = {
   },
   com_endpoint_bing_context_placeholder: {
     english:
-      "Bing can use up to 7k tokens for 'context', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens",
+      'Bing can use up to 7k tokens for \'context\', which it can reference for the conversation. The specific limit is not known but may run into errors exceeding 7k tokens',
     translated:
       'Bing может использовать до 7 тысяч токенов для "контекста", на который он может ссылаться в разговоре. Точный предел неизвестен, но превышение 7 тысяч токенов может вызвать ошибки.',
   },
   com_endpoint_bing_system_message_placeholder: {
     english:
-      "WARNING: Misuse of this feature can get you BANNED from using Bing! Click on 'System Message' for full instructions and the default message if omitted, which is the 'Sydney' preset that is considered safe.",
+      'WARNING: Misuse of this feature can get you BANNED from using Bing! Click on \'System Message\' for full instructions and the default message if omitted, which is the \'Sydney\' preset that is considered safe.',
     translated:
       'ПРЕДУПРЕЖДЕНИЕ: Неправильное использование этой функции может привести к БАНУ на использование Bing! Нажмите на "Системное сообщение" для получения полных инструкций и значения по умолчанию, которое является предустановкой "Sydney", считающейся безопасной.',
   },
@@ -1309,7 +1314,7 @@ export const comparisons = {
   },
   com_endpoint_google_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'Top-k изменяет то, как модель выбирает токены для вывода. Top-k равное 1 означает, что выбирается наиболее вероятный токен из всего словаря модели (так называемое жадное декодирование), а Top-k равное 3 означает, что следующий токен выбирается из трех наиболее вероятных токенов (с использованием температуры).',
   },
@@ -1363,7 +1368,7 @@ export const comparisons = {
   },
   com_endpoint_openai_max: {
     english:
-      "The max tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
+      'The max tokens to generate. The total length of input tokens and generated tokens is limited by the model\'s context length.',
     translated:
       'Максимальное количество генерируемых токенов. Общая длина входных токенов и сгенерированных токенов ограничена длиной контекста модели.',
   },
@@ -1375,13 +1380,13 @@ export const comparisons = {
   },
   com_endpoint_openai_freq: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model\'s likelihood to repeat the same line verbatim.',
     translated:
       'Число от -2.0 до 2.0. Положительные значения штрафуют новые токены на основе их частоты в тексте до сих пор, уменьшая вероятность модели повторить ту же строку дословно.',
   },
   com_endpoint_openai_pres: {
     english:
-      "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
+      'Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model\'s likelihood to talk about new topics.',
     translated:
       'Число от -2.0 до 2.0. Положительные значения штрафуют новые токены на основе того, появляются ли они в тексте до сих пор, увеличивая вероятность модели говорить о новых темах.',
   },
@@ -1407,7 +1412,7 @@ export const comparisons = {
   },
   com_endpoint_anthropic_topk: {
     english:
-      "Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model's vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).",
+      'Top-k changes how the model selects tokens for output. A top-k of 1 means the selected token is the most probable among all tokens in the model\'s vocabulary (also called greedy decoding), while a top-k of 3 means that the next token is selected from among the 3 most probable tokens (using temperature).',
     translated:
       'Top K изменяет то, как модель выбирает токены для вывода. Top K равное 1 означает, что выбирается наиболее вероятный токен из всего словаря модели (так называемое жадное декодирование), а Top K равное 3 означает, что следующий токен выбирается из трех наиболее вероятных токенов (с использованием температуры).',
   },
@@ -1700,7 +1705,7 @@ export const comparisons = {
     translated: 'чтобы получить все строки cookie.',
   },
   com_endpoint_config_key_chatgpt: {
-    english: "To get your Access token For ChatGPT 'Free Version', login to",
+    english: 'To get your Access token For ChatGPT \'Free Version\', login to',
     translated: 'Чтобы получить токен доступа к "Бесплатной Версии" ChatGPT, войдите в',
   },
   com_endpoint_config_key_chatgpt_then_visit: {
@@ -1729,9 +1734,9 @@ export const comparisons = {
   },
   com_endpoint_config_key_google_vertex_api_role: {
     english:
-      "Make sure to click 'Create and Continue' to give at least the 'Vertex AI User' role. Lastly, create a JSON key to import here.",
+      'Make sure to click \'Create and Continue\' to give at least the \'Vertex AI User\' role. Lastly, create a JSON key to import here.',
     translated:
-      "Убедитесь что нажали на 'Create and Continue' чтобы получить как минимум 'Vertex AI User'. Наконец, создайте JSON-ключ чтобы импортировать его сюда.",
+      'Убедитесь что нажали на \'Create and Continue\' чтобы получить как минимум \'Vertex AI User\'. Наконец, создайте JSON-ключ чтобы импортировать его сюда.',
   },
   com_nav_welcome_message: {
     english: 'How can I help you today?',
@@ -2185,7 +2190,7 @@ export const comparisons = {
   },
   com_error_moderation: {
     english:
-      "It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We're unable to proceed with this specific topic. If you have any other questions or topics you'd like to explore, please edit your message, or create a new conversation.",
+      'It appears that the content submitted has been flagged by our moderation system for not aligning with our community guidelines. We\'re unable to proceed with this specific topic. If you have any other questions or topics you\'d like to explore, please edit your message, or create a new conversation.',
     translated:
       'К сожалению, отправленный вами контент был помечен нашей системой модерации как не соответствующий правилам сообщества. Мы не можем продолжить обсуждение этой конкретной темы. Если у вас есть другие вопросы или темы, которые вы хотели бы обсудить, пожалуйста, отредактируйте сообщение или начните новый диалог.',
   },
@@ -2300,7 +2305,7 @@ export const comparisons = {
     translated: 'Произошла ошибка при удалении действия.',
   },
   com_assistants_actions_info: {
-    english: "Let your Assistant retrieve information or take actions via API's",
+    english: 'Let your Assistant retrieve information or take actions via API\'s',
     translated: 'Позвольте вашему ассистенту получать информацию или выполнять действия через API',
   },
   com_ui_field_required: {
@@ -2559,7 +2564,7 @@ export const comparisons = {
   },
   com_endpoint_context_info: {
     english:
-      "The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models' context size. Setting higher values may result in errors and/or higher token cost.",
+      'The maximum number of tokens that can be used for context. Use this for control of how many tokens are sent per request.\n  If unspecified, will use system defaults based on known models\' context size. Setting higher values may result in errors and/or higher token cost.',
     translated:
       'Максимальное количество токенов, которое может быть использовано для контекста. Используется для контроля количества токенов, отправляемых за один запрос. Если не указано, будут использованы системные значения по умолчанию, основанные на известном размере контекста моделей. Установка более высоких значений может привести к ошибкам и/или более высокой стоимости токенов.',
   },
@@ -2571,7 +2576,7 @@ export const comparisons = {
   },
   com_endpoint_prompt_prefix_assistants_placeholder: {
     english:
-      "Set additional instructions or context on top of the Assistant's main instructions. Ignored if empty.",
+      'Set additional instructions or context on top of the Assistant\'s main instructions. Ignored if empty.',
     translated:
       'Задайте дополнительные инструкции или контекст сверху основных инструкций ассистента. Игнорируется, если пусто.',
   },

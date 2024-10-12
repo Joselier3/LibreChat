@@ -9,10 +9,14 @@ import { useMediaQuery, useHasAccess } from '~/hooks';
 import HeaderOptions from './Input/HeaderOptions';
 import BookmarkMenu from './Menus/BookmarkMenu';
 import AddMultiConvo from './AddMultiConvo';
+import SelectWorkspaces from './Menus/SelectWorkspace';
+import { useWorkspace } from '../dashboardFalitech/workspaceContext';
 
 const defaultInterface = getConfigDefaults().interface;
 
 export default function Header() {
+
+  const { selectedWorkspace, selectWorkspace } = useWorkspace();
   const { data: startupConfig } = useGetStartupConfig();
   const { navVisible } = useOutletContext<ContextType>();
   const modelSpecs = useMemo(() => startupConfig?.modelSpecs?.list ?? [], [startupConfig]);
@@ -39,22 +43,23 @@ export default function Header() {
         <div className="flex items-center gap-2">
           {!navVisible && <HeaderNewChat />}
           {/* muestra el menu de IAs y si hay un asistente seleccionado muestra el assistente */}
-          {interfaceConfig.endpointsMenu === true && <EndpointsMenu />}
-          {modelSpecs.length > 0 && <ModelSpecsMenu modelSpecs={modelSpecs} />}
+          <SelectWorkspaces />
+          {(selectedWorkspace?.connections.length && interfaceConfig.endpointsMenu === true) ? <EndpointsMenu /> : null}
+          {/* {modelSpecs.length > 0 && <ModelSpecsMenu modelSpecs={modelSpecs} />} */}
           {/* muestra la configuracion prestablecida de la IA y permite cambiar de asistente  */}
-          {<HeaderOptions interfaceConfig={interfaceConfig} />}
-          {/* {interfaceConfig.presets === true && <PresetsMenu />} */}
-          {/* {hasAccessToBookmarks === true && <BookmarkMenu />} */}
-          {/* {hasAccessToMultiConvo === true && <AddMultiConvo />} */}
-          {/* {isSmallScreen && (
+          {selectedWorkspace?.connections.length ? <HeaderOptions interfaceConfig={interfaceConfig} /> : null}
+          {(selectedWorkspace?.connections.length && interfaceConfig.presets === true) ? <PresetsMenu /> : null}
+          {(selectedWorkspace?.connections.length && hasAccessToBookmarks === true) ? <BookmarkMenu /> : null}
+          {(selectedWorkspace?.connections.length && hasAccessToMultiConvo === true) ? <AddMultiConvo /> : null}
+          {isSmallScreen && (
             <ExportAndShareMenu
               isSharedButtonEnabled={startupConfig?.sharedLinksEnabled ?? false}
             />
-          )} */}
+          )}
         </div>
-        {/* {!isSmallScreen && (
+        {!isSmallScreen && (
           <ExportAndShareMenu isSharedButtonEnabled={startupConfig?.sharedLinksEnabled ?? false} />
-        )} */}
+        )}
       </div>
       {/* Empty div for spacing */}
       <div />
