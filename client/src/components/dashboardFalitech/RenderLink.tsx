@@ -27,7 +27,7 @@ export default function RenderLink({ text, href, icon, open }: RenderLinkProps) 
       to={href}
       className={({ isActive }) => {
         return `h-12 transition-all flex items-center ${isActive ? 'bg-gray-100 text-[#0084ff]' : ''
-        } hover:bg-gray-200 px-5 leading-[48px]`;
+        } hover:bg-gray-200 px-4 leading-[48px]`;
       }}
     >
       <div className="flex items-center justify-center gap-1 transition-all">

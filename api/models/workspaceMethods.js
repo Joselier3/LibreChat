@@ -72,7 +72,12 @@ const createWorkspace = async (data, returnWorkspace = false) => {
   try {
     const workspace = await Workspace.create(restData);
 
-    await updateUser(userId, { workspaces: workspace?._id });
+    await User.findByIdAndUpdate(userId, { $push: { workspaces: workspace?._id } }, {
+      new: true,
+      runValidators: true,
+    }).lean();
+
+    // await updateUser(userId, { workspaces: workspace?._id });
 
     if (returnWorkspace) {
       return workspace.toObject();
