@@ -37,10 +37,19 @@ export default function DetailsChats() {
 
   };
 
+  console.log(data);
+
   return (
     <>
       <section className="w-full p-4">
         <div className='grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-2'>
+
+          {
+            !data && (
+              <strong className='text-xs'>No hay conversaciones que mostrar</strong>
+            )
+          }
+
           {
             data && data.conversations.map(conversation => {
               return (

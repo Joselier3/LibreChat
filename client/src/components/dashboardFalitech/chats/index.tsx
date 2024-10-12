@@ -13,23 +13,35 @@ export default function Chats() {
 
   const { selectedWorkspace } = useWorkspace();
 
-  const { data: members, isLoading } = useGetWorkspaceMembers(selectedWorkspace?._id);
+  const { data: members, isLoading, error } = useGetWorkspaceMembers(selectedWorkspace?._id);
 
   return (
-    <>
-      <section className='flex'>
-        <Aside open={true} setOpen={setOpen} MaxAndMinWidthOpen='min-w-72 max-w-72' MaxAndMinWidthClose='min-w-20 max-w-20' buttonVisible={false} >
-          {
-            members && members.map(member => (
-              <RenderLink key={member._id} text={member.name} href={member._id}
-                icon={<Avatar text={member.name} />} open={true} />
-            ))
-          }
-        </Aside>
-        <div className="h-[calc(100vh-4rem)] w-full overflow-auto reset-scrollbar">
-          <Outlet />
-        </div>
-      </section>
-    </>
+    <section className="flex">
+      <Aside
+        open={open}
+        setOpen={setOpen}
+        MaxAndMinWidthOpen="min-w-72 max-w-72"
+        MaxAndMinWidthClose="min-w-20 max-w-20"
+        buttonVisible={false}
+      >
+        {/* {isLoading && <p>Loading members...</p>} */}
+
+        {error && <p>Failed to load members</p>}
+
+        {members && members.map(({ _id, name }) => (
+          <RenderLink
+            key={_id}
+            text={name}
+            href={_id}
+            icon={<Avatar text={name} loading={isLoading}/>}
+            open={open}
+          />
+        ))}
+      </Aside>
+
+      <div className="h-[calc(100vh-4rem)] w-full overflow-auto reset-scrollbar">
+        <Outlet />
+      </div>
+    </section>
   );
 }

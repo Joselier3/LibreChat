@@ -10,7 +10,7 @@ const {
   deleteUserById,
 } = require('~/models/userMethods');
 const { validateInvitation, acceptInvitation } = require('~/models/invitationMethods');
-const { createToken, findToken, deleteTokens, Session } = require('~/models');
+const { createToken, findToken, deleteTokens, Session, User } = require('~/models');
 const { sendEmail, checkEmailConfig } = require('~/server/utils');
 const { registerSchema } = require('~/strategies/validators');
 const { hashToken } = require('~/server/utils/crypto');
@@ -202,7 +202,7 @@ const registerUser = async (user, additionalData = {}) => {
 
     if(invitationCode){
       const invitation = await validateInvitation(invitationCode, email);
-      console.log('[invitationCode affter]',invitation);
+      console.log('[invitationCode after]',invitation);
       if (invitation && invitation?.status === 'pending') {
         // Aceptar la invitación
         console.log('[invitationCode before]',invitation._id, invitation);
@@ -231,7 +231,11 @@ const registerUser = async (user, additionalData = {}) => {
         name,
       });
     } else {
-      await updateUser(newUserId, { emailVerified: true });
+      await User.findByIdAndUpdate(newUserId, { $set:  { emailVerified: true } }, {
+        new: true,
+        runValidators: true,
+      }).lean();
+      // await updateUser(newUserId, { emailVerified: true });
     }
 
     return { status: 200, message: genericVerificationMessage };

@@ -38,11 +38,16 @@ const getUserIdController = async (req, res) => {
 };
 
 const updateUserController = async (req, res) => {
-  const updateData = { workspaces: req.body.workspaces };
+  const updateData = {  $set: { workspaces: req.body.workspaces } };
   try {
-    const user = await updateUser(req.body.id, updateData, {
+    // const user = await updateUser(req.body.id, updateData, {
+    //   new: true,
+    // });
+
+    const user = await  User.findByIdAndUpdate(req.body.id, updateData, {
       new: true,
-    });
+      runValidators: true,
+    }).lean();
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
