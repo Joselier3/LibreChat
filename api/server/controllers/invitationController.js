@@ -70,11 +70,15 @@ const createInvitation = async (req, res) => {
       workspace: workspaceId,
       invitedEmail: invitedEmail.toLowerCase(),
       expiresAt: { $gt: new Date() }, // Solo verifica invitaciones que aún no hayan expirado
+      status: 'pending',
     });
 
+    console.log(existingInvitation);
+    
     if (existingInvitation) {
       return res.status(400).json({ message: 'Ya existe una invitación pendiente para este correo en esta área de trabajo' });
     }
+
 
     // Genera un código de invitación único
     const invitationCode = uuidv4();
