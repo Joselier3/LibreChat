@@ -75,12 +75,13 @@ const createInvitation = async (req, res) => {
 
     console.log(existingInvitation);
     
-    // if (existingInvitation) {
-    //   return res.status(400).json({ message: 'Ya existe una invitación pendiente para este correo en esta área de trabajo' });
-    // }
+    if (existingInvitation) {
+      return res.status(400).json({ message: 'Ya existe una invitación pendiente para este correo en esta área de trabajo' });
+    }
 
 
     // Genera un código de invitación único
+    
     const invitationCode = uuidv4();
 
     // Crea la invitación
