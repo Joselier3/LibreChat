@@ -2,6 +2,16 @@ const Invitation = require('./schema/invitationSchema');
 const { updateUser } = require('./userMethods');
 const { getWorkspaceById, updateWorkspace } = require('./workspaceMethods');
 
+const findInvitation = async (searchCriteria, fieldsToSelect = null) => {
+  const query = Invitation.findOne(searchCriteria);
+
+  if (fieldsToSelect) {
+    query.select(fieldsToSelect);
+  }
+
+  return await query.lean();
+};
+
 const validateInvitation = async (code, email) => {
   try {
     // Busca la invitación en la base de datos
@@ -67,4 +77,5 @@ const acceptInvitation = async (invitationId, userId) => {
 module.exports = {
   validateInvitation,
   acceptInvitation,
+  findInvitation,
 };

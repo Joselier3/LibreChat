@@ -40,7 +40,7 @@ const getConvo = async (user, conversationId) => {
     }
 
     // 3. Si el propietario está en uno de tus workspaces, devolver la conversación
-    console.log('Tengo acceso a ver la puta conversacion');
+    console.log('Tengo acceso a ver la puta conversación');
     return conversation;
 
     // return await Conversation.findOne({ user, conversationId }).lean();

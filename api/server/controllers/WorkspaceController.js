@@ -260,7 +260,7 @@ const updateConnectionController = async (req, res) => {
   // console.log('[updateConnectionController]', req.body);
 
   try {
-    const { workspaceId, connectionId, provider, apiKey, model, name } = req.body;
+    const { workspaceId, connectionId, provider, apiKey, models, name } = req.body;
 
     // Buscar el workspace por su ID
     const workspace = await findWorkspace({ _id: workspaceId });
@@ -280,7 +280,7 @@ const updateConnectionController = async (req, res) => {
     workspace.connections[connectionIndex] = {
       ...workspace.connections[connectionIndex],
       provider,
-      model,
+      models,
       name,
       updatedAt: new Date(),
     };

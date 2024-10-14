@@ -20,11 +20,17 @@ const SelectWorkspaces: FC = () => {
   const { selectedWorkspace, selectWorkspace } = useWorkspace();
   const location = useLocation();
 
+  const existWorkspace = workspace?.find(x => x?._id === selectedWorkspace?._id);
+
   useEffect(()=>{
-    if(selectedWorkspace){
+    if (workspace) {
+      if (existWorkspace && selectedWorkspace) {
+        selectWorkspace(selectedWorkspace);
+      } else {
+        selectWorkspace(workspace[0]);
+      }
+    } if (existWorkspace && selectedWorkspace) {
       selectWorkspace(selectedWorkspace);
-    }else{
-      workspace && selectWorkspace(workspace[0]);
     }
   },[location, workspace]);
 

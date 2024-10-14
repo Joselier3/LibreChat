@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:conversationId', async (req, res) => {
   const { conversationId } = req.params;
-  console.log({ conversationId, userID:req.user.id });
+
   const convo = await getConvo(req.user.id, conversationId);
 
   if (convo) {

@@ -22,6 +22,8 @@ export default function ModelSwitcher({ isCollapsed }: SwitcherProps) {
     }));
   }, [modelsQuery, endpoint]);
 
+  console.log({ models, x: modelsQuery.data?.[endpoint ?? ''] });
+
   const setModel = useCallback(
     (model: string) => {
       setOption('model')(model);

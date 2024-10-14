@@ -49,7 +49,7 @@ const findWorkspace = async function (searchCriteria, fieldsToSelect = null) {
  */
 const updateWorkspace = async function (workspaceId, updateData) {
 
-  console.log('[updateWorkspace]', workspaceId, updateData);
+  // console.log('[updateWorkspace]', workspaceId, updateData);
 
   return await Workspace.findByIdAndUpdate(workspaceId, updateData, {
     new: true,

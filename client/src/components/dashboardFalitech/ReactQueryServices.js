@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { getUserById, getWorkspaceById, createWorkspace, updateWorkspace, deleteWorkspace, getAvatar, getUserWorkspaces, getWorkspaceMembers, createInvitation, validateInvitation, acceptInvitation, getInvitationForUser, rejectInvitationApiCall, leaveWorkspace, createConnectionApiCall, getWorkspaceConnection, updateConnectionApiCall, getAllConversationForUser } from './workspacesService';
+import { getUserById, getWorkspaceById, createWorkspace, updateWorkspace, deleteWorkspace, getAvatar, getUserWorkspaces, getWorkspaceMembers, createInvitation, validateInvitation, acceptInvitation, getInvitationForUser, rejectInvitationApiCall, leaveWorkspace, createConnectionApiCall, getWorkspaceConnection, updateConnectionApiCall, getAllConversationForUser, getInvitationForCode } from './workspacesService';
 
 // Hook para obtener un usuario por ID
 export const useGetUserById = (userId) => {
@@ -89,6 +89,11 @@ export const useValidateInvitation = () => {
 export const useGetInvitationForUser = (id) => {
   return useQuery(['userInvitations'], () => getInvitationForUser(id), {
     enabled: !!id,
+  });
+};
+export const useGetInvitationForUserCode = (code) => {
+  return useQuery(['userInvitations'], () => getInvitationForCode(code), {
+    enabled: !!code,
   });
 };
 

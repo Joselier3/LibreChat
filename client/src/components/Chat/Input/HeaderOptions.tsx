@@ -67,7 +67,7 @@ export default function HeaderOptions({
 
   const paramEndpoint = isParamEndpoint(endpoint, endpointType);
 
-  console.log(endpoint, endpointType, interfaceConfig);
+  // console.log(endpoint, endpointType, interfaceConfig);
 
   return (
     <Root

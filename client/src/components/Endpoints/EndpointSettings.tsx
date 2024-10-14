@@ -5,6 +5,7 @@ import type { TSettingsProps } from '~/common';
 import { getSettings } from './Settings';
 import { cn } from '~/utils';
 import store from '~/store';
+import { useWorkspace } from '../dashboardFalitech/workspaceContext';
 
 export default function Settings({
   conversation,
@@ -14,15 +15,19 @@ export default function Settings({
 }: TSettingsProps) {
   const modelsQuery = useGetModelsQuery();
   const currentSettingsView = useRecoilValue(store.currentSettingsView);
+  const { selectedWorkspace } = useWorkspace();
+
   if (!conversation?.endpoint || currentSettingsView !== SettingsViews.default) {
     return null;
   }
 
   const { settings, multiViewSettings } = getSettings();
   const { endpoint: _endpoint, endpointType } = conversation;
-  const models = modelsQuery?.data?.[_endpoint] ?? [];
+  const models = modelsQuery.data?.[_endpoint] ?? [];
   const endpoint = endpointType ?? _endpoint;
   const OptionComponent = settings[endpoint];
+
+  const currentModel = selectedWorkspace?.connections.find(connect => connect.provider ===_endpoint);
 
   if (OptionComponent) {
     return (
@@ -30,7 +35,7 @@ export default function Settings({
         <OptionComponent
           conversation={conversation}
           setOption={setOption}
-          models={models}
+          models={currentModel?.models || []}
           isPreset={isPreset}
         />
       </div>

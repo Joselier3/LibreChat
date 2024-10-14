@@ -7,6 +7,7 @@ import type { TLoginLayoutContext } from '~/common';
 import { ErrorMessage } from './ErrorMessage';
 import { Spinner } from '~/components/svg';
 import { useLocalize } from '~/hooks';
+import {  useGetInvitationForUserCode } from '../dashboardFalitech/ReactQueryServices';
 
 const Registration: React.FC = () => {
   const navigate = useNavigate();
@@ -26,6 +27,8 @@ const Registration: React.FC = () => {
   const [countdown, setCountdown] = useState<number>(3);
   const [searchParams] = useSearchParams();
   const invitationCode = searchParams.get('invitation');
+
+  const { data } = useGetInvitationForUserCode(invitationCode);
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -77,8 +80,8 @@ const Registration: React.FC = () => {
           disabled:cursor-not-allowed"
           placeholder=" "
           data-testid={id}
-          defaultValue={id === 'workspace' && invitationCode ? invitationCode : ''}
-          // disabled={id === 'workspace' && !!invitationCode}
+          defaultValue={id === 'workspace' && data ? data.invitation.name : ''}
+          disabled={id === 'workspace' && !!data}
         />
         <label
           htmlFor={id}
@@ -132,12 +135,12 @@ const Registration: React.FC = () => {
             )}
           >
             {renderInput('workspace', 'com_auth_workspace', 'text', {
-              required: localize('com_auth_workspace_required'),
-              minLength: {
+              required: data ? false : localize('com_auth_workspace_required'),
+              minLength: !data && {
                 value: 3,
                 message: localize('com_auth_workspace_min_length'),
               },
-              maxLength: {
+              maxLength: !data && {
                 value: 80,
                 message: localize('com_auth_workspace_max_length'),
               },

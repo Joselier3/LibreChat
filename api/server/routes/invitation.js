@@ -1,9 +1,11 @@
 const express = require('express');
-const { createInvitation, getAllInvitationForUser, validateInvitationController, acceptInvitationController, rejectInvitation } = require('~/server/controllers/invitationController');
+const { createInvitation, getAllInvitationForUser, validateInvitationController, acceptInvitationController, rejectInvitation, getInvitationForCode } = require('~/server/controllers/invitationController');
 
 const router = express.Router();
 
 router.get('/:id', getAllInvitationForUser);
+
+router.get('/find/:code', getInvitationForCode);
 
 router.delete('/:id/reject', rejectInvitation);
 

@@ -2,6 +2,7 @@ import { useGetModelsQuery } from 'librechat-data-provider/react-query';
 import type { TConversation } from 'librechat-data-provider';
 import type { TSetOption } from '~/common';
 import { multiChatOptions } from './options';
+import { useWorkspace } from '~/components/dashboardFalitech/workspaceContext';
 
 type TGoogleProps = {
   showExamples: boolean;
@@ -24,6 +25,8 @@ export default function ModelSelect({
 }: TSelectProps) {
   const modelsQuery = useGetModelsQuery();
 
+  const { selectedWorkspace } = useWorkspace();
+
   if (!conversation?.endpoint) {
     return null;
   }
@@ -31,6 +34,8 @@ export default function ModelSelect({
   const { endpoint: _endpoint, endpointType } = conversation;
   const models = modelsQuery.data?.[_endpoint] ?? [];
   const endpoint = endpointType ?? _endpoint;
+
+  const currentModel = selectedWorkspace?.connections.find(connect => connect.provider ===_endpoint);
 
   const OptionComponent = multiChatOptions[endpoint];
 
@@ -41,7 +46,7 @@ export default function ModelSelect({
     <OptionComponent
       conversation={conversation}
       setOption={setOption}
-      models={models}
+      models={currentModel?.models || []}
       showAbove={showAbove}
       popover={popover}
     />

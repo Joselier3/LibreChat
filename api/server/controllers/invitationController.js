@@ -3,7 +3,7 @@ const { getWorkspaceById, findWorkspace } = require('~/models/workspaceMethods')
 const Invitation = require('~/models/schema/invitationSchema');
 const { getUserById, findUser } = require('~/models/userMethods');
 const { sendEmail } = require('~/server/utils');
-const { validateInvitation, acceptInvitation } = require('~/models/invitationMethods');
+const { validateInvitation, acceptInvitation, findInvitation } = require('~/models/invitationMethods');
 
 const getAllInvitationForUser = async (req, res) => {
   const { id } = req.params;
@@ -70,7 +70,10 @@ const createInvitation = async (req, res) => {
       workspace: workspaceId,
       invitedEmail: invitedEmail.toLowerCase(),
       expiresAt: { $gt: new Date() }, // Solo verifica invitaciones que aún no hayan expirado
+      status: 'pending',
     });
+
+    console.log(existingInvitation);
 
     if (existingInvitation) {
       return res.status(400).json({ message: 'Ya existe una invitación pendiente para este correo en esta área de trabajo' });
@@ -180,10 +183,29 @@ const rejectInvitation = async (req, res) => {
   }
 };
 
+const getInvitationForCode = async (req, res) => {
+  const { code } = req.params;
+
+  if (!code) {
+    return res.status(400).json({ message: 'El ID del usuario es requerido' });
+  }
+
+  const invitation = await findInvitation({ code });
+
+  const workspace = await getWorkspaceById(invitation.workspace);
+
+  return res.status(200).json({
+    message: 'Invitación obtenida exitosamente',
+    invitation: { code: invitation.code, name: workspace.name },
+  });
+
+};
+
 module.exports = {
   createInvitation,
   getAllInvitationForUser,
   validateInvitationController,
   acceptInvitationController,
   rejectInvitation,
+  getInvitationForCode,
 };

@@ -277,6 +277,28 @@ export const getInvitationForUser = async (id) => {
   }
 };
 
+export const getInvitationForCode = async (code) => {
+
+  try {
+    const response = await fetch(`/api/invitation/find/${code}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Invitación no válida o ha expirado');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    // console.error('Error:', error);
+    throw error;
+  }
+};
+
 export const rejectInvitationApiCall = async (invitationId) => {
 
   try {

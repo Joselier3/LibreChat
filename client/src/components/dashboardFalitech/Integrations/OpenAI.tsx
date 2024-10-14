@@ -5,17 +5,26 @@ import { useGetWorkspaceConnection, useWorkspaceCreateConnection, useWorkspaceUp
 import { useAuthContext } from '~/hooks';
 import { useToastContext } from '~/Providers';
 
+interface openAiState {
+  connectionId:string,
+  workspaceId: string,
+  provider:string,
+  apiKey: string,
+  models: string[],
+  name: string,
+}
+
 export default function OpenAI() {
   const { selectedWorkspace, selectWorkspace } = useWorkspace();
   const { user } = useAuthContext();
   const { showToast } = useToastContext();
 
-  const [openAi, setOpenAi] = useState({
+  const [openAi, setOpenAi] = useState<openAiState>({
     connectionId:'',
-    workspaceId: selectedWorkspace?._id,
+    workspaceId: selectedWorkspace?._id || '',
     provider: 'openAI',
     apiKey: '',
-    model: '',
+    models: [],
     name: '',
   });
 
@@ -30,17 +39,39 @@ export default function OpenAI() {
     if (connections) {
       setOpenAi({
         connectionId:connections?._id || '',
-        workspaceId: selectedWorkspace?._id,
+        workspaceId: selectedWorkspace?._id || '',
         provider: connections.provider || 'openAI',
         apiKey: connections.apiKey || '', // Si no quieres mostrar la API Key, puedes omitirla
-        model: connections.model || '',
+        models: connections.models || [],
         name: connections.name || '',
       });
     }
   }, [connections, selectedWorkspace]);
 
   function handlerChange(e) {
-    setOpenAi({ ...openAi, [e.target.name]: e.target.value });
+    const { name, value, checked } = e.target;
+    if(checked){
+      console.log(value);
+      // Agregar la propiedad al array de models si no existe
+      setOpenAi((prevState) => ({
+        ...prevState,
+        models: [...prevState.models, value],
+      }));
+    }else{
+      // Eliminar la propiedad del array de models si está desmarcada
+      setOpenAi((prevState) => ({
+        ...prevState,
+        models: prevState.models.filter((model) => model !== value),
+      }));
+    }
+
+    // Actualizar el resto del state normalmente
+    if(name !== 'models'){
+      setOpenAi((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
   }
 
   const { mutate } = useWorkspaceCreateConnection();
@@ -91,21 +122,28 @@ export default function OpenAI() {
         <div className="bg-gray-50 p-4">
           <form onSubmit={handlerSubmit} className="max-w-96 m-auto flex flex-col gap-3 ">
             <fieldset className='flex items-center flex-wrap gap-1'>
-              <span className="block">Nombre IA</span>
+              <strong className="block">Nombre IA</strong>
               <input type="text" value={openAi.name} name='name' onChange={handlerChange} className="w-full md:flex-grow rounded-lg border p-2 focus:outline-[#0084ff]/60 " placeholder='Name IA (optional)' />
             </fieldset>
             <fieldset className='flex items-center flex-wrap gap-1'>
-              <span className="block">Api Key</span>
+              <strong className="block">Api Key</strong>
               <input type="text" value={openAi.apiKey} name='apiKey' onChange={handlerChange} className="w-full md:flex-grow rounded-lg border p-2 focus:outline-[#0084ff]/60 " placeholder='************************************' />
             </fieldset>
-            <fieldset className='flex items-center flex-wrap gap-1'>
-              <span className="block">Modelo</span>
-              <select name='model'  value={openAi.model} onChange={handlerChange} className="w-full md:flex-grow rounded-lg border p-2 focus:outline-[#0084ff]/60 reset-scrollbar">
-                <option value="">-- Select Model --</option>
+            <fieldset className='flex flex-col gap-1'>
+              <strong className="block">Modelo</strong>
+              <ul className='grid grid-cols-[repeat(auto-fill, minmax(200px, 1fr))]'>
                 {
-                  modelOpenAI.map(model => <option key={model} value={model}>{model}</option>)
+                  modelOpenAI.map(model => {
+                    const isCurrentModel = connections?.models.some(currentModel => currentModel === model);
+                    return (
+                      <li key={model} className='flex gap-1 items-center'>
+                        <input type="checkbox" name='models' defaultChecked={isCurrentModel} id={model} value={model} onChange={handlerChange}/>
+                        <label htmlFor={model}>{model}</label>
+                      </li>
+                    );
+                  })
                 }
-              </select>
+              </ul>
             </fieldset>
 
             <button type='submit' className="mt-3 rounded-md border bg-[#2791d1]/80 p-2 px-5 text-white transition-all hover:bg-[#2791d1]">
