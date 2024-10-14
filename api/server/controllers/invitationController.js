@@ -71,6 +71,7 @@ const createInvitation = async (req, res) => {
       invitedEmail: invitedEmail.toLowerCase(),
       expiresAt: { $gt: new Date() }, // Solo verifica invitaciones que aún no hayan expirado
       status: 'pending',
+      status: 'pending',
     });
 
     console.log(existingInvitation);
@@ -80,6 +81,7 @@ const createInvitation = async (req, res) => {
     }
 
     // Genera un código de invitación único
+
     const invitationCode = uuidv4();
 
     // Crea la invitación
