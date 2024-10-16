@@ -9,7 +9,7 @@ import { MdPeopleAlt } from 'react-icons/md';
 import { GrConnect } from 'react-icons/gr';
 import { FaPeopleGroup } from 'react-icons/fa6';
 import { IoSettingsOutline } from 'react-icons/io5';
-import { useGetUserWorkspaces } from './ReactQueryServices';
+import { useGetUserWorkspaces, useGetWorkspaceById } from './ReactQueryServices';
 import { GoDiscussionClosed } from 'react-icons/go';
 import PageLoader from './PageLoader';
 
@@ -18,37 +18,40 @@ export default function LayoutFalitech() {
   const { selectedWorkspace, selectWorkspace } = useWorkspace();
   const location = useLocation();
 
-  const { data: workspace, isLoading, error } = useGetUserWorkspaces(user?.id);
+  // Obtén los workspaces del usuario
+  const { data: workspaces, isLoading, error } = useGetUserWorkspaces(user?.id);
+  const { data: activeWorkspace } = useGetWorkspaceById(user?.activeWorkspace);
 
-  const [isOwner, setIsOwner] = useState<boolean>(selectedWorkspace?.owner._id === user?.id);
+  // const [isOwner, setIsOwner] = useState<boolean>(selectedWorkspace?.owner._id === user?.id);
 
+  const [isOwner, setIsOwner] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
 
-  const existWorkspace = workspace?.find(x => x?._id === selectedWorkspace?._id);
+  // const existWorkspace = workspaces?.find(x => x?._id === selectedWorkspace?._id);
 
   useEffect(() => {
-    // console.log({ existWorkspace, isLoading, error, workspace });
-    if (workspace) {
-      if (existWorkspace && selectedWorkspace) {
-        selectWorkspace(selectedWorkspace);
-      } else {
-        selectWorkspace(workspace[0]);
-      }
-    } if (existWorkspace && selectedWorkspace) {
-      selectWorkspace(selectedWorkspace);
+    // Si existe un activeWorkspace, seleccionarlo automáticamente al iniciar sesión
+    if (activeWorkspace && !selectedWorkspace) {
+      selectWorkspace(activeWorkspace);
     }
 
-  }, [location, existWorkspace, isLoading, error, workspace, selectedWorkspace, selectWorkspace]);
+    // Si no hay un workspace seleccionado, seleccionar el primer workspace de la lista
+    if (workspaces && !selectedWorkspace) {
+      selectWorkspace(workspaces[0]);
+    }
 
+  }, [activeWorkspace, workspaces, selectedWorkspace, selectWorkspace]);
+
+  // Actualizar el isOwner cuando el workspace seleccionado cambia
   useEffect(() => {
     setIsOwner(selectedWorkspace?.owner._id === user?.id);
-  }, [selectedWorkspace, isLoading]);
+  }, [selectedWorkspace, user]);
 
   return (
     <>
       <PageLoader loader={isLoading}/>
       <main className="h-screen overflow-hidden bg-white">
-        <Header user={user} workspace={workspace} />
+        <Header user={user} workspace={workspaces} />
         <div className="flex">
           <Aside open={open} setOpen={setOpen}>
             <RenderLink open={open} text="Espacios de trabajo" href="workspaces" icon={<MdPeopleAlt size={20} />} />

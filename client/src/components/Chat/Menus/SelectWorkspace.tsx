@@ -7,7 +7,7 @@ import EndpointItems from './Endpoints/MenuItems';
 import TitleButton from './UI/TitleButton';
 import { mapEndpoints } from '~/utils';
 import { useWorkspace } from '~/components/dashboardFalitech/workspaceContext';
-import { useGetUserWorkspaces } from '~/components/dashboardFalitech/ReactQueryServices';
+import { useGetUserWorkspaces, useSelectActiveWorkspace } from '~/components/dashboardFalitech/ReactQueryServices';
 import { useAuthContext } from '~/hooks';
 import { GoCheckCircleFill } from 'react-icons/go';
 import Avatar from '~/components/dashboardFalitech/Avatar';
@@ -18,6 +18,7 @@ const SelectWorkspaces: FC = () => {
   const { user } = useAuthContext();
   const { data: workspace, isLoading  } = useGetUserWorkspaces(user?.id);
   const { selectedWorkspace, selectWorkspace } = useWorkspace();
+  const { mutate } = useSelectActiveWorkspace();
   const location = useLocation();
 
   const existWorkspace = workspace?.find(x => x?._id === selectedWorkspace?._id);
@@ -49,10 +50,22 @@ const SelectWorkspaces: FC = () => {
 
   const primaryText = assistant ? assistantName : (alternateName[endpoint] ?? endpoint ?? '') + ' ';
 
-  const handlerSettingWorkspace = (workspace) => {
+  const handlerChangeWorkspace = (workspace) => {
+    mutate({ userId: user?.id, workspaceId: workspace?._id },{
+      onSuccess(data) {
+        // console.log(data);
+      },
+      onError(error){
+        // console.log(error);
+      },
+    });
     selectWorkspace(workspace);
+  };
+
+  const handlerSettingWorkspace = (workspace) => {
+    handlerChangeWorkspace(workspace);
     console.log('ir a configuracion de:', workspace.name);
-    window.open('/dashboard/workspaces', '_blank');
+    window.location.href='/dashboard/workspaces';
   };
 
   if(isLoading){
@@ -85,7 +98,7 @@ const SelectWorkspaces: FC = () => {
                   const isAdminWorkspace = workspace.owner._id === user?.id;
                   return (
                     <div key={workspace._id} className='group m-1.5 flex max-h-[40px] cursor-pointer gap-2 rounded px-5 py-2.5 !pr-3 text-sm !opacity-100 hover:bg-surface-hover radix-disabled:pointer-events-none radix-disabled:opacity-50'>
-                      <button onClick={() => selectWorkspace(workspace)} className='flex grow items-center justify-between gap-2'>
+                      <button onClick={() => handlerChangeWorkspace(workspace)} className='flex grow items-center justify-between gap-2'>
                         <div className='flex gap-2'>
                           <Avatar text={workspace.name} size='w-6 h-6 text-[10px]'/>
                           <span>{workspace.name}</span>

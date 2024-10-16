@@ -133,7 +133,7 @@ function AccountSettings() {
                       className={focus ? 'bg-surface-hover' : ''}
                       svg={() => <LuLayoutDashboard size={18}/>}
                       text={localize('com_nav_dashboard')}
-                      clickHandler={() => window.open('/dashboard', '_blank')}
+                      clickHandler={() => window.location.href='/dashboard'}
                     />
                   )}
                 </MenuItem>

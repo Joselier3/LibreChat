@@ -430,3 +430,24 @@ export const generateShareLink = async (conversationId) => {
   };
 
 };
+
+export const selectActiveWorkspace = async ({ userId,workspaceId }) => {
+
+  try{
+    const response = await fetch(`/api/user/${userId}/active-workspace`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ workspaceId }),
+    });
+
+    // Procesa la respuesta como JSON
+    const resData = await response.json();
+
+    return resData;
+  }catch(error){
+    console.error('Error al generar el link para compartir', error);
+    throw error;
+  }
+};

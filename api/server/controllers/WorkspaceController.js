@@ -5,6 +5,7 @@ const {
   updateWorkspace,
   deleteWorkspaceById,
   workspaceConnection,
+  updateActiveWorkspace,
 } = require('~/models/workspaceMethods');
 const { getUserById, CriteriaUpdateUser } = require('~/models/userMethods');
 const { logger } = require('~/config');
@@ -247,7 +248,7 @@ const createConnectionController = async (req, res) => {
       return res.status(400).json({ message: 'Error al crear la conexión' });
     }
 
-    res.status(200).json({ message: 'Conexión creada exitosamente' });
+    res.status(200).json({ data: result, message: 'Conexión creada exitosamente' });
 
   } catch (error) {
     console.log(error);
@@ -292,7 +293,7 @@ const updateConnectionController = async (req, res) => {
     // Guardar el workspace con la conexión actualizada usando updateWorkspace
     const updatedWorkspace = await updateWorkspace(workspaceId, { $set: { connections: workspace.connections } });
 
-    res.status(200).json({ message: 'Conexión actualizada exitosamente', updatedWorkspace });
+    res.status(200).json({ message: 'Conexión actualizada exitosamente', data: updatedWorkspace });
 
   } catch (error) {
     console.log(error);
@@ -408,6 +409,25 @@ const generateShareLinkConversation = async (req, res) => {
   }
 };
 
+const updateActiveWorkspaceController = async (req, res) => {
+  const { userId } = req.params;
+  const { workspaceId } = req.body;
+
+  try {
+    await updateActiveWorkspace({ userId, workspaceId });
+
+    return res.status(200).json({
+      status: 'success',
+      message: 'Workspace activo actualizado correctamente',
+    });
+  } catch (error) {
+    return res.status(500).json({
+      status: 'error',
+      message: 'Error al actualizar el workspace activo',
+    });
+  }
+};
+
 module.exports = {
   getWorkspaceController,
   getAllWorkspacesController,
@@ -423,4 +443,5 @@ module.exports = {
   getWorkspaceConnectionController,
   getAllConversationForUserController,
   generateShareLinkConversation,
+  updateActiveWorkspaceController,
 };

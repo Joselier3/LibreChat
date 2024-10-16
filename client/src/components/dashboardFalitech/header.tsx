@@ -51,9 +51,9 @@ export default function Header({ user, workspace }: HeaderProps) {
             </div>
           </Button>
           {/* <Button text='Chat en vivo' handler={} /> */}
-          <Link to='/c/new' target='_blank' className="flex cursor-pointer items-center gap-1 p-2 hover:bg-gray-100 hover:shadow rounded-md">
+          <a href='/c/new'  className="flex cursor-pointer items-center gap-1 p-2 hover:bg-gray-100 hover:shadow rounded-md">
             <span>Chat</span>
-          </Link>
+          </a>
 
         </div>
         <div className='flex items-center gap-1'>

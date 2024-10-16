@@ -1,4 +1,4 @@
-const { updateUser, getUserById } = require('./userMethods');
+const { getUserById } = require('./userMethods');
 const Workspace = require('./workspace');
 const User = require('~/models/User');
 // const { GridFSBucket, MongoClient } = require('mongodb');
@@ -15,7 +15,7 @@ const User = require('~/models/User');
  * @returns {Promise<Object>} A plain object representing the workspace document, or `null` if no workspace is found.
  */
 const getWorkspaceById = async function (workspaceId, fieldsToSelect = null) {
-  const query = Workspace.findById(workspaceId);
+  const query = Workspace.findById(workspaceId).select('-connections.apiKey');
 
   if (fieldsToSelect) {
     query.select(fieldsToSelect);
@@ -32,7 +32,7 @@ const getWorkspaceById = async function (workspaceId, fieldsToSelect = null) {
  * @returns {Promise<Object>} A plain object representing the workspace document, or `null` if no workspace is found.
  */
 const findWorkspace = async function (searchCriteria, fieldsToSelect = null) {
-  const query = Workspace.findOne(searchCriteria);
+  const query = Workspace.findOne(searchCriteria).select('-connections.apiKey');
   if (fieldsToSelect) {
     query.select(fieldsToSelect);
   }
@@ -77,7 +77,7 @@ const createWorkspace = async (data, returnWorkspace = false) => {
       runValidators: true,
     }).lean();
 
-    // await updateUser(userId, { workspaces: workspace?._id });
+    await updateActiveWorkspace({ userId, workspaceId: workspace?._id });
 
     if (returnWorkspace) {
       return workspace.toObject();
@@ -205,6 +205,26 @@ const detectUserInWorkspaces = async (loggedInUser, conversationOwner) => {
   }
 };
 
+const updateActiveWorkspace = async ({ userId, workspaceId }) => {
+  try {
+    const updatedUser = await User.findByIdAndUpdate(userId, {
+      $set: { activeWorkspace: workspaceId },
+    }, {
+      new: true,
+      runValidators: true,
+    }).lean();
+
+    if (!updatedUser) {
+      throw new Error('User not found');
+    }
+
+    return updatedUser;
+  } catch (error) {
+    console.error('Error updating activeWorkspace:', error);
+    throw error;
+  }
+};
+
 module.exports = {
   getWorkspaceById,
   findWorkspace,
@@ -214,4 +234,5 @@ module.exports = {
   deleteWorkspaceById,
   workspaceConnection,
   detectUserInWorkspaces,
+  updateActiveWorkspace,
 };

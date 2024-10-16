@@ -54,7 +54,7 @@ const PageLoader = ({ loader = false }: PageLoaderProps) => {
                 fontWeight: 'bold',
                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
               }}>
-              Falitech
+              AgentIA
             </h1>
             <div id="splash-msg" style={{ color: '#aaa' }}>
               Please wait, loading ...

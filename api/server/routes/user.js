@@ -11,7 +11,7 @@ const {
   getUserIdController,
   updateUserController,
 } = require('~/server/controllers/UserController');
-const { getUserWorkspacesController } = require('~/server/controllers/WorkspaceController');
+const { getUserWorkspacesController, updateActiveWorkspaceController } = require('~/server/controllers/WorkspaceController');
 
 const router = express.Router();
 
@@ -25,5 +25,6 @@ router.delete('/delete', requireJwtAuth, canDeleteAccount, deleteUserController)
 router.post('/verify', verifyEmailController);
 router.post('/verify/resend', verifyEmailLimiter, resendVerificationController);
 router.get('/:userId/workspaces', getUserWorkspacesController);
+router.put('/:userId/active-workspace', updateActiveWorkspaceController);
 
 module.exports = router;

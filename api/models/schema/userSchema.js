@@ -121,12 +121,17 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    activeWorkspace: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Workspace',
+    },
     workspaces: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Workspace', // Referencia a la colección de workspaces
       },
     ],
+
   },
 
   { timestamps: true },

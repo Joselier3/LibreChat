@@ -97,7 +97,7 @@ export default function Landing({ Header }: { Header?: ReactNode }) {
           selectedWorkspace?.connections.length === 0
             ? <div className='flex flex-col items-center justify-center'>
               <h2 className="mb-5 max-w-[75vh] px-12 text-center text-lg font-medium dark:text-white md:px-0 md:text-2xl">Configura tu cuenta</h2>
-              <a href="/dashboard/workspaces" target="_blank" rel="noopener noreferrer" className='text-text-secondary underline'>Ir al panel</a>
+              <a href="/dashboard/workspaces"  rel="noopener noreferrer" className='text-text-secondary underline'>Ir al panel</a>
             </div>
             : <h2 className="mb-5 max-w-[75vh] px-12 text-center text-lg font-medium dark:text-white md:px-0 md:text-2xl">
               {isAssistant

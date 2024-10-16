@@ -44,7 +44,7 @@ export default function Footer({ className }: { className?: string }) {
   const mainContentParts = (
     typeof config?.customFooter === 'string'
       ? config.customFooter
-      : '[Falitech V0.0.1' + '](https://falitech.com/) - ' + localize('com_ui_latest_footer')
+      : '[AgentIA V.1' + '](https://falitech.com/AgentIA) - ' + localize('com_ui_latest_footer')
   ).split('|');
 
   const mainContentRender = mainContentParts.map((text, index) => (
@@ -57,7 +57,6 @@ export default function Footer({ className }: { className?: string }) {
               <a
                 className="text-text-secondary underline"
                 href={href}
-                target="_blank"
                 rel="noreferrer"
                 {...otherProps}
               >

@@ -9,6 +9,8 @@ const { getLLMConfig } = require('~/server/services/Endpoints/openAI/llm');
 const { isEnabled, isUserProvided } = require('~/server/utils');
 const { getAzureCredentials } = require('~/utils');
 const { OpenAIClient } = require('~/app');
+const { getUserById } = require('~/models');
+const Workspace = require('~/models/workspace');
 
 const initializeClient = async ({
   req,
@@ -32,8 +34,15 @@ const initializeClient = async ({
   const endpoint = overrideEndpoint ?? req.body.endpoint;
   const contextStrategy = isEnabled(OPENAI_SUMMARIZE) ? 'summarize' : null;
 
+  const user = req.user;
+
+  const currentUser = await getUserById(user?.id);
+  const currentWorkspace = await Workspace.findById(currentUser.activeWorkspace);
+  const currentApiKey = currentWorkspace.connections.find(workspace => workspace.provider === endpoint);
+  console.log({ currentUser,currentWorkspace , currentApiKey });
+
   const credentials = {
-    [EModelEndpoint.openAI]: OPENAI_API_KEY,
+    [EModelEndpoint.openAI]: currentApiKey.apiKey,
     [EModelEndpoint.azureOpenAI]: AZURE_API_KEY,
   };
 
