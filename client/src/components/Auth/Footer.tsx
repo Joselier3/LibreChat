@@ -12,7 +12,7 @@ function Footer({ startupConfig }: { startupConfig: TStartupConfig | null | unde
   const privacyPolicyRender = privacyPolicy?.externalUrl && (
     <a
       className="text-sm text-green-500"
-      href={privacyPolicy.externalUrl}
+      href='https://falitech.com/falitech_legal.html#article07-2w'
       target={privacyPolicy.openNewTab ? '_blank' : undefined}
       rel="noreferrer"
     >
@@ -23,7 +23,7 @@ function Footer({ startupConfig }: { startupConfig: TStartupConfig | null | unde
   const termsOfServiceRender = termsOfService?.externalUrl && (
     <a
       className="text-sm text-green-500"
-      href={termsOfService.externalUrl}
+      href='https://falitech.com/falitech_legal.html#article07-2v '
       target={termsOfService.openNewTab ? '_blank' : undefined}
       rel="noreferrer"
     >
