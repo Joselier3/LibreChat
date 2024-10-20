@@ -33,6 +33,7 @@ import { useDeleteFilesMutation } from '~/data-provider';
 import { usePauseGlobalAudio } from './Audio';
 import { mainTextareaId } from '~/common';
 import store from '~/store';
+import { useWorkspace } from '~/components/dashboardFalitech/workspaceContext';
 
 const useNewConvo = (index = 0) => {
   const navigate = useNavigate();
@@ -44,6 +45,7 @@ const useNewConvo = (index = 0) => {
   const clearAllLatestMessages = store.useClearLatestMessages(`useNewConvo ${index}`);
   const setSubmission = useSetRecoilState<TSubmission | null>(store.submissionByIndex(index));
   const { data: endpointsConfig = {} as TEndpointsConfig } = useGetEndpointsQuery();
+  const { selectedWorkspace, selectWorkspace } = useWorkspace();
 
   const modelsQuery = useGetModelsQuery();
   const timeoutIdRef = useRef<NodeJS.Timeout>();
@@ -174,7 +176,6 @@ const useNewConvo = (index = 0) => {
       buildDefault = true,
       keepLatestMessage = false,
       keepAddedConvos = false,
-      workspaceId,
     }: {
       template?: Partial<TConversation>;
       preset?: Partial<TPreset>;
@@ -182,7 +183,6 @@ const useNewConvo = (index = 0) => {
       buildDefault?: boolean;
       keepLatestMessage?: boolean;
       keepAddedConvos?: boolean;
-      workspaceId?: string ,
     } = {}) => {
       pauseGlobalAudio();
 
@@ -199,7 +199,7 @@ const useNewConvo = (index = 0) => {
         conversationId: 'new',
         title: 'New Chat',
         endpoint: null,
-        workspaceId: workspaceId || null,
+        workspaceId: selectedWorkspace?._id || null,
         ...template,
         createdAt: '',
         updatedAt: '',

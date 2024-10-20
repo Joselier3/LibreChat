@@ -39,7 +39,7 @@ const initializeClient = async ({
   const currentUser = await getUserById(user?.id);
   const currentWorkspace = await Workspace.findById(currentUser.activeWorkspace);
   const currentApiKey = currentWorkspace.connections.find(workspace => workspace.provider === endpoint);
-  console.log({ currentUser,currentWorkspace , currentApiKey });
+  // console.log({ currentUser,currentWorkspace , currentApiKey });
 
   const credentials = {
     [EModelEndpoint.openAI]: currentApiKey.apiKey,

@@ -45,9 +45,9 @@ export const useDeleteWorkspace = () => {
 };
 
 // Hook para obtener los miembros de un workspace
-export const useGetWorkspaceMembers = (workspaceId) => {
-  return useQuery(['workspaceMembers', workspaceId], () => getWorkspaceMembers(workspaceId), {
-    enabled: !!workspaceId, // Ejecutar solo si hay un workspaceId
+export const useGetWorkspaceMembers = (workspaceId, userId) => {
+  return useQuery(['workspaceMembers', workspaceId, userId], () => getWorkspaceMembers(workspaceId, userId), {
+    enabled: !!workspaceId && !!userId, // Ejecutar solo si hay un workspaceId
   });
 };
 
@@ -183,8 +183,13 @@ export const useGetWorkspaceConnection = ({ workspaceId, userId, provider }) => 
 };
 
 // Hook para obtener el avatar de un workspace
-export const useGetAllConversationForUser = (userId, ownerId) => {
-  return useQuery(['conversation', userId, ownerId], () => getAllConversationForUser(userId,ownerId), {
-    enabled: !!userId || !!ownerId,
-  });
+export const useGetAllConversationForUser = (userId, ownerId, workspaceId, pageNumber = 1, pageSize = 10) => {
+  return useQuery(
+    ['conversation', userId, ownerId, pageNumber], // Incluye pageNumber en la clave del query
+    () => getAllConversationForUser(userId, ownerId, workspaceId, pageNumber, pageSize),
+    {
+      enabled: !!userId || !!ownerId,
+      keepPreviousData: true, // Mantiene los datos previos mientras se carga la nueva página
+    },
+  );
 };

@@ -1,6 +1,7 @@
 // Russian phrases
 
 export default {
+  com_auth_error_login_no_verify: 'Пожалуйста, подтвердите свою электронную почту перед входом.',
   com_nav_dashboard: 'приборная панель',
   com_auth_workspace_required: 'Требуется имя рабочей области',
   com_auth_workspace_min_length: 'Имя рабочей области должно содержать не менее 3 символов',

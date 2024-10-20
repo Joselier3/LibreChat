@@ -8,6 +8,7 @@ const {
   getUserById,
   generateToken,
   deleteUserById,
+  CriteriaUpdateUser,
 } = require('~/models/userMethods');
 const { validateInvitation, acceptInvitation } = require('~/models/invitationMethods');
 const { createToken, findToken, deleteTokens, Session, User } = require('~/models');
@@ -76,7 +77,7 @@ const sendVerificationEmail = async (user) => {
     domains.client
   }/verify?token=${verifyToken}&email=${encodeURIComponent(user.email)}`;
   await sendEmail({
-    email: user.email,
+    email: user.email.toLocaleLowerCase(),
     subject: 'Verify your email',
     payload: {
       appName: process.env.APP_TITLE || 'LibreChat',
@@ -89,13 +90,13 @@ const sendVerificationEmail = async (user) => {
 
   await createToken({
     userId: user._id,
-    email: user.email,
+    email: user.email.toLocaleLowerCase(),
     token: hash,
     createdAt: Date.now(),
     expiresIn: 900,
   });
 
-  logger.info(`[sendVerificationEmail] Verification link issued. [Email: ${user.email}]`);
+  logger.info(`[sendVerificationEmail] Verification link issued. [Email: ${user.email.toLocaleLowerCase()}]`);
 };
 
 /**
@@ -104,23 +105,28 @@ const sendVerificationEmail = async (user) => {
  */
 const verifyEmail = async (req) => {
   const { email, token } = req.body;
-  let emailVerificationData = await findToken({ email: decodeURIComponent(email) });
+
+  const formatEmail = email.toLowerCase();
+
+  let emailVerificationData = await findToken({ email: decodeURIComponent(formatEmail) });
+
+  // console.log({ email, token,formatEmail,emailVerificationData  });
 
   if (!emailVerificationData) {
-    logger.warn(`[verifyEmail] [No email verification data found] [Email: ${email}]`);
+    logger.warn(`[verifyEmail] [No email verification data found] [Email: ${formatEmail}]`);
     return new Error('Invalid or expired password reset token');
   }
 
   const isValid = bcrypt.compareSync(token, emailVerificationData.token);
 
   if (!isValid) {
-    logger.warn(`[verifyEmail] [Invalid or expired email verification token] [Email: ${email}]`);
+    logger.warn(`[verifyEmail] [Invalid or expired email verification token] [Email: ${formatEmail}]`);
     return new Error('Invalid or expired email verification token');
   }
 
-  const updatedUser = await updateUser(emailVerificationData.userId, { emailVerified: true });
+  const updatedUser = await CriteriaUpdateUser(emailVerificationData.userId, { $set: { emailVerified: true } });
   if (!updatedUser) {
-    logger.warn(`[verifyEmail] [User not found] [Email: ${email}]`);
+    logger.warn(`[verifyEmail] [User not found] [Email: ${formatEmail}]`);
     return new Error('User not found');
   }
 
@@ -202,15 +208,9 @@ const registerUser = async (user, additionalData = {}) => {
 
     if(invitationCode){
       const invitation = await validateInvitation(invitationCode, email);
-      console.log('[invitationCode after]',invitation);
       if (invitation && invitation?.status === 'pending') {
         // Aceptar la invitación
-        console.log('[invitationCode before]',invitation._id, invitation);
-
         await acceptInvitation(invitation._id, newUserId);
-
-        // Actualizar la lista de workspaces del usuario
-        // await updateUser(newUserId, { $push: { workspaces: invitation?.workspace } });
       } else {
         throw new Error('La invitación no es válida o ya fue aceptada');
       }

@@ -27,6 +27,8 @@ export default function Settings({
   const endpoint = endpointType ?? _endpoint;
   const OptionComponent = settings[endpoint];
 
+  // console.log({ settings: settings[endpoint], endpoint });
+
   const currentModel = selectedWorkspace?.connections.find(connect => connect.provider ===_endpoint);
 
   if (OptionComponent) {

@@ -8,6 +8,11 @@ const loginController = async (req, res) => {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
+    // Verificar si el correo del usuario está verificado
+    if (!req.user.emailVerified) {
+      return res.status(409).json({ message: 'Please verify your email before logging in.' });
+    }
+
     const { password: _, __v, ...user } = req.user;
     user.id = user._id.toString();
 

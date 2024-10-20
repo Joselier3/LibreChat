@@ -1,6 +1,7 @@
 // Hebrew phrases
 
 export default {
+  com_auth_error_login_no_verify: 'אנא אשר את כתובת הדוא"ל שלך לפני שתתחבר.',
   com_nav_dashboard: 'לוח מחוונים',
   com_auth_workspace_required: 'שם סביבת העבודה נדרש',
   com_auth_workspace_min_length: 'שם סביבת העבודה חייב להיות באורך של לפחות 3 תווים',

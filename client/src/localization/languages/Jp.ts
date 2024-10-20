@@ -3,6 +3,7 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_auth_error_login_no_verify: 'ログインする前にメールを確認してください。',
   com_nav_dashboard: 'ダッシュボード',
   com_auth_workspace_required: 'ワークスペース名は必須です',
   com_auth_workspace_min_length: 'ワークスペース名は少なくとも3文字でなければなりません',

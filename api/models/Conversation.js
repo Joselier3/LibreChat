@@ -1,7 +1,6 @@
 const Conversation = require('./schema/convoSchema');
 const { getMessages, deleteMessages } = require('./Message');
 const logger = require('~/config/winston');
-const { detectUserInWorkspaces } = require('./workspaceMethods');
 
 /**
  * Searches for a conversation by conversationId and returns a lean document with only conversationId and user.
@@ -23,27 +22,36 @@ const searchConversation = async (conversationId) => {
  * @param {string} conversationId - The conversation's ID.
  * @returns {Promise<TConversation>} The conversation object.
  */
+// const getConvo = async (user, conversationId) => {
+//   try {
+//     // 1. Buscar la conversación por el conversationId
+//     const conversation = await Conversation.findOne({ conversationId }).lean();
+
+//     if (!conversation) {
+//       return { message: 'Conversación no encontrada' };
+//     }
+
+//     // 2. Verificar si el propietario de la conversación está en los workspaces del usuario logueado
+//     const hasAccess = await detectUserInWorkspaces(user, conversation.user);
+
+//     if (!hasAccess) {
+//       return { message: 'No tienes acceso a esta conversación, el propietario no está en tus áreas de trabajo' };
+//     }
+
+//     // 3. Si el propietario está en uno de tus workspaces, devolver la conversación
+//     // console.log('Tengo acceso a ver la puta conversación');
+//     return conversation;
+
+//     // return await Conversation.findOne({ user, conversationId }).lean();
+//   } catch (error) {
+//     logger.error('[getConvo] Error getting single conversation', error);
+//     return { message: 'Error getting single conversation' };
+//   }
+// };
+
 const getConvo = async (user, conversationId) => {
   try {
-    // 1. Buscar la conversación por el conversationId
-    const conversation = await Conversation.findOne({ conversationId }).lean();
-
-    if (!conversation) {
-      return { message: 'Conversación no encontrada' };
-    }
-
-    // 2. Verificar si el propietario de la conversación está en los workspaces del usuario logueado
-    const hasAccess = await detectUserInWorkspaces(user, conversation.user);
-
-    if (!hasAccess) {
-      return { message: 'No tienes acceso a esta conversación, el propietario no está en tus áreas de trabajo' };
-    }
-
-    // 3. Si el propietario está en uno de tus workspaces, devolver la conversación
-    console.log('Tengo acceso a ver la puta conversación');
-    return conversation;
-
-    // return await Conversation.findOne({ user, conversationId }).lean();
+    return await Conversation.findOne({ user, conversationId }).lean();
   } catch (error) {
     logger.error('[getConvo] Error getting single conversation', error);
     return { message: 'Error getting single conversation' };
@@ -66,7 +74,11 @@ module.exports = {
         logger.debug(`[saveConvo] ${metadata.context}`);
       }
       const messages = await getMessages({ conversationId }, '_id');
-      const update = { ...convo, messages, user: req.user.id };
+      const workspaceId = req.user?.activeWorkspace ? req.user.activeWorkspace.toString() : null;
+
+      const update = { ...convo, messages, user: req.user.id, ...(workspaceId && { workspaceId }) };
+      // console.log({ update });
+
       if (newConversationId) {
         update.conversationId = newConversationId;
       }
@@ -79,6 +91,8 @@ module.exports = {
           upsert: true,
         },
       );
+
+      // console.log({ body: req.body, messages, update,newConversationId, convo, conversation });
 
       return conversation.toObject();
     } catch (error) {

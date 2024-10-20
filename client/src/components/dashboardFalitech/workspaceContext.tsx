@@ -4,9 +4,9 @@ import { useGetUserWorkspaces, useGetWorkspaceById } from './ReactQueryServices'
 import { useAuthContext } from '~/hooks';
 
 // Define los tipos para el Workspace y el contexto
-interface Workspace {
-  connections: any[]
-  createdAt: string
+export interface Workspace {
+  connections: Record<string, string>[]
+  createdAt?: string
   members: TUser[]
   name: string
   owner: TUser

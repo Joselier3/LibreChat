@@ -1,6 +1,7 @@
 // Arabic phrases
 
 export default {
+  com_auth_error_login_no_verify: 'يرجى التحقق من بريدك الإلكتروني قبل تسجيل الدخول.',
   com_nav_dashboard: 'لوحة القيادة',
   com_ui_examples: 'أمثلة',
   com_ui_happy_birthday: 'إنه عيد ميلادي الأول!',

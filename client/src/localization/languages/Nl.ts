@@ -1,6 +1,7 @@
 // Dutch phrases
 
 export default {
+  com_auth_error_login_no_verify: 'Verifieer uw e-mail voordat u inlogt.',
   com_nav_dashboard: 'dashboard',
   com_auth_workspace_required: 'Werkruimtenaam is verplicht',
   com_auth_workspace_min_length: 'De werkruimtenaam moet minimaal 3 tekens lang zijn',

@@ -26,8 +26,10 @@ export default function Settings({ conversation, setOption, models, readonly }: 
   const { model, endpoint, assistant_id, endpointType, promptPrefix, instructions } =
     conversation ?? {};
 
+  // console.log(assistantListMap);
+
   const currentList = useMemo(
-    () => Object.values(assistantListMap?.[endpoint ?? ''] ?? {}) as Assistant[],
+    () => Object.values(assistantListMap[endpoint ?? ''] ?? {}) as Assistant[],
     [assistantListMap, endpoint],
   );
 
@@ -112,6 +114,8 @@ export default function Settings({ conversation, setOption, models, readonly }: 
   };
 
   const optionEndpoint = endpointType ?? endpoint;
+
+  // console.log({ modelOptions,assistants, optionEndpoint, currentList, assistantListMap });
 
   return (
     <div className="grid grid-cols-6 gap-6">

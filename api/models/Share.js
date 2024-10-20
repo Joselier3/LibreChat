@@ -36,6 +36,7 @@ function anonymizeMessageId(id) {
  */
 function anonymizeConvo(conversation) {
   const newConvo = { ...conversation };
+  console.log({ newConvo });
   if (newConvo.assistant_id) {
     newConvo.assistant_id = anonymizeAssistantId();
   }

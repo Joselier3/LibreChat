@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Header from './header';
 import { useAuthContext } from '~/hooks';
 import Aside from './aside';
-import { useWorkspace, WorkspaceProvider } from './workspaceContext';
-import { Outlet, useLocation } from 'react-router-dom';
+import { useWorkspace } from './workspaceContext';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import RenderLink from './RenderLink';
 import { MdPeopleAlt } from 'react-icons/md';
 import { GrConnect } from 'react-icons/gr';
@@ -16,10 +16,11 @@ import PageLoader from './PageLoader';
 export default function LayoutFalitech() {
   const { user } = useAuthContext();
   const { selectedWorkspace, selectWorkspace } = useWorkspace();
+  const navigate = useNavigate();
   const location = useLocation();
 
   // Obtén los workspaces del usuario
-  const { data: workspaces, isLoading, error } = useGetUserWorkspaces(user?.id);
+  const { data: workspaces, isLoading  } = useGetUserWorkspaces(user?.id);
   const { data: activeWorkspace } = useGetWorkspaceById(user?.activeWorkspace);
 
   // const [isOwner, setIsOwner] = useState<boolean>(selectedWorkspace?.owner._id === user?.id);
@@ -46,6 +47,13 @@ export default function LayoutFalitech() {
   useEffect(() => {
     setIsOwner(selectedWorkspace?.owner._id === user?.id);
   }, [selectedWorkspace, user]);
+
+  // Redirección condicional basada en el propietario del workspace
+  useEffect(() => {
+    if (selectedWorkspace?.owner._id !== user?.id && location.pathname !== '/dashboard/workspaces') {
+      navigate('/dashboard/workspaces');
+    }
+  }, [isOwner, location, navigate, selectedWorkspace?.owner._id, user?.id]);
 
   return (
     <>

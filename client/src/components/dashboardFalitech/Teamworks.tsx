@@ -15,7 +15,7 @@ export default function Teamworks() {
   const [invitedEmail, setInvitedEmail] = useState<string>();
   const [invitationLink, setInvitationLink] = useState<string>('');
 
-  const { data: members, isLoading } = useGetWorkspaceMembers(selectedWorkspace?._id);
+  const { data: members, isLoading } = useGetWorkspaceMembers(selectedWorkspace?._id, user?.id);
   const { mutate, isLoading: invitationLoading } = useCreateInvitation();
 
   const sendInvitation = async (e) => {

@@ -257,9 +257,17 @@ export const useListAssistantsQuery = <TData = AssistantListResponse>(
   const endpointsConfig = queryClient.getQueryData<TEndpointsConfig>([QueryKeys.endpoints]);
   const keyExpiry = queryClient.getQueryData<TCheckUserKeyResponse>([QueryKeys.name, endpoint]);
   const userProvidesKey = !!(endpointsConfig?.[endpoint]?.userProvide ?? false);
-  const keyProvided = userProvidesKey ? !!(keyExpiry?.expiresAt ?? '') : true;
+  let keyProvided = true;
+
+  if (endpoint !== 'assistants') {
+    if (userProvidesKey) {
+      keyProvided = Boolean(keyExpiry?.expiresAt); // Valida keyExpiry solo para otros endpoints
+    }
+  }
+
   const enabled = !!endpointsConfig?.[endpoint] && keyProvided;
   const version = endpointsConfig?.[endpoint]?.version ?? defaultAssistantsVersion[endpoint];
+  // console.log({ enabled, endpoint, keyProvided, endpointsConfig, userProvidesKey, keyExpiry });
   return useQuery<AssistantListResponse, unknown, TData>(
     [QueryKeys.assistants, endpoint, params],
     () => dataService.listAssistants({ ...params, endpoint }, version),

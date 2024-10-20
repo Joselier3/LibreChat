@@ -1,6 +1,7 @@
 // Traditional Chinese phrases
 
 export default {
+  com_auth_error_login_no_verify: '請在登入前驗證您的電子郵件。',
   com_nav_dashboard: '儀表板',
   com_auth_workspace_required: '工作空間名稱是必需的',
   com_auth_workspace_min_length: '工作空間名稱必須至少有3個字符',

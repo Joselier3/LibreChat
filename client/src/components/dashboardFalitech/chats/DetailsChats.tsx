@@ -1,19 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, redirect, useNavigate, useParams } from 'react-router-dom';
 import { useGetAllConversationForUser } from '../ReactQueryServices';
 import { useAuthContext } from '~/hooks';
 import { generateShareLink } from '../workspacesService';
+import TableEsqueleton from '../TableEsqueleton';
+import { IoEyeOutline } from 'react-icons/io5';
+import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
+import { useWorkspace } from '../workspaceContext';
+import { TbEye, TbEyeEdit } from 'react-icons/tb';
 
 export default function DetailsChats() {
   const { user } = useAuthContext();
+  const { selectedWorkspace, selectWorkspace } = useWorkspace();
   const { chatId } = useParams();  // Acceder al valor de 'chatId'
   const navigate = useNavigate();
 
-  const { data, isLoading } = useGetAllConversationForUser(chatId, user?.id);
+  const [pageNumber, setPageNumber] = useState(1);
+  const pageSize = 10;
 
-  // generateShareLink(chatId).then(x=> console.log(x));
+  const { data, isLoading, isError } = useGetAllConversationForUser(
+    chatId,
+    user?.id,
+    selectedWorkspace?._id,
+    pageNumber,
+    pageSize,
+  );
 
-  const RenderButton = ({ owner, conversation })=>{
+  // Maneja el cambio de página
+  const handleNextPage = () => {
+    setPageNumber((prevPage) => prevPage + 1);
+  };
+
+  const handlePreviousPage = () => {
+    if (pageNumber > 1) {
+      setPageNumber((prevPage) => prevPage - 1);
+    }
+  };
+
+  const RenderButton = ({ owner, conversation }) => {
 
     const handlerSharedLink = async () => {
       const { shareLink } = await generateShareLink(conversation.conversationId);
@@ -21,55 +45,117 @@ export default function DetailsChats() {
 
     };
 
-    if(owner){
+    if (owner) {
       return (
-        <Link to={conversation.link} target='_blank' className='rounded-md border bg-[#2791d1]/80 p-2 px-5 text-white transition-all hover:bg-[#2791d1] flex items-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:border-gray-100 disabled:text-gray-400'>
-      Ver conversación
-        </Link>
+        <a href={conversation.link} className='rounded-md border bg-[#2791d1]/80 p-2 text-white transition-all hover:bg-[#2791d1] flex items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:border-gray-100 disabled:text-gray-400 '>
+          <TbEyeEdit  size={25} />
+        </a>
       );
     }
 
     return (
-      <button onClick={handlerSharedLink} className='rounded-md border bg-[#2791d1]/80 p-2 px-5 text-white transition-all hover:bg-[#2791d1] flex items-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:border-gray-100 disabled:text-gray-400'>
-        Ver conversación
+      <button onClick={handlerSharedLink} className='rounded-md border bg-[#2791d1]/80 p-2 text-white transition-all hover:bg-[#2791d1] flex items-center justify-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:border-gray-100 disabled:text-gray-400'>
+        <TbEye size={25} />
       </button>
     );
 
   };
 
-  console.log(data);
+  if (isLoading) {
+    return  <section className="w-full p-4"><TableEsqueleton rows={4} /></section>;
+  }
+
+  if(!data && !data?.conversations.length){
+    return <div className='p-4'>No hay conversaciones</div>;
+  }
+
+  if (isError) {
+    return <div className='p-4'>Error al cargar las conversaciones.</div>;
+  }
 
   return (
     <>
       <section className="w-full p-4">
-        <div className='grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-2'>
-
+        <div className=''>
+          {isLoading && <TableEsqueleton rows={4} />}
           {
-            !data && (
-              <strong className='text-xs'>No hay conversaciones que mostrar</strong>
+            !isLoading && (
+              <div className="overflow-hidden rounded-md border shadow">
+                <h2 className="p-4">Conversaciones de {user?.name}</h2>
+                <div className="w-full overflow-x-auto whitespace-nowrap reset-scrollbar">
+                  <table className="w-full overflow-x-auto border">
+                    <thead className="border">
+                      <tr className="bg-[#e6ecf0]">
+                        <th className="p-3 text-left text-gray-500">Conversación</th>
+                        <th className="p-3 text-left text-gray-500">IA</th>
+                        <th className="p-3 text-left text-gray-500">Modelo</th>
+                        <th className="p-3 text-left text-gray-500">Actualización</th>
+                        <th className="p-3 text-left text-gray-500">&nbsp;</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y ">
+                      {data &&
+                        data.conversations.map((conversation) => {
+
+                          return (
+                            <tr key={conversation?.conversationId}>
+                              <td className="p-3">
+                                <div>{conversation.title}</div>
+                              </td>
+                              <td className="p-3">
+                                <div>{conversation.endpoint}</div>
+                              </td>
+                              <td className="p-3">
+                                <div>
+                                  <div>{conversation.model}</div>
+                                </div>
+                              </td>
+                              <td className="p-3">
+                                <div>
+                                  <div>{`${new Date(conversation.updatedAt).toLocaleDateString()} - ${new Date(conversation.updatedAt).toLocaleTimeString()}`}</div>
+                                </div>
+                              </td>
+                              <td className="p-3">
+                                <div className="badge badge-light">
+                                  <RenderButton conversation={conversation} owner={conversation.owner} />
+                                </div>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             )
           }
-
-          {
-            data && data.conversations.map(conversation => {
-              return (
-                <div key={conversation.conversationId} className='border p-2 flex flex-col items-center gap-1 rounded-lg shadow'>
-                  <strong className='text-xs'>Conversación</strong>
-                  <h2 className='text-center'>{conversation.title}</h2>
-                  <strong className='text-xs'>IA</strong>
-                  <h3 className='text-center'>{conversation.endpoint}</h3>
-                  <strong className='text-xs'>Modelo</strong>
-                  <h3 className='text-center'>{conversation.model}</h3>
-                  <strong className='text-xs'>Ultima actualización</strong>
-                  <h4 className='text-center'>{`${new Date(conversation.updatedAt).toLocaleDateString()} - ${new Date(conversation.updatedAt).toLocaleTimeString()}`}</h4>
-                  <RenderButton conversation={conversation} owner={conversation.owner}  />
-                  {/* <Link to={conversation.link} target='_blank' className='rounded-md border bg-[#2791d1]/80 p-2 px-5 text-white transition-all hover:bg-[#2791d1] flex items-center gap-2 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:border-gray-100 disabled:text-gray-400'>
-                  Ver conversación
-                  </Link> */}
-                </div>
-              );
-            })
-          }
+          <div className='flex items-center justify-between gap-1 py-2'>
+            <span>Pagina {data?.currentPage} de {data?.totalPages}</span>
+            <div className='flex items-center gap-2'>
+              <button
+                onClick={handlePreviousPage}
+                disabled={pageNumber === 1}
+                className={`px-4 py-2 rounded-md font-medium text-white flex items-center gap-1 ${pageNumber === 1
+                  ? 'bg-gray-300 cursor-not-allowed'
+                  : 'bg-[#2791d1]/80 hover:[#2791d1]'
+                }`}
+              >
+                <IoIosArrowBack />
+                Anterior
+              </button>
+              <button
+                onClick={handleNextPage}
+                disabled={data.totalPages && pageNumber >= data.totalPages}
+                className={`px-4 py-2 rounded-md font-medium text-white flex items-center gap-1 ${data.totalPages && pageNumber >= data.totalPages
+                  ? 'bg-gray-300 cursor-not-allowed'
+                  : 'bg-[#2791d1]/80 hover:[#2791d1]'
+                }`}
+              >
+                Siguiente
+                <IoIosArrowForward />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </>

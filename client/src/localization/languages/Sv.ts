@@ -1,6 +1,7 @@
 // Swedish phrases
 
 export default {
+  com_auth_error_login_no_verify: 'Vänligen verifiera din e-post innan du loggar in.',
   com_nav_dashboard: 'instrumentbräda',
   com_auth_workspace_required: 'Arbetsytans namn krävs',
   com_auth_workspace_min_length: 'Arbetsytans namn måste vara minst 3 tecken långt',

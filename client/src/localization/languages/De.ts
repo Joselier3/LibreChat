@@ -3,6 +3,7 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_auth_error_login_no_verify: 'Bitte verifizieren Sie Ihre E-Mail, bevor Sie sich einloggen.',
   com_nav_dashboard: 'Armaturenbrett',
   com_auth_workspace_required: 'Arbeitsbereichsname ist erforderlich',
   com_auth_workspace_min_length: 'Der Arbeitsbereichsname muss mindestens 3 Zeichen lang sein',

@@ -128,7 +128,7 @@ const MenuItem: FC<MenuItemProps> = ({
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             {userProvidesKey ? (
               <div className="text-token-text-primary" key={`set-key-${endpoint}`}>
                 <button
@@ -187,7 +187,7 @@ const MenuItem: FC<MenuItemProps> = ({
                 </svg>
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
       {userProvidesKey && (

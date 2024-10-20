@@ -7,13 +7,15 @@ import RenderLink from '../RenderLink';
 import { useWorkspace } from '../workspaceContext';
 import { useGetWorkspaceMembers } from '../ReactQueryServices';
 import Avatar from '../Avatar';
+import { useAuthContext } from '~/hooks';
 
 export default function Chats() {
+  const { user } = useAuthContext();
   const [open, setOpen] = useState<boolean>(true);
 
   const { selectedWorkspace } = useWorkspace();
 
-  const { data: members, isLoading, error } = useGetWorkspaceMembers(selectedWorkspace?._id);
+  const { data: members, isLoading, error } = useGetWorkspaceMembers(selectedWorkspace?._id, user?.id);
 
   return (
     <section className="flex">

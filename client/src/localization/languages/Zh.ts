@@ -3,6 +3,7 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_auth_error_login_no_verify: '请在登录前验证您的电子邮件。',
   com_nav_dashboard: '仪表板',
   com_auth_workspace_required: '工作空间名称是必需的',
   com_auth_workspace_min_length: '工作空间名称必须至少有3个字符',

@@ -86,8 +86,9 @@ export default function OpenAI() {
     if (connections) {
     // Si ya existe una conexión, se actualiza
       updateMutate(openAi, {
-        onSuccess(data) {
+        onSuccess({ data }) {
           // console.log('Conexión actualizada:', data);
+          selectWorkspace({ ...selectedWorkspace, connections: data?.connections || [] });
           showToast({ message: 'Conexión actualizada', status: 'success' });
 
         },
@@ -99,8 +100,9 @@ export default function OpenAI() {
     } else {
     // Si no hay ninguna conexión, se crea una nueva
       mutate(openAi, {
-        onSuccess(data) {
+        onSuccess({ data }) {
           // console.log('Conexión creada:', data);
+          selectWorkspace({ ...selectedWorkspace, connections: data?.connections || [] });
           showToast({ message: 'Conexión creada', status: 'success' });
         },
         onError(error) {

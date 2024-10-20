@@ -1,6 +1,7 @@
 const OpenAI = require('openai');
 const { HttpsProxyAgent } = require('https-proxy-agent');
 const { ErrorTypes, EModelEndpoint } = require('librechat-data-provider');
+
 const {
   getUserKeyValues,
   getUserKeyExpiry,
@@ -8,11 +9,22 @@ const {
 } = require('~/server/services/UserService');
 const OpenAIClient = require('~/app/clients/OpenAIClient');
 const { isUserProvided } = require('~/server/utils');
+const { getUserById } = require('~/models');
+const Workspace = require('~/models/workspace');
 
 const initializeClient = async ({ req, res, endpointOption, version, initAppClient = false }) => {
   const { PROXY, OPENAI_ORGANIZATION, ASSISTANTS_API_KEY, ASSISTANTS_BASE_URL } = process.env;
 
-  const userProvidesKey = isUserProvided(ASSISTANTS_API_KEY);
+  const user = req.user;
+
+  const currentUser = await getUserById(user?.id);
+  const currentWorkspace = await Workspace.findById(currentUser.activeWorkspace);
+
+  // console.log('currentApiKey',currentWorkspace);
+
+  const currentApiKey = currentWorkspace.connections.find(workspace => workspace.provider === 'assistants');
+
+  const userProvidesKey = isUserProvided(currentApiKey.apiKey);
   const userProvidesURL = isUserProvided(ASSISTANTS_BASE_URL);
 
   let userValues = null;
@@ -25,7 +37,7 @@ const initializeClient = async ({ req, res, endpointOption, version, initAppClie
     userValues = await getUserKeyValues({ userId: req.user.id, name: EModelEndpoint.assistants });
   }
 
-  let apiKey = userProvidesKey ? userValues.apiKey : ASSISTANTS_API_KEY;
+  let apiKey = userProvidesKey ? userValues.apiKey :  currentApiKey.apiKey;;
   let baseURL = userProvidesURL ? userValues.baseURL : ASSISTANTS_BASE_URL;
 
   const opts = {

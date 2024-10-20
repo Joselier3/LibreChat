@@ -3,6 +3,7 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_auth_error_login_no_verify: 'Por favor, verifica tu correo electrónico antes de iniciar sesión.',
   com_nav_dashboard: 'Panel',
   com_auth_workspace_required: 'Se requiere nombre del espacio de trabajo',
   com_auth_workspace_min_length:

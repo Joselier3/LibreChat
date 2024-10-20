@@ -293,6 +293,7 @@ const chatV2 = async (req, res) => {
         thread_id,
         model: assistant_id,
         endpoint,
+        workspaceId: req.user.workspaceActive,
       };
 
       previousMessages.push(requestMessage);
@@ -306,6 +307,7 @@ const chatV2 = async (req, res) => {
         promptPrefix: promptPrefix,
         instructions: instructions,
         assistant_id,
+        workspaceId: req.user.activeWorkspace,
         // model,
       };
 
@@ -447,6 +449,7 @@ const chatV2 = async (req, res) => {
       thread_id,
       model: assistant_id,
       endpoint,
+      workspaceId: req.user.workspaceActive,
     };
 
     sendMessage(res, {
@@ -455,6 +458,7 @@ const chatV2 = async (req, res) => {
       requestMessage: {
         parentMessageId,
         thread_id,
+        workspaceId: req.user.workspaceActive,
       },
     });
     res.end();

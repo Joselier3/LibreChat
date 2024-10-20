@@ -179,6 +179,7 @@ const listAssistantsForAzure = async ({ req, res, version, azureConfig = {}, que
 
 async function getOpenAIClient({ req, res, endpointOption, initAppClient, overrideEndpoint }) {
   let endpoint = overrideEndpoint ?? req.body.endpoint ?? req.query.endpoint;
+
   const version = await getCurrentVersion(req, endpoint);
   if (!endpoint) {
     throw new Error(`[${req.baseUrl}] Endpoint is required`);
@@ -220,7 +221,7 @@ const fetchAssistants = async ({ req, res, overrideEndpoint }) => {
 
   /** @type {AssistantListResponse} */
   let body;
-
+  // console.log(endpoint, EModelEndpoint);
   if (endpoint === EModelEndpoint.assistants) {
     ({ body } = await listAllAssistants({ req, res, version, query }));
   } else if (endpoint === EModelEndpoint.azureAssistants) {
@@ -239,6 +240,7 @@ const fetchAssistants = async ({ req, res, overrideEndpoint }) => {
     assistants: body.data,
     assistantsConfig: req.app.locals[endpoint],
   });
+  // console.log({ body });
   return body;
 };
 

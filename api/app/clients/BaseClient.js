@@ -120,7 +120,7 @@ class BaseClient {
     if (this.options.directEndpoint) {
       url = this.options.reverseProxyUrl;
     }
-    console.log({ init, context: this.options });
+    // console.log({ init, context: this.options });
     logger.debug(`Making request to ${url}`);
     if (typeof Bun !== 'undefined') {
       return await fetch(url, init);
@@ -787,7 +787,7 @@ class BaseClient {
       },
       { context: 'api/app/clients/BaseClient.js - saveMessageToDatabase #saveConvo' },
     );
-
+    console.log(conversation);
     return { message: savedMessage, conversation };
   }
 

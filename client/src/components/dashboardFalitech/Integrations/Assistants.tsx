@@ -78,7 +78,7 @@ export default function Assistants() {
   const { mutate: updateMutate } = useWorkspaceUpdateConnection();
 
   const modelsQuery = useGetModelsQuery();
-  const modelOpenAI = modelsQuery.data?.['openAI'] || [];
+  const modelOpenAI = modelsQuery.data?.['assistants'] || [];
 
   const handlerSubmit = (e) => {
     e.preventDefault();
@@ -86,8 +86,9 @@ export default function Assistants() {
     if (connections) {
     // Si ya existe una conexión, se actualiza
       updateMutate(assistants, {
-        onSuccess(data) {
+        onSuccess({ data }) {
           // console.log('Conexión actualizada:', data);
+          selectWorkspace({ ...selectedWorkspace, connections: data?.connections || [] });
           showToast({ message: 'Conexión actualizada', status: 'success' });
 
         },
@@ -99,8 +100,9 @@ export default function Assistants() {
     } else {
     // Si no hay ninguna conexión, se crea una nueva
       mutate(assistants, {
-        onSuccess(data) {
+        onSuccess({ data }) {
           // console.log('Conexión creada:', data);
+          selectWorkspace({ ...selectedWorkspace, connections: data?.connections || [] });
           showToast({ message: 'Conexión creada', status: 'success' });
         },
         onError(error) {

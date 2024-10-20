@@ -506,6 +506,7 @@ const DocumentType: z.ZodType<DocumentTypeValue> = z.lazy(() =>
 
 export const tConversationSchema = z.object({
   conversationId: z.string().nullable(),
+  workspaceId: z.string().nullable(),
   endpoint: eModelEndpointSchema.nullable(),
   endpointType: eModelEndpointSchema.optional(),
   title: z.string().nullable().or(z.literal('New Chat')).default('New Chat'),
@@ -626,6 +627,7 @@ export type TSetOption = (
 
 export type TConversation = z.infer<typeof tConversationSchema> & {
   presetOverride?: Partial<TPreset>;
+  workspaceId?: string
 };
 
 export const tSharedLinkSchema = z.object({

@@ -3,6 +3,7 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_auth_error_login_no_verify: 'Giriş yapmadan önce e-postanızı doğrulayın lütfen.',
   com_nav_dashboard: 'gösterge paneli',
   com_auth_workspace_required: 'Çalışma alanı adı gereklidir',
   com_auth_workspace_min_length: 'Çalışma alanı adı en az 3 karakter uzunluğunda olmalıdır',

@@ -10,6 +10,7 @@ const convoSchema = mongoose.Schema(
       index: true,
       meiliIndex: true,
     },
+    workspaceId: { type: mongoose.Schema.Types.ObjectId, ref: 'Workspace', required: true },
     title: {
       type: String,
       default: 'New Chat',

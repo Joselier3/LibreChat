@@ -1,6 +1,7 @@
 // Korean phrases
 
 export default {
+  com_auth_error_login_no_verify: '로그인하기 전에 이메일을 확인하세요.',
   com_nav_dashboard: '대시보드',
   com_auth_workspace_required: '작업 공간 이름이 필요합니다',
   com_auth_workspace_min_length: '작업 공간 이름은 최소 3자 이상이어야 합니다',

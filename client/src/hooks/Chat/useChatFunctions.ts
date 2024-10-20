@@ -254,6 +254,7 @@ export default function useChatFunctions({
       conversation: {
         ...conversation,
         conversationId,
+        workspaceId: conversation?.workspaceId || 'defaultWorkspaceId',
       },
       endpointOption,
       userMessage: {
@@ -268,6 +269,8 @@ export default function useChatFunctions({
       isRegenerate,
       initialResponse,
     };
+
+    console.log(submission);
 
     if (isRegenerate) {
       setMessages([...submission.messages, initialResponse]);

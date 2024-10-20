@@ -14,6 +14,7 @@ const User = require('~/models/User');
 const { Types } = require('mongoose');
 const Conversation = require('~/models/schema/convoSchema');
 const { createSharedLink } = require('~/models/Share');
+const Workspace = require('~/models/workspace');
 const MONGO_URI = process.env.MONGO_URI;
 
 const getWorkspaceController = async (req, res) => {
@@ -179,7 +180,10 @@ const getUserWorkspacesController = async (req, res) => {
 
 const getWorkspaceMembersController = async (req, res) => {
   try {
-    const workspace = await getWorkspaceById(req.params.workspaceId);
+
+    const { workspaceId, userId } = req.params;
+
+    const workspace = await getWorkspaceById(workspaceId);
 
     if (!workspace) {
       return res.status(404).json({ message: 'Workspace not found' });
@@ -187,11 +191,28 @@ const getWorkspaceMembersController = async (req, res) => {
 
     const members = await Promise.all(
       workspace.members.map(async (memberId) => {
-        return await getUserById(memberId);
+        // Si el miembro es el propietario, devolver todos los miembros
+        if (userId === workspace.owner.toString()) {
+          return await getUserById(memberId); // Obtiene todos los miembros si el solicitante es el propietario
+        }
+
+        // Si no es el propietario, solo devolvemos al usuario solicitante
+        if (memberId.toString() === userId) {
+          return await getUserById(memberId); // Solo obtiene el miembro que hizo la solicitud
+        }
+
+        return null; // Si no es el propietario ni el miembro solicitante, retorna null
       }),
     );
 
-    res.status(200).json(members);
+    const filteredMembers = members.filter((member) => member !== null);
+
+    if (filteredMembers.length > 0) {
+      return res.status(200).json(filteredMembers);
+    } else {
+      return res.status(403).json({ message: 'Access denied' });
+    }
+
   } catch (error) {
     logger.error('[getWorkspaceMembersController]', error);
     res.status(500).json({ message: 'Error fetching members' });
@@ -264,7 +285,7 @@ const updateConnectionController = async (req, res) => {
     const { workspaceId, connectionId, provider, apiKey, models, name } = req.body;
 
     // Buscar el workspace por su ID
-    const workspace = await findWorkspace({ _id: workspaceId });
+    const workspace = await Workspace.findOne({ _id: workspaceId });
 
     if (!workspace) {
       return res.status(404).json({ message: 'Workspace not found' });
@@ -284,14 +305,13 @@ const updateConnectionController = async (req, res) => {
       models,
       name,
       updatedAt: new Date(),
+      apiKey: apiKey || workspace.connections[connectionIndex].apiKey, // Mantener el apiKey anterior si no se proporciona uno nuevo
     };
-
-    if (apiKey) {
-      workspace.connections[connectionIndex].apiKey = apiKey;
-    }
 
     // Guardar el workspace con la conexión actualizada usando updateWorkspace
     const updatedWorkspace = await updateWorkspace(workspaceId, { $set: { connections: workspace.connections } });
+
+    // console.log({ connections: workspace.connections, updatedWorkspace });
 
     res.status(200).json({ message: 'Conexión actualizada exitosamente', data: updatedWorkspace });
 
@@ -331,10 +351,29 @@ const getWorkspaceConnectionController = async (req, res) => {
 
 const getAllConversationForUserController = async (req, res) => {
   try {
-    const { userId, ownerId } = req.params;
+    const { userId, ownerId, workspaceId } = req.params;
+    const { pageNumber = 1, pageSize = 10 } = req.query;
+
+    // Definir el filtro para encontrar las conversaciones del usuario
+    const query = { user: userId, workspaceId };
+
+    // Calcular el total de conversaciones
+    const totalConversations = await Conversation.countDocuments(query);
+    const totalPages = Math.ceil(totalConversations / pageSize);
+
+    // Validar que no se soliciten páginas fuera del rango
+    if (pageNumber > totalPages) {
+      return res.status(404).json({ message: 'No se encontraron más conversaciones' });
+    }
+
+    // Obtener las conversaciones para la página solicitada
+    const allConversationforUser = await Conversation.find(query)
+      .sort({ updatedAt: -1 }) // Ordenar por fecha de actualización
+      .skip((pageNumber - 1) * pageSize)
+      .limit(pageSize)
+      .lean();
 
     // Busca todas las conversaciones en las que el usuario esté involucrado
-    const allConversationforUser = await Conversation.find({ user: userId });
 
     if (!allConversationforUser || allConversationforUser.length === 0) {
       return res.status(404).json({ message: 'No se encontraron conversaciones para este usuario' });
@@ -373,6 +412,8 @@ const getAllConversationForUserController = async (req, res) => {
     res.status(200).json({
       message: 'Conversaciones obtenidas exitosamente',
       conversations: customizedConversations,
+      totalPages,
+      currentPage: pageNumber,
     });
   } catch (error) {
     console.error('Error al obtener conversaciones:', error);

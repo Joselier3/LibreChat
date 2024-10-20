@@ -17,6 +17,7 @@ const { logger } = require('~/config');
 const createAssistant = async (req, res) => {
   try {
     const { openai } = await getOpenAIClient({ req, res });
+    console.log({ openai });
 
     const { tools = [], endpoint, conversation_starters, ...assistantData } = req.body;
     delete assistantData.conversation_starters;
@@ -166,8 +167,10 @@ const deleteAssistant = async (req, res) => {
  * @returns {AssistantListResponse} 200 - success response - application/json
  */
 const listAssistants = async (req, res) => {
+  console.log('Request received:', req.body);
   try {
     const body = await fetchAssistants({ req, res });
+    // console.log({ body, req, res });
     res.json(body);
   } catch (error) {
     logger.error('[/assistants] Error listing assistants', error);

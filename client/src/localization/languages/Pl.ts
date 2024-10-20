@@ -1,6 +1,7 @@
 // Polish phrases
 
 export default {
+  com_auth_error_login_no_verify: 'Zweryfikuj swój adres e-mail przed zalogowaniem się.',
   com_nav_dashboard: 'deska rozdzielcza',
   com_auth_workspace_required: 'Nazwa przestrzeni roboczej jest wymagana',
   com_auth_workspace_min_length: 'Nazwa przestrzeni roboczej musi mieć co najmniej 3 znaki',

@@ -173,9 +173,9 @@ export const getUserWorkspaces = async (userId) => {
   }
 };
 
-export const getWorkspaceMembers = async (workspaceId) => {
+export const getWorkspaceMembers = async (workspaceId, userId) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/${workspaceId}/members`, {
+    const response = await fetch(`${API_BASE_URL}/${workspaceId}/${userId}/members`, {
       method: 'GET',
     });
 
@@ -383,12 +383,11 @@ export const getWorkspaceConnection = async (data) => {
   }
 };
 
-export const getAllConversationForUser = async (userId, ownerId) => {
+export const getAllConversationForUser = async (userId, ownerId, workspaceId, pageNumber = 1, pageSize = 10) => {
   try {
-    //http://localhost:3090/share/GjFmjEICth0ySTZyztir1
 
     // Realiza la solicitud al backend
-    const response = await fetch(`${API_BASE_URL}/conversation/all/${userId}/${ownerId}`, {
+    const response = await fetch(`${API_BASE_URL}/conversation/all/${userId}/${ownerId}/${workspaceId}?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
       method: 'GET',
     });
 

@@ -3,6 +3,7 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_auth_error_login_no_verify: 'Vahvista sähköpostisi ennen sisäänkirjautumista.',
   com_nav_dashboard: 'hallintapaneeli',
   com_auth_workspace_required: 'Työtilan nimi on pakollinen',
   com_auth_workspace_min_length: 'Työtilan nimen on oltava vähintään 3 merkkiä pitkä',

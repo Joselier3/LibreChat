@@ -1,6 +1,7 @@
 // Vietnamese phrases
 
 export default {
+  com_auth_error_login_no_verify: 'Vui lòng xác minh email của bạn trước khi đăng nhập.',
   com_nav_dashboard: 'bảng điều khiển',
   com_auth_workspace_required: 'Tên không gian làm việc là bắt buộc',
   com_auth_workspace_min_length: 'Tên không gian làm việc phải có ít nhất 3 ký tự',

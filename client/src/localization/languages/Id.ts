@@ -3,6 +3,7 @@
 // file deepcode ignore HardcodedNonCryptoSecret: No hardcoded secrets present in this file
 
 export default {
+  com_auth_error_login_no_verify: 'Silakan verifikasi email Anda sebelum masuk.',
   com_nav_dashboard: 'dasbor',
   com_auth_workspace_required: 'Nama ruang kerja diperlukan',
   com_auth_workspace_min_length: 'Nama ruang kerja harus memiliki setidaknya 3 karakter',

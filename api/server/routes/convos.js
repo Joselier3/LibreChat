@@ -55,6 +55,7 @@ router.get('/:conversationId', async (req, res) => {
 router.post('/gen_title', async (req, res) => {
   const { conversationId } = req.body;
   const titleCache = getLogStores(CacheKeys.GEN_TITLE);
+
   const key = `${req.user.id}-${conversationId}`;
   let title = await titleCache.get(key);
 
