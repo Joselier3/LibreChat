@@ -15,7 +15,7 @@ export default function Footer({ className }: { className?: string }) {
   const privacyPolicyRender = privacyPolicy?.externalUrl != null && (
     <a
       className="text-text-secondary underline"
-      href={privacyPolicy.externalUrl}
+      href='https://falitech.com/falitech_legal.html#article07-2w'
       target={privacyPolicy.openNewTab === true ? '_blank' : undefined}
       rel="noreferrer"
     >
@@ -26,7 +26,7 @@ export default function Footer({ className }: { className?: string }) {
   const termsOfServiceRender = termsOfService?.externalUrl != null && (
     <a
       className="text-text-secondary underline"
-      href={termsOfService.externalUrl}
+      href='https://falitech.com/falitech_legal.html#article07-2v'
       target={termsOfService.openNewTab === true ? '_blank' : undefined}
       rel="noreferrer"
     >

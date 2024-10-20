@@ -23,7 +23,7 @@ function Footer({ startupConfig }: { startupConfig: TStartupConfig | null | unde
   const termsOfServiceRender = termsOfService?.externalUrl && (
     <a
       className="text-sm text-green-500"
-      href='https://falitech.com/falitech_legal.html#article07-2v '
+      href='https://falitech.com/falitech_legal.html#article07-2v'
       target={termsOfService.openNewTab ? '_blank' : undefined}
       rel="noreferrer"
     >
