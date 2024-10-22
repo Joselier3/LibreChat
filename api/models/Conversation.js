@@ -77,7 +77,7 @@ module.exports = {
       const workspaceId = req.user?.activeWorkspace ? req.user.activeWorkspace.toString() : null;
 
       const update = { ...convo, messages, user: req.user.id, ...(workspaceId && { workspaceId }) };
-      // console.log({ update });
+      
 
       if (newConversationId) {
         update.conversationId = newConversationId;

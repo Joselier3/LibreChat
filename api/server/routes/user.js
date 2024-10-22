@@ -10,14 +10,19 @@ const {
   acceptTermsController,
   getUserIdController,
   updateUserController,
+  updateInfoUserController,
 } = require('~/server/controllers/UserController');
-const { getUserWorkspacesController, updateActiveWorkspaceController } = require('~/server/controllers/WorkspaceController');
+const {
+  getUserWorkspacesController,
+  updateActiveWorkspaceController,
+} = require('~/server/controllers/WorkspaceController');
 
 const router = express.Router();
 
 router.get('/', requireJwtAuth, getUserController);
 router.get('/:id', getUserIdController);
 router.put('/', updateUserController);
+router.put('/:id', updateInfoUserController);
 router.get('/terms', requireJwtAuth, getTermsStatusController);
 router.post('/terms/accept', requireJwtAuth, acceptTermsController);
 router.post('/plugins', requireJwtAuth, updateUserPluginsController);

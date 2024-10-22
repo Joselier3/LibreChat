@@ -38,13 +38,28 @@ const getUserIdController = async (req, res) => {
 };
 
 const updateUserController = async (req, res) => {
-  const updateData = {  $set: { workspaces: req.body.workspaces } };
+  const updateData = { $set: { workspaces: req.body.workspaces } };
   try {
-    // const user = await updateUser(req.body.id, updateData, {
-    //   new: true,
-    // });
+    const user = await User.findByIdAndUpdate(req.body.id, updateData, {
+      new: true,
+      runValidators: true,
+    }).lean();
 
-    const user = await  User.findByIdAndUpdate(req.body.id, updateData, {
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    logger.error('[getUserIdController]', error);
+    res.status(500).json({ message: 'Error fetching User' });
+  }
+};
+
+const updateInfoUserController = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const user = await User.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true,
     }).lean();
@@ -209,4 +224,5 @@ module.exports = {
   verifyEmailController,
   updateUserPluginsController,
   resendVerificationController,
+  updateInfoUserController,
 };

@@ -78,7 +78,6 @@ export const createWorkspace = async (data) => {
 
 // Actualizar un workspace
 export const updateWorkspace = async (updateData) => {
-
   const { workspaceId, data } = updateData;
 
   try {
@@ -124,7 +123,7 @@ export const leaveWorkspace = async (data) => {
   try {
     //recibe  {workspaceId, userId}
     const { workspaceId, userId } = data;
-    const response = await fetch(`/api/workspaces/leave/${workspaceId}/${userId}`,{
+    const response = await fetch(`/api/workspaces/leave/${workspaceId}/${userId}`, {
       method: 'DELETE',
     });
     return await response.data;
@@ -278,7 +277,6 @@ export const getInvitationForUser = async (id) => {
 };
 
 export const getInvitationForCode = async (code) => {
-
   try {
     const response = await fetch(`/api/invitation/find/${code}`, {
       method: 'GET',
@@ -300,7 +298,6 @@ export const getInvitationForCode = async (code) => {
 };
 
 export const rejectInvitationApiCall = async (invitationId) => {
-
   try {
     const response = await fetch(`/api/invitation/${invitationId}/reject`, {
       method: 'DELETE',
@@ -311,7 +308,7 @@ export const rejectInvitationApiCall = async (invitationId) => {
     }
 
     return response.json();
-  } catch (	error ) {
+  } catch (error) {
     // console.error('Error:', error);
     throw error;
   }
@@ -376,20 +373,27 @@ export const getWorkspaceConnection = async (data) => {
     const resData = await response.json();
 
     return resData;
-
   } catch (error) {
     console.error('Error al obtener la conexión del workspace', error);
     throw error;
   }
 };
 
-export const getAllConversationForUser = async (userId, ownerId, workspaceId, pageNumber = 1, pageSize = 10) => {
+export const getAllConversationForUser = async (
+  userId,
+  ownerId,
+  workspaceId,
+  pageNumber = 1,
+  pageSize = 10,
+) => {
   try {
-
     // Realiza la solicitud al backend
-    const response = await fetch(`${API_BASE_URL}/conversation/all/${userId}/${ownerId}/${workspaceId}?pageNumber=${pageNumber}&pageSize=${pageSize}`, {
-      method: 'GET',
-    });
+    const response = await fetch(
+      `${API_BASE_URL}/conversation/all/${userId}/${ownerId}/${workspaceId}?pageNumber=${pageNumber}&pageSize=${pageSize}`,
+      {
+        method: 'GET',
+      },
+    );
 
     // Asegúrate de que la respuesta es válida
     if (!response.ok) {
@@ -400,7 +404,6 @@ export const getAllConversationForUser = async (userId, ownerId, workspaceId, pa
     const resData = await response.json();
 
     return resData;
-
   } catch (error) {
     console.error('Error al salir del área de trabajo:', error);
     throw error;
@@ -408,7 +411,6 @@ export const getAllConversationForUser = async (userId, ownerId, workspaceId, pa
 };
 
 export const generateShareLink = async (conversationId) => {
-
   try {
     const response = await fetch(`${API_BASE_URL}/conversation/${conversationId}/share`, {
       method: 'GET',
@@ -426,13 +428,11 @@ export const generateShareLink = async (conversationId) => {
   } catch (error) {
     console.error('Error al generar el link para compartir', error);
     throw error;
-  };
-
+  }
 };
 
-export const selectActiveWorkspace = async ({ userId,workspaceId }) => {
-
-  try{
+export const selectActiveWorkspace = async ({ userId, workspaceId }) => {
+  try {
     const response = await fetch(`/api/user/${userId}/active-workspace`, {
       method: 'PUT',
       headers: {
@@ -445,7 +445,27 @@ export const selectActiveWorkspace = async ({ userId,workspaceId }) => {
     const resData = await response.json();
 
     return resData;
-  }catch(error){
+  } catch (error) {
+    console.error('Error al generar el link para compartir', error);
+    throw error;
+  }
+};
+
+export const updateUser = async ({ id, update }) => {
+  try {
+    const response = await fetch(`/api/user/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(update),
+    });
+
+    // Procesa la respuesta como JSON
+    const resData = await response.json();
+
+    return resData;
+  } catch (error) {
     console.error('Error al generar el link para compartir', error);
     throw error;
   }

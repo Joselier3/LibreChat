@@ -1,5 +1,27 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { getUserById, getWorkspaceById, createWorkspace, updateWorkspace, deleteWorkspace, getAvatar, getUserWorkspaces, getWorkspaceMembers, createInvitation, validateInvitation, acceptInvitation, getInvitationForUser, rejectInvitationApiCall, leaveWorkspace, createConnectionApiCall, getWorkspaceConnection, updateConnectionApiCall, getAllConversationForUser, getInvitationForCode, selectActiveWorkspace } from './workspacesService';
+import {
+  getUserById,
+  getWorkspaceById,
+  createWorkspace,
+  updateWorkspace,
+  deleteWorkspace,
+  getAvatar,
+  getUserWorkspaces,
+  getWorkspaceMembers,
+  createInvitation,
+  validateInvitation,
+  acceptInvitation,
+  getInvitationForUser,
+  rejectInvitationApiCall,
+  leaveWorkspace,
+  createConnectionApiCall,
+  getWorkspaceConnection,
+  updateConnectionApiCall,
+  getAllConversationForUser,
+  getInvitationForCode,
+  selectActiveWorkspace,
+  updateUser,
+} from './workspacesService';
 
 // Hook para obtener un usuario por ID
 export const useGetUserById = (userId) => {
@@ -46,9 +68,13 @@ export const useDeleteWorkspace = () => {
 
 // Hook para obtener los miembros de un workspace
 export const useGetWorkspaceMembers = (workspaceId, userId) => {
-  return useQuery(['workspaceMembers', workspaceId, userId], () => getWorkspaceMembers(workspaceId, userId), {
-    enabled: !!workspaceId && !!userId, // Ejecutar solo si hay un workspaceId
-  });
+  return useQuery(
+    ['workspaceMembers', workspaceId, userId],
+    () => getWorkspaceMembers(workspaceId, userId),
+    {
+      enabled: !!workspaceId && !!userId, // Ejecutar solo si hay un workspaceId
+    },
+  );
 };
 
 // Hook para actualizar un workspace
@@ -105,7 +131,9 @@ export const useAcceptInvitation = () => {
     onSuccess: (_, { invitationId }) => {
       // Actualizar la cache manualmente para eliminar la invitación aceptada
       queryClient.setQueryData(['userInvitations'], (oldData) => {
-        if (!oldData) { return oldData; }
+        if (!oldData) {
+          return oldData;
+        }
 
         return {
           ...oldData,
@@ -146,8 +174,8 @@ export const useLeaveInvitation = () => {
 export const useWorkspaceCreateConnection = () => {
   const queryClient = useQueryClient();
 
-  return useMutation(createConnectionApiCall,{
-    onSuccess(){
+  return useMutation(createConnectionApiCall, {
+    onSuccess() {
       queryClient.invalidateQueries(['connections']);
     },
   });
@@ -156,8 +184,8 @@ export const useWorkspaceCreateConnection = () => {
 export const useWorkspaceUpdateConnection = () => {
   const queryClient = useQueryClient();
 
-  return useMutation(updateConnectionApiCall,{
-    onSuccess(){
+  return useMutation(updateConnectionApiCall, {
+    onSuccess() {
       queryClient.invalidateQueries(['connections']);
     },
   });
@@ -165,8 +193,8 @@ export const useWorkspaceUpdateConnection = () => {
 export const useSelectActiveWorkspace = () => {
   const queryClient = useQueryClient();
 
-  return useMutation(selectActiveWorkspace,{
-    onSuccess(){
+  return useMutation(selectActiveWorkspace, {
+    onSuccess() {
       queryClient.invalidateQueries(['userWorkspaces']);
     },
   });
@@ -183,7 +211,13 @@ export const useGetWorkspaceConnection = ({ workspaceId, userId, provider }) => 
 };
 
 // Hook para obtener el avatar de un workspace
-export const useGetAllConversationForUser = (userId, ownerId, workspaceId, pageNumber = 1, pageSize = 10) => {
+export const useGetAllConversationForUser = (
+  userId,
+  ownerId,
+  workspaceId,
+  pageNumber = 1,
+  pageSize = 10,
+) => {
   return useQuery(
     ['conversation', userId, ownerId, pageNumber], // Incluye pageNumber en la clave del query
     () => getAllConversationForUser(userId, ownerId, workspaceId, pageNumber, pageSize),
@@ -192,4 +226,13 @@ export const useGetAllConversationForUser = (userId, ownerId, workspaceId, pageN
       keepPreviousData: true, // Mantiene los datos previos mientras se carga la nueva página
     },
   );
+};
+
+export const useUpdateUser = () => {
+  const queryClient = useQueryClient();
+  return useMutation(updateUser, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(['user']);
+    },
+  });
 };

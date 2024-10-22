@@ -115,8 +115,6 @@ export default function Settings({ conversation, setOption, models, readonly }: 
 
   const optionEndpoint = endpointType ?? endpoint;
 
-  // console.log({ modelOptions,assistants, optionEndpoint, currentList, assistantListMap });
-
   return (
     <div className="grid grid-cols-6 gap-6">
       <div className="col-span-6 flex flex-col items-center justify-start gap-6 sm:col-span-3">

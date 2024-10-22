@@ -1,17 +1,21 @@
 import { useGetModelsQuery } from 'librechat-data-provider/react-query';
 import React, { useEffect, useState } from 'react';
 import { useWorkspace } from '../workspaceContext';
-import { useGetWorkspaceConnection, useWorkspaceCreateConnection, useWorkspaceUpdateConnection } from '../ReactQueryServices';
+import {
+  useGetWorkspaceConnection,
+  useWorkspaceCreateConnection,
+  useWorkspaceUpdateConnection,
+} from '../ReactQueryServices';
 import { useAuthContext } from '~/hooks';
 import { useToastContext } from '~/Providers';
 
 interface openAiState {
-  connectionId:string,
-  workspaceId: string,
-  provider:string,
-  apiKey: string,
-  models: string[],
-  name: string,
+  connectionId: string;
+  workspaceId: string;
+  provider: string;
+  apiKey: string;
+  models: string[];
+  name: string;
 }
 
 export default function OpenAI() {
@@ -20,7 +24,7 @@ export default function OpenAI() {
   const { showToast } = useToastContext();
 
   const [openAi, setOpenAi] = useState<openAiState>({
-    connectionId:'',
+    connectionId: '',
     workspaceId: selectedWorkspace?._id || '',
     provider: 'openAI',
     apiKey: '',
@@ -30,7 +34,7 @@ export default function OpenAI() {
 
   const { data: connections } = useGetWorkspaceConnection({
     workspaceId: selectedWorkspace?._id,
-    userId: user?._id,
+    userId: user?.id,
     provider: 'openAI',
   });
 
@@ -38,7 +42,7 @@ export default function OpenAI() {
   useEffect(() => {
     if (connections) {
       setOpenAi({
-        connectionId:connections?._id || '',
+        connectionId: connections?._id || '',
         workspaceId: selectedWorkspace?._id || '',
         provider: connections.provider || 'openAI',
         apiKey: connections.apiKey || '', // Si no quieres mostrar la API Key, puedes omitirla
@@ -50,14 +54,14 @@ export default function OpenAI() {
 
   function handlerChange(e) {
     const { name, value, checked } = e.target;
-    if(checked){
+    if (checked) {
       console.log(value);
       // Agregar la propiedad al array de models si no existe
       setOpenAi((prevState) => ({
         ...prevState,
         models: [...prevState.models, value],
       }));
-    }else{
+    } else {
       // Eliminar la propiedad del array de models si está desmarcada
       setOpenAi((prevState) => ({
         ...prevState,
@@ -66,7 +70,7 @@ export default function OpenAI() {
     }
 
     // Actualizar el resto del state normalmente
-    if(name !== 'models'){
+    if (name !== 'models') {
       setOpenAi((prevState) => ({
         ...prevState,
         [name]: value,
@@ -84,13 +88,12 @@ export default function OpenAI() {
     e.preventDefault();
 
     if (connections) {
-    // Si ya existe una conexión, se actualiza
+      // Si ya existe una conexión, se actualiza
       updateMutate(openAi, {
         onSuccess({ data }) {
           // console.log('Conexión actualizada:', data);
           selectWorkspace({ ...selectedWorkspace, connections: data?.connections || [] });
           showToast({ message: 'Conexión actualizada', status: 'success' });
-
         },
         onError(error) {
           showToast({ message: 'Error al actualizar la conexión', status: 'error' });
@@ -98,7 +101,7 @@ export default function OpenAI() {
         },
       });
     } else {
-    // Si no hay ninguna conexión, se crea una nueva
+      // Si no hay ninguna conexión, se crea una nueva
       mutate(openAi, {
         onSuccess({ data }) {
           // console.log('Conexión creada:', data);
@@ -115,40 +118,70 @@ export default function OpenAI() {
 
   return (
     <section className="w-full p-4">
-
       <div className="mb-8 overflow-hidden rounded-md border shadow">
         <h2 className="p-4">
-          <a href="http://openai.com" target="_blank" rel="noopener noreferrer" className='text-[#0084ff] hover:underline'>Registrarse </a>
+          <a
+            href="http://openai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#0084ff] hover:underline"
+          >
+            Registrarse{' '}
+          </a>
           for an Open AI account
         </h2>
         <div className="bg-gray-50 p-4">
-          <form onSubmit={handlerSubmit} className="max-w-96 m-auto flex flex-col gap-3 ">
-            <fieldset className='flex items-center flex-wrap gap-1'>
+          <form onSubmit={handlerSubmit} className="m-auto flex max-w-96 flex-col gap-3 ">
+            <fieldset className="flex flex-wrap items-center gap-1">
               <strong className="block">Nombre IA</strong>
-              <input type="text" value={openAi.name} name='name' onChange={handlerChange} className="w-full md:flex-grow rounded-lg border p-2 focus:outline-[#0084ff]/60 " placeholder='Name IA (optional)' />
+              <input
+                type="text"
+                value={openAi.name}
+                name="name"
+                onChange={handlerChange}
+                className="w-full rounded-lg border p-2 focus:outline-[#0084ff]/60 md:flex-grow "
+                placeholder="Name IA (optional)"
+              />
             </fieldset>
-            <fieldset className='flex items-center flex-wrap gap-1'>
+            <fieldset className="flex flex-wrap items-center gap-1">
               <strong className="block">Api Key</strong>
-              <input type="text" value={openAi.apiKey} name='apiKey' onChange={handlerChange} className="w-full md:flex-grow rounded-lg border p-2 focus:outline-[#0084ff]/60 " placeholder='************************************' />
+              <input
+                type="text"
+                value={openAi.apiKey}
+                name="apiKey"
+                onChange={handlerChange}
+                className="w-full rounded-lg border p-2 focus:outline-[#0084ff]/60 md:flex-grow "
+                placeholder="************************************"
+              />
             </fieldset>
-            <fieldset className='flex flex-col gap-1'>
+            <fieldset className="flex flex-col gap-1">
               <strong className="block">Modelo</strong>
-              <ul className='grid grid-cols-[repeat(auto-fill, minmax(200px, 1fr))]'>
-                {
-                  modelOpenAI.map(model => {
-                    const isCurrentModel = connections?.models.some(currentModel => currentModel === model);
-                    return (
-                      <li key={model} className='flex gap-1 items-center'>
-                        <input type="checkbox" name='models' defaultChecked={isCurrentModel} id={model} value={model} onChange={handlerChange}/>
-                        <label htmlFor={model}>{model}</label>
-                      </li>
-                    );
-                  })
-                }
+              <ul className="grid-cols-[repeat(auto-fill, minmax(200px, 1fr))] grid">
+                {modelOpenAI.map((model) => {
+                  const isCurrentModel = connections?.models.some(
+                    (currentModel) => currentModel === model,
+                  );
+                  return (
+                    <li key={model} className="flex items-center gap-1">
+                      <input
+                        type="checkbox"
+                        name="models"
+                        defaultChecked={isCurrentModel}
+                        id={model}
+                        value={model}
+                        onChange={handlerChange}
+                      />
+                      <label htmlFor={model}>{model}</label>
+                    </li>
+                  );
+                })}
               </ul>
             </fieldset>
 
-            <button type='submit' className="mt-3 rounded-md border bg-[#2791d1]/80 p-2 px-5 text-white transition-all hover:bg-[#2791d1]">
+            <button
+              type="submit"
+              className="mt-3 rounded-md border bg-[#2791d1]/80 p-2 px-5 text-white transition-all hover:bg-[#2791d1]"
+            >
               Guardar
             </button>
           </form>
