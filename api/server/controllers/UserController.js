@@ -50,7 +50,7 @@ const updateUserController = async (req, res) => {
     }
     res.status(200).json(user);
   } catch (error) {
-    logger.error('[getUserIdController]', error);
+    logger.error('[updateUserController]', error);
     res.status(500).json({ message: 'Error fetching User' });
   }
 };
@@ -69,7 +69,7 @@ const updateInfoUserController = async (req, res) => {
     }
     res.status(200).json(user);
   } catch (error) {
-    logger.error('[getUserIdController]', error);
+    logger.error('[updateInfoUserController]', error);
     res.status(500).json({ message: 'Error fetching User' });
   }
 };
