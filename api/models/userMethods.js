@@ -20,7 +20,7 @@ const getUserById = async function (userId, fieldsToSelect = null) {
 
   // Agregar un log para ver qué sucede con el userId
   if (!user) {
-    console.log(`Usuario no encontrado para el ID: ${userId}`);
+    logger.log(`Usuario no encontrado para el ID: ${userId}`);
   }
 
   return user;
