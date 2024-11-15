@@ -253,6 +253,7 @@ export const listAssistants = (
   params: a.AssistantListParams,
   version: number | string,
 ): Promise<a.AssistantListResponse> => {
+  console.log("[dataService.listAssistants] ", { params, version });
   return request.get(
     endpoints.assistants({
       version,
