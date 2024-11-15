@@ -167,7 +167,7 @@ const deleteAssistant = async (req, res) => {
  * @returns {AssistantListResponse} 200 - success response - application/json
  */
 const listAssistants = async (req, res) => {
-  console.log('Request received:', req.body);
+  logger.log('[/assistants] Request received:', req.body);
   try {
     const body = await fetchAssistants({ req, res });
     // console.log({ body, req, res });

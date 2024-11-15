@@ -267,7 +267,7 @@ export const useListAssistantsQuery = <TData = AssistantListResponse>(
 
   const enabled = !!endpointsConfig?.[endpoint] && keyProvided;
   const version = endpointsConfig?.[endpoint]?.version ?? defaultAssistantsVersion[endpoint];
-  // console.log({ enabled, endpoint, keyProvided, endpointsConfig, userProvidesKey, keyExpiry });
+  console.log(`[useListAssistantsQuery] ${JSON.stringify({ enabled, endpoint, keyProvided, endpointsConfig, userProvidesKey, keyExpiry })}`);
   return useQuery<AssistantListResponse, unknown, TData>(
     [QueryKeys.assistants, endpoint, params],
     () => dataService.listAssistants({ ...params, endpoint }, version),

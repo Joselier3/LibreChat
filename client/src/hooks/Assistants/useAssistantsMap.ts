@@ -21,6 +21,8 @@ export default function useAssistantsMap({
     },
   );
 
+  console.log('[useAssistantsMap]', JSON.stringify({ assistants, azureAssistants }));
+
   return {
     [EModelEndpoint.assistants]: assistants,
     [EModelEndpoint.azureAssistants]: azureAssistants,

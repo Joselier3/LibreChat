@@ -133,6 +133,8 @@ export default function AssistantSelect({
       }),
   });
 
+  console.log("[AssistantSelect] assistants query: ", JSON.stringify(query));
+
   const onSelect = useCallback(
     (value: string) => {
       const assistant = query.data?.find((assistant) => assistant.id === value);

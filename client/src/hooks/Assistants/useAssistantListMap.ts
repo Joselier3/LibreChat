@@ -40,5 +40,7 @@ export default function useAssistantListMap<T = AssistantListItem[] | null>(
     };
   }, [assistantsList, azureAssistants]);
 
+  console.log('[assistantListMap]', JSON.stringify(assistantListMap));
+
   return assistantListMap;
 }
